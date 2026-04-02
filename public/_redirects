@@ -1,0 +1,4 @@
+# Redirect non-trailing-slash URLs to canonical trailing-slash form
+/about /about/ 301
+/contact /contact/ 301
+/privacy-policy /privacy-policy/ 301

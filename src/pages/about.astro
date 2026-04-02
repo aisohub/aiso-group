@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Greg Stoos",
+  "jobTitle": "Founder & CEO",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "AISO Group",
+    "url": "https://aisogroup.com"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lisbon",
+    "addressCountry": "PT"
+  }
+};
+---
+
+<Base
+  title="About AISO Group"
+  description="AISO Group was founded in Lisbon, Portugal with a single mission: to make businesses visible, credible, and recommended by AI systems worldwide."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+  </Fragment>
+
+  <!-- Page Hero -->
+  <section class="bg-[#0A1628] pt-32 pb-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8">
+        <span class="text-blue-300 text-sm font-medium">Founded in Lisbon, 2025</span>
+      </div>
+      <h1 class="text-5xl font-extrabold text-white mb-6">About AISO Group</h1>
+      <p class="text-xl text-slate-300 leading-relaxed">
+        We exist to solve one of the most important business challenges of this decade: being found and trusted by AI.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="bg-[#0A1628] rounded-2xl p-10">
+          <div class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-4">Vision</div>
+          <h2 class="text-2xl font-bold text-white mb-4">The global standard for AI search optimization</h2>
+          <p class="text-slate-300 leading-relaxed">
+            To be the global standard for AI search optimization — helping businesses thrive in an AI-first world where answers matter more than links.
+          </p>
+        </div>
+        <div class="border border-slate-200 rounded-2xl p-10">
+          <div class="text-xs font-semibold text-blue-500 uppercase tracking-wider mb-4">Mission</div>
+          <h2 class="text-2xl font-bold text-[#0A1628] mb-4">Visible, credible, recommended by AI</h2>
+          <p class="text-slate-500 leading-relaxed">
+            We combine deep AI expertise with proven digital marketing to make businesses visible, credible, and recommended by AI systems worldwide.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-[#0A1628] mb-8 text-center">Our Story</h2>
+      <div class="prose prose-lg max-w-none text-slate-600 space-y-6">
+        <p>
+          AISO Group was founded in Lisbon, Portugal, under the legal entity <strong>Precious Episode LDA</strong> (NIF PT516578506). We were born from a simple observation: traditional SEO was being disrupted by AI-powered search, and most businesses didn't know it yet.
+        </p>
+        <p>
+          When ChatGPT, Perplexity, and Gemini began answering questions that used to require a Google search, the rules changed overnight. Being on page one of Google no longer meant being the answer. Businesses needed a new strategy — one built for AI, not retrofitted from legacy playbooks.
+        </p>
+        <p>
+          That's why we built AISO Group: an AI-first holding company with three specialized arms covering the full spectrum of digital transformation in the AI era. AISO Hub handles AI search optimization. AISO Dev builds the technology infrastructure. AISO Buzz drives marketing and brand amplification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-[#0A1628] mb-12 text-center">Leadership</h2>
+      <div class="max-w-sm mx-auto">
+        <div class="border border-slate-200 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-[#0A1628] rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">GS</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#0A1628] mb-1">Greg Stoos</h3>
+          <div class="text-blue-500 text-sm font-semibold mb-4">Founder & CEO</div>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Background in technology and digital strategy. Based in Lisbon, Portugal. Built AISO Group to help businesses navigate the AI search revolution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-[#0A1628]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-white mb-12 text-center">Our Values</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            number: '01',
+            title: 'Transparency',
+            desc: "We show our work. Clients see exactly what we do and why — no black boxes, no vague reporting.",
+          },
+          {
+            number: '02',
+            title: 'Innovation',
+            desc: "We don't follow playbooks, we write them. The AI search landscape evolves fast and so do we.",
+          },
+          {
+            number: '03',
+            title: 'Results',
+            desc: 'Visibility that translates to revenue. We measure success in business outcomes, not vanity metrics.',
+          },
+        ].map(v => (
+          <div class="border border-white/10 rounded-2xl p-8">
+            <div class="text-blue-400 text-4xl font-black mb-4 opacity-40">{v.number}</div>
+            <h3 class="text-xl font-bold text-white mb-3">{v.title}</h3>
+            <p class="text-slate-400 leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white border-t border-slate-100">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-[#0A1628] mb-4">Want to work with us?</h2>
+      <p class="text-slate-500 text-lg mb-8">We'd love to hear about your business and how we can help.</p>
+      <a href="/contact/"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl inline-block transition-colors">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Base>

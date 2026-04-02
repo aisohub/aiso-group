@@ -1,0 +1,131 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const { title, description, ogImage = '/og-default.png', canonicalUrl } = Astro.props;
+const canonical = canonicalUrl ?? Astro.url.href;
+const siteTitle = title.includes('AISO Group') ? title : `${title} | AISO Group`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{siteTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0A1628]/95 backdrop-blur-sm border-b border-white/10">
+      <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+            AISO <span class="text-blue-400">Group</span>
+          </span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Home</a>
+          <a href="/about/" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="/contact/" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+          <a href="https://aisohub.com" target="_blank" rel="noopener noreferrer"
+            class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
+            AISO Hub →
+          </a>
+        </div>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-[#0A1628] border-t border-white/10 px-6 py-4">
+        <div class="flex flex-col gap-4">
+          <a href="/" class="text-slate-300 hover:text-white font-medium transition-colors">Home</a>
+          <a href="/about/" class="text-slate-300 hover:text-white font-medium transition-colors">About</a>
+          <a href="/contact/" class="text-slate-300 hover:text-white font-medium transition-colors">Contact</a>
+          <a href="https://aisohub.com" target="_blank" rel="noopener noreferrer"
+            class="text-blue-400 hover:text-blue-300 font-medium transition-colors">AISO Hub →</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-[#0A1628] text-slate-400 border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <div class="text-xl font-bold text-white mb-3">AISO <span class="text-blue-400">Group</span></div>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              AI-Powered Digital Transformation. Three specialized companies. One vision.
+            </p>
+            <p class="text-sm text-slate-500 mt-2">Lisbon, Portugal</p>
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Companies</div>
+            <div class="flex flex-col gap-2 text-sm">
+              <a href="https://aisohub.com" target="_blank" rel="noopener noreferrer"
+                class="hover:text-blue-400 transition-colors">AISO Hub — AI Search Optimization</a>
+              <span class="text-slate-600">AISO Dev — Technology (Coming Soon)</span>
+              <span class="text-slate-600">AISO Buzz — Marketing (Coming Soon)</span>
+            </div>
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</div>
+            <div class="flex flex-col gap-2 text-sm">
+              <a href="/privacy-policy/" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
+              <span class="text-slate-500">Precious Episode LDA</span>
+              <span class="text-slate-500">NIF PT516578506</span>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-xs text-slate-500">© {new Date().getFullYear()} Precious Episode LDA. All rights reserved.</p>
+          <p class="text-xs text-slate-500">hello@aisogroup.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    </script>
+  </body>
+</html>
