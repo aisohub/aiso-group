@@ -175,8 +175,7 @@ import Base from '../layouts/Base.astro';
         const data = new FormData(form);
         const body = Object.fromEntries(data.entries());
 
-        // Formspree or similar — replace FORM_ID when configured
-        const res = await fetch('https://formspree.io/f/FORM_ID', {
+        const res = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify(body),
