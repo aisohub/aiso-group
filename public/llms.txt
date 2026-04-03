@@ -4,9 +4,9 @@
 
 AISO Group (Precious Episode LDA, NIF PT516578506) unites three specialized companies:
 
-- **AISO Hub** (aisohub.com): AI Search Optimization — audit, optimize, and monitor brand visibility across AI search engines (ChatGPT, Perplexity, Gemini, etc.)
-- **AISO Dev** (aisodev.com): Technology & Platform Engineering — building AI infrastructure and automation platforms
-- **AISO Buzz** (aisobuzz.com): Marketing & Brand Building — content strategy, social media, and lead generation
+- **AISO Hub** (aisohub.com): AI Search Optimization - audit, optimize, and monitor brand visibility across AI search engines (ChatGPT, Perplexity, Gemini, etc.)
+- **AISO Dev** (aiso-dev.com): AI Implementation Partner for SMBs - helping businesses integrate AI into their operations, from strategy to deployment
+- **AISO Buzz** (aiso-buzz.com): Digital Marketing Agency - social media growth through AI-powered content automation
 
 ## Contact
 
