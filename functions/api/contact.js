@@ -1,16 +1,16 @@
 /**
- * Cloudflare Pages Function — POST /api/contact
+ * Cloudflare Pages Function - POST /api/contact
  *
  * Accepts form submissions from the AISO Group contact page and forwards
  * them via Resend.
  *
  * Required env vars (Cloudflare Pages dashboard > Settings > Environment variables):
- *   RESEND_API_KEY       — API key from resend.com
+ *   RESEND_API_KEY       - API key from resend.com
  *
  * Optional env vars (have sensible defaults):
- *   RESEND_FROM_DOMAIN   — Verified Resend sending domain.
+ *   RESEND_FROM_DOMAIN   - Verified Resend sending domain.
  *                          Default: notifications.aiso-hub.com (already verified).
- *   RESEND_TO_EMAIL      — Destination inbox for form submissions.
+ *   RESEND_TO_EMAIL      - Destination inbox for form submissions.
  *                          Default: hello@aisogroup.com
  */
 export async function onRequestPost(context) {
