@@ -1,260 +1,154 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const jsonLd = {
+const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AISO Group",
   "alternateName": "AISO",
-  "url": "https://aisogroup.com",
-  "description": "AI-Powered Digital Transformation — three specialized companies in AI search optimization, technology, and marketing.",
+  "url": "https://aiso-group.com",
+  "description": "Three specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz).",
   "foundingDate": "2025",
-  "foundingLocation": {
-    "@type": "Place",
-    "name": "Lisbon, Portugal"
-  },
+  "foundingLocation": { "@type": "Place", "name": "Lisbon, Portugal" },
   "parentOrganization": {
     "@type": "Organization",
     "name": "Precious Episode LDA",
     "taxID": "PT516578506",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lisbon",
-      "addressCountry": "PT"
-    }
+    "address": { "@type": "PostalAddress", "addressLocality": "Lisbon", "addressCountry": "PT" }
   },
   "subOrganization": [
-    {
-      "@type": "Organization",
-      "name": "AISO Hub",
-      "url": "https://aisohub.com",
-      "description": "AI Search Optimization agency"
-    },
-    {
-      "@type": "Organization",
-      "name": "AISO Dev",
-      "url": "https://aisodev.com",
-      "description": "Technology and platform development"
-    },
-    {
-      "@type": "Organization",
-      "name": "AISO Buzz",
-      "url": "https://aisobuzz.com",
-      "description": "Marketing, content, and brand building"
-    }
+    { "@type": "Organization", "name": "AISO Hub", "url": "https://aiso-hub.com", "description": "AI Search Optimization agency" },
+    { "@type": "Organization", "name": "AISO Dev", "url": "https://aiso-dev.com", "description": "AI implementation partner for SMBs" },
+    { "@type": "Organization", "name": "AISO Buzz", "url": "https://aiso-buzz.com", "description": "AI-powered social & content agency" }
   ],
-  "founder": {
-    "@type": "Person",
-    "name": "Greg Stoos"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "hello@aisogroup.com",
-    "contactType": "customer service"
-  }
+  "founder": { "@type": "Person", "name": "Greg Stoos" },
+  "contactPoint": { "@type": "ContactPoint", "email": "hello@aiso-group.com", "contactType": "customer service" }
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://aiso-group.com",
+  "name": "AISO Group",
+  "publisher": { "@type": "Organization", "name": "AISO Group" }
 };
 ---
 
 <Base
-  title="AISO Group — AI-Powered Digital Transformation"
-  description="AISO Group brings together AI search optimization (Hub), technology (Dev), and marketing (Buzz) to make businesses visible in the age of AI search. Based in Lisbon."
+  title="AISO Group — The specialist AI group for real businesses"
+  description="Three specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz). Pick the one that fits — expand when you are ready."
+  jsonLd={[orgJsonLd, webSiteJsonLd]}
 >
-  <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  </Fragment>
-
-  <!-- Hero -->
-  <section class="min-h-screen bg-[#0A1628] flex items-center relative overflow-hidden">
-    <!-- Background grid pattern -->
-    <div class="absolute inset-0 opacity-5"
-      style="background-image: linear-gradient(#3B82F6 1px, transparent 1px), linear-gradient(90deg, #3B82F6 1px, transparent 1px); background-size: 60px 60px;">
-    </div>
-    <!-- Gradient orb -->
-    <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="relative max-w-6xl mx-auto px-6 pt-32 pb-20 text-center">
-      <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8">
-        <div class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-        <span class="text-blue-300 text-sm font-medium">AI-First from Day One</span>
-      </div>
-
-      <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-        AISO Group
-        <span class="block text-blue-400 mt-2">AI-Powered Digital</span>
-        <span class="block">Transformation</span>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-24 md:!py-32">
+      <span class="kicker kicker-on-dark mb-5 block">Lisbon · 2026 · Specialist AI</span>
+      <h1 class="h1 !text-white max-w-4xl">
+        The specialist AI group for real businesses.
       </h1>
-
-      <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-        Three specialized companies. One vision: making businesses visible in the age of AI search.
+      <p class="lead !text-slate-300 mt-6">
+        Three specialist AI companies under one roof. AI search. AI systems. AI-powered social. Pick the one that fits. Expand when you are ready.
       </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#companies"
-          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/25">
-          Explore Our Companies
-        </a>
-        <a href="/contact/"
-          class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border border-white/20 transition-all">
-          Get in Touch
-        </a>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="#router" class="btn btn-on-dark">Find your AISO specialist →</a>
+        <a href="/contact/" class="btn btn-ghost-on-dark">Talk to Greg →</a>
       </div>
     </div>
-
-    <!-- Scroll indicator -->
-    <a href="#companies" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-slate-300 transition-colors">
-      <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </a>
   </section>
 
-  <!-- Companies Section -->
-  <section id="companies" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-[#0A1628] mb-4">Our Companies</h2>
-        <p class="text-lg text-slate-500 max-w-2xl mx-auto">
-          Each company is a specialist. Together, they cover the full spectrum of AI-era digital transformation.
-        </p>
+  <section id="router" class="bg-white">
+    <div class="container-aiso section">
+      <div class="max-w-2xl mb-10">
+        <span class="kicker mb-3">The router</span>
+        <h2 class="h2">Which AISO brand do I need?</h2>
+        <p class="lead mt-4">Three questions. One specialist. A 20-second answer.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- AISO Hub -->
-        <div class="group border border-slate-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-50 transition-all">
-          <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-          </div>
-          <div class="text-xs font-semibold text-blue-500 uppercase tracking-wider mb-2">AI Search Optimization</div>
-          <h3 class="text-2xl font-bold text-[#0A1628] mb-3">AISO Hub</h3>
-          <p class="text-slate-500 leading-relaxed mb-6">
-            We make businesses the answer when AI talks. Audit, optimize, and monitor your brand's visibility across ChatGPT, Perplexity, Gemini, and every AI search engine.
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="router-card" style="--accent: #00d492;">
+          <div class="router-card__accent"></div>
+          <p class="router-card__question">Do I need to be found by AI?</p>
+          <h3 class="router-card__answer">AISO Hub</h3>
+          <p class="router-card__audience">
+            We make your brand the answer ChatGPT, Perplexity, and Google AI Overviews cite. For businesses ready to own the AI search layer.
           </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            {['AI Search Audit', 'Optimization', 'Monitoring', 'Foundation'].map(tag => (
-              <span class="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full font-medium">{tag}</span>
-            ))}
-          </div>
-          <a href="https://aisohub.com" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-blue-500 font-semibold hover:text-blue-600 transition-colors">
-            Visit aisohub.com
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        </div>
+          <a class="router-card__cta" href="https://aiso-hub.com" rel="noopener">Visit AISO Hub →</a>
+        </article>
 
-        <!-- AISO Dev -->
-        <div class="group border border-slate-200 rounded-2xl p-8 opacity-75 hover:opacity-100 hover:border-slate-300 hover:shadow-xl transition-all relative overflow-hidden">
-          <div class="absolute top-4 right-4">
-            <span class="text-xs bg-slate-100 text-slate-500 px-3 py-1 rounded-full font-medium">Coming Soon</span>
-          </div>
-          <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Technology & Engineering</div>
-          <h3 class="text-2xl font-bold text-[#0A1628] mb-3">AISO Dev</h3>
-          <p class="text-slate-500 leading-relaxed mb-6">
-            The engineering force behind AISO. We build the platforms, tools, and AI infrastructure that power everything we do.
+        <article class="router-card" style="--accent: #3B82F6;">
+          <div class="router-card__accent"></div>
+          <p class="router-card__question">Do I need AI to run something in my business?</p>
+          <h3 class="router-card__answer">AISO Dev</h3>
+          <p class="router-card__audience">
+            We build AI systems your team can operate — data pipelines, agent workflows, custom internal tools. For SMBs with a process, not a slide deck.
           </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            {['Platform Development', 'AI Infrastructure', 'Automation', 'Integration'].map(tag => (
-              <span class="text-xs bg-slate-50 text-slate-500 px-3 py-1 rounded-full font-medium">{tag}</span>
-            ))}
-          </div>
-          <span class="text-slate-400 text-sm font-medium">aisodev.com — launching soon</span>
-        </div>
+          <a class="router-card__cta" href="https://aiso-dev.com" rel="noopener">Visit AISO Dev →</a>
+        </article>
 
-        <!-- AISO Buzz -->
-        <div class="group border border-slate-200 rounded-2xl p-8 opacity-75 hover:opacity-100 hover:border-slate-300 hover:shadow-xl transition-all relative overflow-hidden">
-          <div class="absolute top-4 right-4">
-            <span class="text-xs bg-slate-100 text-slate-500 px-3 py-1 rounded-full font-medium">Coming Soon</span>
-          </div>
-          <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-            </svg>
-          </div>
-          <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Marketing & Brand Building</div>
-          <h3 class="text-2xl font-bold text-[#0A1628] mb-3">AISO Buzz</h3>
-          <p class="text-slate-500 leading-relaxed mb-6">
-            Content that converts. Social strategies that scale. We turn brand visibility into measurable business growth.
+        <article class="router-card" style="--accent: #F97316;">
+          <div class="router-card__accent"></div>
+          <p class="router-card__question">Do I need content and social that sounds like my brand?</p>
+          <h3 class="router-card__answer">AISO Buzz</h3>
+          <p class="router-card__audience">
+            We produce social and content backed by a brand bible, validated before it ships. For businesses without a marketing team who refuse to sound like AI.
           </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            {['Content Strategy', 'Social Media', 'Brand Architecture', 'Lead Generation'].map(tag => (
-              <span class="text-xs bg-slate-50 text-slate-500 px-3 py-1 rounded-full font-medium">{tag}</span>
-            ))}
-          </div>
-          <span class="text-slate-400 text-sm font-medium">aisobuzz.com — launching soon</span>
+          <a class="router-card__cta" href="https://aiso-buzz.com" rel="noopener">Visit AISO Buzz →</a>
+        </article>
+      </div>
+
+      <div class="mt-10 p-6 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row justify-between gap-4 items-start sm:items-center">
+        <div>
+          <p class="text-sm font-semibold text-[#0A1628]">Not sure which one fits?</p>
+          <p class="text-sm text-slate-600 mt-1">Book a 20-minute call. We will route you.</p>
+        </div>
+        <a href="/contact/" class="btn btn-primary whitespace-nowrap">Talk to Greg →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-50">
+    <div class="container-aiso section">
+      <span class="kicker mb-3 block">The verb test</span>
+      <h2 class="h2 mb-8">One line each. Made visible.</h2>
+      <div class="sibling-strip">
+        <div class="sibling-strip__item" style="--accent: #00d492;">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Hub cites</p>
+          <p class="text-lg text-[#0A1628] mt-1">We make AI quote your brand.</p>
+        </div>
+        <div class="sibling-strip__item" style="--accent: #3B82F6;">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Dev builds</p>
+          <p class="text-lg text-[#0A1628] mt-1">We ship AI systems that run.</p>
+        </div>
+        <div class="sibling-strip__item" style="--accent: #F97316;">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Buzz says</p>
+          <p class="text-lg text-[#0A1628] mt-1">We write content that sounds like you.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why AISO Group -->
-  <section class="py-24 bg-[#0A1628]">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">Born AI-First</h2>
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
-          While others adapt legacy SEO to AI, we built from the ground up for a world where AI answers the questions.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          {
-            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`,
-            title: 'AI-Native',
-            desc: 'Built for AI search from day one, not retrofitted from legacy SEO playbooks.',
-          },
-          {
-            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />`,
-            title: 'Full-Stack',
-            desc: 'Strategy, technology, and marketing under one roof — no coordination gaps between agencies.',
-          },
-          {
-            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
-            title: 'Data-Driven',
-            desc: 'Every decision backed by real-time AI visibility data — not gut feel or outdated rankings.',
-          },
-        ].map(item => (
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-colors">
-            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <Fragment set:html={item.icon} />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">{item.title}</h3>
-            <p class="text-slate-400 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-24 bg-blue-600">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-white mb-4">Ready to be visible in the AI era?</h2>
-      <p class="text-xl text-blue-100 mb-8">
-        Start with an AI search audit. Understand where your brand stands today.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://aisohub.com" target="_blank" rel="noopener noreferrer"
-          class="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-4 rounded-xl transition-colors">
-          Go to AISO Hub
-        </a>
-        <a href="/contact/"
-          class="bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-4 rounded-xl border border-white/30 transition-colors">
-          Contact Us
-        </a>
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="max-w-3xl">
+        <span class="kicker mb-3 block">Founder note</span>
+        <h2 class="h2 mb-6">Why a group, not a generalist</h2>
+        <div class="article-body">
+          <p>
+            Generalist AI agencies fail small and mid-sized businesses. The work spreads thin. The team optimizes for hours, not outcomes.
+          </p>
+          <p>
+            We built a group instead. Three specialist companies, each with one job.
+          </p>
+          <p>
+            The advantage: you do not buy a bundle. You buy the specialist you need now. You bring in the others when the timing is right.
+          </p>
+          <p>
+            Lisbon-based. EU-focused. Built in 2025.
+          </p>
+          <p class="text-sm text-slate-500 mt-6">— Greg Stoos, Founder. Lisbon, 2025.</p>
+        </div>
+        <div class="mt-8">
+          <a href="/about/" class="btn btn-ghost">Read the thesis →</a>
+        </div>
       </div>
     </div>
   </section>

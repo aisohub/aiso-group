@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aiso-group.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Brands", "item": "https://aiso-group.com/brands/" }
+  ]
+};
+---
+
+<Base
+  title="Our brands — AISO Hub, AISO Dev, AISO Buzz"
+  description="Three specialist AI companies. What each one does. What each one does not do. Pick the specialist that matches the problem."
+  jsonLd={breadcrumbJsonLd}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-28">
+      <span class="kicker kicker-on-dark mb-5 block">The three specialists</span>
+      <h1 class="h1 !text-white max-w-4xl">
+        Three specialists. One practical advantage.
+      </h1>
+      <p class="lead !text-slate-300 mt-6">
+        Each AISO brand has one job. When the job fits, the work is faster, sharper, and cheaper than a generalist. Here is what each one does — and what each one does not.
+      </p>
+    </div>
+  </section>
+
+  {/* HUB */}
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <div class="w-12 h-1.5 rounded-full mb-4" style="background: #00d492;"></div>
+          <span class="kicker mb-2 block">AISO Hub</span>
+          <h2 class="h2 !text-[#0A1628]">AI Search Optimization</h2>
+          <a href="https://aiso-hub.com" rel="noopener" class="btn btn-primary mt-6 !bg-[#00d492] hover:!bg-[#00b87c]">Visit AISO Hub →</a>
+        </div>
+        <div class="md:col-span-2 article-body">
+          <p><strong>The one job:</strong> We make your brand the answer AI cites.</p>
+          <p><strong>What we do:</strong></p>
+          <ul>
+            <li>AISO audits for ChatGPT, Perplexity, Gemini, Google AI Overviews.</li>
+            <li>Structured data, content architecture, and citation-ready pages.</li>
+            <li>Monthly monitoring of AI visibility across engines.</li>
+          </ul>
+          <p><strong>What we do not do:</strong></p>
+          <ul>
+            <li>We do not write social posts. That is Buzz.</li>
+            <li>We do not build custom software. That is Dev.</li>
+          </ul>
+          <p><strong>Who it fits:</strong> Brands whose customers now ask AI before Google. SaaS, legal, health, finance, real estate — any business where being <em>cited</em> matters more than ranking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* DEV */}
+  <section class="bg-slate-50">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <div class="w-12 h-1.5 rounded-full mb-4" style="background: #3B82F6;"></div>
+          <span class="kicker mb-2 block">AISO Dev</span>
+          <h2 class="h2 !text-[#0A1628]">AI Systems for SMBs</h2>
+          <a href="https://aiso-dev.com" rel="noopener" class="btn btn-primary mt-6 !bg-[#3B82F6] hover:!bg-[#2563EB]">Visit AISO Dev →</a>
+        </div>
+        <div class="md:col-span-2 article-body">
+          <p><strong>The one job:</strong> We build AI that runs in your business.</p>
+          <p><strong>What we do:</strong></p>
+          <ul>
+            <li>Internal tools, agent workflows, data pipelines.</li>
+            <li>AI-augmented websites and lead systems.</li>
+            <li>Scoped projects with a fixed timeline and a fixed price band.</li>
+          </ul>
+          <p><strong>What we do not do:</strong></p>
+          <ul>
+            <li>We do not do AI search optimization. That is Hub.</li>
+            <li>We do not manage your social channels. That is Buzz.</li>
+          </ul>
+          <p><strong>Who it fits:</strong> SMBs with a process that should not be manual anymore — a form that routes badly, a report that takes 8 hours, a lead flow that loses people between systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* BUZZ */}
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <div class="w-12 h-1.5 rounded-full mb-4" style="background: #F97316;"></div>
+          <span class="kicker mb-2 block">AISO Buzz</span>
+          <h2 class="h2 !text-[#0A1628]">AI-Powered Social & Content</h2>
+          <a href="https://aiso-buzz.com" rel="noopener" class="btn btn-primary mt-6 !bg-[#F97316] hover:!bg-[#EA580C]">Visit AISO Buzz →</a>
+        </div>
+        <div class="md:col-span-2 article-body">
+          <p><strong>The one job:</strong> We produce content that sounds like you, not like AI.</p>
+          <p><strong>What we do:</strong></p>
+          <ul>
+            <li>Brand-bible-first social management across LinkedIn, Instagram, TikTok, YouTube.</li>
+            <li>Content creation with a human validation step before every post.</li>
+            <li>Monthly results reporting tied to reach, leads, and on-brand alignment.</li>
+          </ul>
+          <p><strong>What we do not do:</strong></p>
+          <ul>
+            <li>We do not do AI search work. That is Hub.</li>
+            <li>We do not build software. That is Dev.</li>
+          </ul>
+          <p><strong>Who it fits:</strong> Businesses without a marketing team who need a real social presence — and refuse to sound generic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* HOW TO CHOOSE */}
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section">
+      <div class="max-w-3xl">
+        <span class="kicker kicker-on-dark mb-3 block">How to choose</span>
+        <h2 class="h2 !text-white">If you want the long version.</h2>
+        <div class="article-body mt-6 !text-slate-200 [&>p]:text-slate-300 [&_strong]:!text-white [&_a]:!text-white">
+          <p><em class="text-slate-400">If you want a 20-second answer, the homepage router is faster.</em></p>
+          <ul class="!text-slate-300">
+            <li><strong>Start with the pain you feel today.</strong> One brand, one problem. Do not buy a bundle.</li>
+            <li><strong>Ask the verb question.</strong> Do you need AI to <em>cite</em> you, <em>build</em> for you, or <em>say</em> something for you? The verb tells you the specialist.</li>
+            <li><strong>Bring in the next one when it matters.</strong> Most clients start with one brand. The others join when the timing is right.</li>
+          </ul>
+        </div>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="/#router" class="btn btn-on-dark">Find your AISO specialist →</a>
+          <a href="/contact/" class="btn btn-ghost-on-dark">Talk to Greg →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

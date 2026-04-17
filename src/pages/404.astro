@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found"
+  description="This page does not exist on aiso-group.com. Try the home router, or talk to Greg."
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-24 md:!py-32">
+      <span class="kicker kicker-on-dark mb-4 block">404</span>
+      <h1 class="h1 !text-white">This page does not exist.</h1>
+      <p class="lead !text-slate-300 mt-6 max-w-2xl">
+        Happens. Try the home router — three questions, one specialist, a 20-second answer.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="/" class="btn btn-on-dark">Back to home →</a>
+        <a href="/contact/" class="btn btn-ghost-on-dark">Talk to Greg →</a>
+      </div>
+    </div>
+  </section>
+</Base>

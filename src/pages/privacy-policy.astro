@@ -1,109 +1,75 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const lastUpdated = '2026-04-02';
+const updated = '2026-04-17';
 ---
 
 <Base
-  title="Privacy Policy"
-  description="Privacy Policy for AISO Group (Precious Episode LDA). Learn how we collect, use, and protect your personal data in accordance with GDPR."
+  title="Privacy policy"
+  description="How AISO Group handles information submitted through aiso-group.com. Minimal, EU-based, and explicit."
 >
-  <section class="bg-[#0A1628] pt-32 pb-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-4xl font-extrabold text-white mb-4">Privacy Policy</h1>
-      <p class="text-slate-400">Last updated: {lastUpdated}</p>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-16 md:!py-24">
+      <span class="kicker kicker-on-dark mb-4 block">Legal</span>
+      <h1 class="h1 !text-white">Privacy policy</h1>
+      <p class="text-sm text-slate-400 mt-4">Last updated: {updated}</p>
     </div>
   </section>
 
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-6 prose prose-slate prose-lg max-w-none">
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="article-body">
+        <h2>Who we are</h2>
+        <p>
+          AISO Group is a brand operated by Precious Episode LDA, a company registered in Portugal (NIF PT516578506). The group is the parent of three specialist companies: AISO Hub, AISO Dev, and AISO Buzz.
+        </p>
 
-      <h2>1. Who We Are</h2>
-      <p>
-        This website is operated by <strong>Precious Episode LDA</strong>, NIF PT516578506, registered in Lisbon, Portugal ("AISO Group", "we", "us", or "our").
-        We can be reached at <a href="mailto:hello@aisogroup.com">hello@aisogroup.com</a>.
-      </p>
+        <h2>What we collect</h2>
+        <p>On <strong>aiso-group.com</strong> we collect only what you hand us:</p>
+        <ul>
+          <li><strong>Contact form.</strong> Name, company, message, and (optionally) email. Used to reply to you and route you to the right sibling brand.</li>
+          <li><strong>Email.</strong> If you write to <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>, we keep the thread in our mailbox.</li>
+          <li><strong>Server logs.</strong> Cloudflare edge logs (IP, user agent, path) for security and debugging. Retained up to 30 days.</li>
+        </ul>
+        <p>No tracking cookies. No ad pixels. No analytics that identify you personally.</p>
 
-      <h2>2. What Data We Collect</h2>
-      <p>We collect the following categories of personal data:</p>
-      <ul>
-        <li><strong>Contact form data:</strong> name, email address, company name, and message content when you submit our contact form.</li>
-        <li><strong>Usage data:</strong> IP address, browser type, pages visited, and time spent on site, collected automatically via standard web server logs.</li>
-        <li><strong>Cookies:</strong> We use essential cookies to ensure the website functions correctly. We do not use advertising or tracking cookies.</li>
-      </ul>
+        <h2>What we do with it</h2>
+        <ul>
+          <li>Reply to your inbound.</li>
+          <li>Route you to Hub, Dev, or Buzz internally.</li>
+          <li>Keep a minimal record of our correspondence.</li>
+        </ul>
+        <p>We do not sell or rent your data to anyone. Ever.</p>
 
-      <h2>3. Legal Basis for Processing</h2>
-      <p>We process your personal data under the following legal bases (GDPR Article 6):</p>
-      <ul>
-        <li><strong>Legitimate interest</strong> (Art. 6(1)(f)) — for website analytics to understand how our site is used.</li>
-        <li><strong>Contract performance / pre-contractual steps</strong> (Art. 6(1)(b)) — for processing enquiries submitted via our contact form.</li>
-        <li><strong>Consent</strong> (Art. 6(1)(a)) — where you have explicitly provided consent (e.g., newsletter sign-up if applicable).</li>
-      </ul>
+        <h2>Who sees your data</h2>
+        <ul>
+          <li><strong>Greg Stoos</strong> (founder) and the triage operator.</li>
+          <li>The specialist team at the sibling brand we route you to, if we route you.</li>
+          <li><strong>Processors:</strong> Cloudflare (hosting), Resend (email delivery), Google Workspace (mailbox). All GDPR-compliant.</li>
+        </ul>
 
-      <h2>4. How We Use Your Data</h2>
-      <ul>
-        <li>To respond to your contact form submissions and business enquiries.</li>
-        <li>To improve our website based on aggregated, anonymised usage data.</li>
-        <li>To comply with legal obligations.</li>
-      </ul>
-      <p>We do not sell, rent, or trade your personal data to third parties.</p>
+        <h2>Your rights (GDPR)</h2>
+        <p>
+          You can ask for a copy of your data, ask us to correct it, or ask us to delete it. Email <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a> with "GDPR request" in the subject. We reply within 30 days.
+        </p>
 
-      <h2>5. Data Retention</h2>
-      <p>
-        Contact form submissions are retained for up to <strong>2 years</strong> after last contact, unless a longer period is required by law or ongoing business relationship.
-        Website usage logs are retained for up to <strong>90 days</strong>.
-      </p>
+        <h2>Retention</h2>
+        <p>
+          Contact-form entries: kept for 24 months unless you ask us to delete them sooner, or unless our correspondence continues.
+        </p>
 
-      <h2>6. Third-Party Services</h2>
-      <p>We may use the following third-party services that may process your data:</p>
-      <ul>
-        <li><strong>Cloudflare</strong> — CDN and hosting. Privacy policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">cloudflare.com/privacypolicy</a></li>
-        <li><strong>Formspree</strong> (if contact form is active) — form handling. Privacy policy: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">formspree.io</a></li>
-      </ul>
+        <h2>Changes</h2>
+        <p>
+          We update this page when the practice changes. The "last updated" date above is the source of truth.
+        </p>
 
-      <h2>7. Your Rights Under GDPR</h2>
-      <p>As a resident of the European Economic Area, you have the following rights:</p>
-      <ul>
-        <li><strong>Right of access</strong> — request a copy of the personal data we hold about you.</li>
-        <li><strong>Right to rectification</strong> — request correction of inaccurate data.</li>
-        <li><strong>Right to erasure</strong> — request deletion of your data ("right to be forgotten").</li>
-        <li><strong>Right to restrict processing</strong> — request we limit how we use your data.</li>
-        <li><strong>Right to data portability</strong> — receive your data in a machine-readable format.</li>
-        <li><strong>Right to object</strong> — object to processing based on legitimate interests.</li>
-      </ul>
-      <p>
-        To exercise any of these rights, please contact us at <a href="mailto:hello@aisogroup.com">hello@aisogroup.com</a>.
-        We will respond within 30 days.
-      </p>
-
-      <h2>8. Cookies</h2>
-      <p>
-        This website uses only essential cookies necessary for the website to function. No third-party advertising or tracking cookies are used.
-        You can disable cookies in your browser settings, though this may affect website functionality.
-      </p>
-
-      <h2>9. Data Transfers</h2>
-      <p>
-        Your data may be processed in countries outside the EEA by our service providers (e.g., Cloudflare). Where such transfers occur, we ensure appropriate safeguards are in place in accordance with GDPR Chapter V, including Standard Contractual Clauses where applicable.
-      </p>
-
-      <h2>10. Supervisory Authority</h2>
-      <p>
-        You have the right to lodge a complaint with the Portuguese data protection authority, <strong>CNPD</strong> (Comissão Nacional de Proteção de Dados) at <a href="https://www.cnpd.pt" target="_blank" rel="noopener noreferrer">cnpd.pt</a>.
-      </p>
-
-      <h2>11. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page reflects when the policy was last revised. Continued use of the website after changes constitutes acceptance.
-      </p>
-
-      <h2>12. Contact</h2>
-      <p>
-        For any privacy-related questions or requests, contact:<br />
-        <strong>Precious Episode LDA</strong><br />
-        Lisbon, Portugal<br />
-        <a href="mailto:hello@aisogroup.com">hello@aisogroup.com</a>
-      </p>
+        <h2>Contact</h2>
+        <p>
+          <strong>Precious Episode LDA</strong><br />
+          Lisbon, Portugal · NIF PT516578506<br />
+          <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>
+        </p>
+      </div>
     </div>
   </section>
 </Base>
