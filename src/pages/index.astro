@@ -19,7 +19,8 @@ const orgJsonLd = {
   "subOrganization": [
     { "@type": "Organization", "name": "AISO Hub", "url": "https://aiso-hub.com", "description": "AI Search Optimization agency" },
     { "@type": "Organization", "name": "AISO Dev", "url": "https://aiso-dev.com", "description": "AI implementation partner for SMBs" },
-    { "@type": "Organization", "name": "AISO Buzz", "url": "https://aiso-buzz.com", "description": "AI-powered social & content agency" }
+    { "@type": "Organization", "name": "AISO Buzz", "url": "https://aiso-buzz.com", "description": "AI-powered social & content agency" },
+    { "@type": "Organization", "name": "AISO Learn", "url": "https://aiso-learn.com", "description": "Corporate AI training & EU AI Act compliance" }
   ],
   "founder": { "@type": "Person", "name": "Greg Stoos" },
   "contactPoint": { "@type": "ContactPoint", "email": "hello@aiso-group.com", "contactType": "customer service" }
@@ -63,7 +64,7 @@ const webSiteJsonLd = {
         <p class="lead mt-4">Three questions. One specialist. A 20-second answer.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <article class="router-card" style="--accent: #00d492;">
           <div class="router-card__accent"></div>
           <p class="router-card__question">Do I need to be found by AI?</p>
@@ -93,6 +94,16 @@ const webSiteJsonLd = {
           </p>
           <a class="router-card__cta" href="https://aiso-buzz.com" rel="noopener">Visit AISO Buzz →</a>
         </article>
+
+        <article class="router-card" style="--accent: #8B5CF6;">
+          <div class="router-card__accent"></div>
+          <p class="router-card__question">Do I need my team to actually use AI?</p>
+          <h3 class="router-card__answer">AISO Learn</h3>
+          <p class="router-card__audience">
+            We train your team from AI-curious to AI-capable — with EU AI Act-aligned curricula. For companies who need proof, not a PDF.
+          </p>
+          <a class="router-card__cta" href="https://aiso-learn.com" rel="noopener">Visit AISO Learn →</a>
+        </article>
       </div>
 
       <div class="mt-10 p-6 rounded-2xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row justify-between gap-4 items-start sm:items-center">
@@ -121,6 +132,10 @@ const webSiteJsonLd = {
         <div class="sibling-strip__item" style="--accent: #F97316;">
           <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Buzz says</p>
           <p class="text-lg text-[#0A1628] mt-1">We write content that sounds like you.</p>
+        </div>
+        <div class="sibling-strip__item" style="--accent: #8B5CF6;">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Learn teaches</p>
+          <p class="text-lg text-[#0A1628] mt-1">We turn AI-curious teams into AI-capable ones.</p>
         </div>
       </div>
     </div>
