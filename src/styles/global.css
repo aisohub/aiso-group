@@ -234,14 +234,18 @@ body {
 }
 .router-card__cta:hover { text-decoration: underline; }
 
-/* Sibling-strip */
+/* Sibling-strip — scales 1 → 2×2 (md) → 4-up (lg) so the 4 AISO brands
+   always fit cleanly regardless of viewport. */
 .sibling-strip {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(1, minmax(0,1fr));
 }
 @media (min-width: 768px) {
-  .sibling-strip { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .sibling-strip { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (min-width: 1024px) {
+  .sibling-strip { grid-template-columns: repeat(4, minmax(0,1fr)); }
 }
 .sibling-strip__item {
   border-left: 3px solid var(--accent, var(--color-silver-muted));
