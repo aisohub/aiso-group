@@ -229,10 +229,19 @@ body {
 .router-card__cta {
   margin-top: auto;
   font-weight: 600;
-  color: var(--accent, var(--color-navy));
+  /* Use navy for WCAG AA contrast on white; keep accent as the underline
+     on hover/focus so each card retains its brand colour cue. */
+  color: var(--color-navy);
   text-decoration: none;
+  text-decoration-color: var(--accent, var(--color-navy));
+  text-underline-offset: 3px;
 }
-.router-card__cta:hover { text-decoration: underline; }
+.router-card__cta:hover,
+.router-card__cta:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--accent, var(--color-navy));
+  text-decoration-thickness: 2px;
+}
 
 /* Sibling-strip — scales 1 → 2×2 (md) → 4-up (lg) so the 4 AISO brands
    always fit cleanly regardless of viewport. */
