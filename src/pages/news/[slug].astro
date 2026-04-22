@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props { post: CollectionEntry<'news'> }
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const categoryLabels: Record<string, string> = {
+  'announcement': 'Announcement',
+  'specialist-series': 'Specialist series',
+  'meta-essay': 'Meta-essay',
+};
+
+const canonical = `https://aiso-group.com/news/${post.slug}/`;
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.date.toISOString(),
+  "author": { "@type": "Person", "name": post.data.author },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AISO Group",
+    "url": "https://aiso-group.com"
+  },
+  "mainEntityOfPage": canonical
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aiso-group.com/" },
+    { "@type": "ListItem", "position": 2, "name": "News", "item": "https://aiso-group.com/news/" },
+    { "@type": "ListItem", "position": 3, "name": post.data.title, "item": canonical }
+  ]
+};
+
+function fmt(d: Date) {
+  return d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  canonicalUrl={canonical}
+  jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+>
+  <article>
+    <header class="bg-[#0A1628] text-white">
+      <div class="container-aiso section !py-20 md:!py-24">
+        <nav aria-label="Breadcrumb" class="mb-6 text-sm text-slate-400">
+          <a href="/" class="hover:text-white">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/news/" class="hover:text-white">News</a>
+        </nav>
+        <span class="kicker kicker-on-dark mb-4 block">
+          {categoryLabels[post.data.category] ?? post.data.category}
+        </span>
+        <h1 class="h1 !text-white max-w-4xl">{post.data.title}</h1>
+        <p class="text-sm text-slate-400 mt-6">
+          {fmt(post.data.date)} · {post.data.readTime} min read · {post.data.author}
+        </p>
+      </div>
+    </header>
+
+    <section class="bg-white">
+      <div class="container-aiso section">
+        <div class="article-body">
+          <Content />
+        </div>
+        <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row gap-3 sm:justify-between items-start">
+          <a href="/news/" class="btn btn-ghost">← Back to News & notes</a>
+          <a href="/#router" class="btn btn-primary">Find your AISO specialist →</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

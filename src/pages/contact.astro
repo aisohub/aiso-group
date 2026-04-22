@@ -1,197 +1,141 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact AISO Group",
+  "url": "https://aiso-group.com/contact/",
+  "description": "Not sure which specialist you need? Book a 20-minute call. Greg routes you to the right AISO brand."
+};
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aiso-group.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://aiso-group.com/contact/" }
+  ]
+};
 ---
 
 <Base
-  title="Contact AISO Group"
-  description="Get in touch with AISO Group. We're based in Lisbon, Portugal. Reach out to learn how we can help your business thrive in the age of AI search."
+  title="Contact — Talk to Greg"
+  description="Not sure which specialist you need? Book a 20-minute call. Greg routes you to the right AISO brand — or tells you if we are the wrong call."
+  jsonLd={[contactJsonLd, breadcrumbJsonLd]}
 >
-  <!-- Page Hero -->
-  <section class="bg-[#0A1628] pt-32 pb-16">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h1 class="text-5xl font-extrabold text-white mb-6">Get in Touch</h1>
-      <p class="text-xl text-slate-300">
-        Tell us about your business. We'll get back to you within 24 hours.
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-28">
+      <span class="kicker kicker-on-dark mb-5 block">Triage · not a sales funnel</span>
+      <h1 class="h1 !text-white max-w-3xl">Not sure which specialist? Book a call.</h1>
+      <p class="lead !text-slate-300 mt-6 max-w-2xl">
+        20 minutes with Greg. We route you to Hub, Dev, or Buzz — or we tell you honestly if we are the wrong fit. No decks. No sales team. Triage.
       </p>
     </div>
   </section>
 
-  <!-- Contact Content -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Form -->
-        <div>
-          <h2 class="text-2xl font-bold text-[#0A1628] mb-8">Send us a message</h2>
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-3">
+          <span class="kicker mb-3 block">One form. Routed by Greg.</span>
+          <h2 class="h2">Three fields. No qualifying theater.</h2>
+
           <form
+            class="mt-8 flex flex-col gap-5"
+            action="/api/contact"
+            method="POST"
             id="contact-form"
-            class="space-y-6"
-            novalidate
           >
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label for="name" class="block text-sm font-semibold text-slate-700 mb-2">Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                  class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                />
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="you@company.com"
-                  class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                />
-              </div>
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder="Full name" />
             </div>
-
-            <div>
-              <label for="company" class="block text-sm font-semibold text-slate-700 mb-2">Company</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                placeholder="Your company name"
-                class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-              />
+            <div class="form-field">
+              <label for="company">Company or project</label>
+              <input id="company" name="company" type="text" required autocomplete="organization" placeholder="Where you work (or what you are building)" />
             </div>
-
-            <div>
-              <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows="5"
-                placeholder="Tell us about your project or question..."
-                class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all resize-none"
-              ></textarea>
+            <div class="form-field">
+              <label for="message">What are you looking for?</label>
+              <textarea id="message" name="message" rows="4" required placeholder={'One sentence is enough. "We need AI search for a SaaS product" works. So does "Not sure, send help."'}></textarea>
             </div>
-
-            <div id="form-success" class="hidden bg-green-50 border border-green-200 rounded-xl p-4 text-green-700 text-sm font-medium">
-              Thanks! We'll get back to you within 24 hours.
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="For the reply" />
             </div>
-
-            <div id="form-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-sm">
-              Something went wrong. Please email us directly at <a href="mailto:hello@aisogroup.com" class="underline">hello@aisogroup.com</a>.
+            <div class="flex items-center gap-4">
+              <button type="submit" class="btn btn-primary">Route me</button>
+              <p class="text-xs text-slate-500">Greg reads every inbound personally. Expect a reply within one business day.</p>
             </div>
-
-            <button
-              type="submit"
-              id="submit-btn"
-              class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              Send Message
-            </button>
+            <p id="form-status" class="text-sm" role="status" aria-live="polite"></p>
           </form>
         </div>
 
-        <!-- Contact Info -->
-        <div>
-          <h2 class="text-2xl font-bold text-[#0A1628] mb-8">Contact details</h2>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">Email</div>
-                <a href="mailto:hello@aisogroup.com"
-                  class="text-blue-500 hover:text-blue-600 transition-colors">hello@aisogroup.com</a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">Location</div>
-                <span class="text-slate-500">Lisbon, Portugal</span>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">Website</div>
-                <a href="https://aisohub.com" target="_blank" rel="noopener noreferrer"
-                  class="text-blue-500 hover:text-blue-600 transition-colors">aisohub.com</a>
-              </div>
-            </div>
+        <aside class="lg:col-span-2 flex flex-col gap-8">
+          <div>
+            <span class="kicker mb-3 block">If you already know</span>
+            <h3 class="h3 mb-4">Go directly to the brand</h3>
+            <ul class="flex flex-col gap-2 text-sm">
+              <li><a class="text-[#0A1628] font-medium hover:underline" href="https://aiso-hub.com" rel="noopener"><span class="inline-block w-2 h-2 rounded-full align-middle mr-2" style="background:#00d492;"></span> aiso-hub.com — AI search work</a></li>
+              <li><a class="text-[#0A1628] font-medium hover:underline" href="https://aiso-dev.com" rel="noopener"><span class="inline-block w-2 h-2 rounded-full align-middle mr-2" style="background:#3B82F6;"></span> aiso-dev.com — AI systems / software</a></li>
+              <li><a class="text-[#0A1628] font-medium hover:underline" href="https://aiso-buzz.com" rel="noopener"><span class="inline-block w-2 h-2 rounded-full align-middle mr-2" style="background:#F97316;"></span> aiso-buzz.com — Social & content</a></li>
+            </ul>
           </div>
-
-          <!-- Company card -->
-          <div class="mt-10 bg-slate-50 rounded-2xl p-6 border border-slate-200">
-            <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Legal Entity</div>
-            <div class="text-[#0A1628] font-semibold">Precious Episode LDA</div>
-            <div class="text-slate-500 text-sm mt-1">NIF PT516578506</div>
-            <div class="text-slate-500 text-sm">Lisbon, Portugal</div>
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="kicker mb-2 block">If you want the calendar</span>
+            <p class="text-sm text-slate-600 mb-4">20-minute triage with Greg. No pitch.</p>
+            <a class="btn btn-primary" href="mailto:hello@aiso-group.com?subject=20-min%20triage">Email Greg →</a>
           </div>
-        </div>
+          <div>
+            <span class="kicker mb-2 block">What happens next</span>
+            <ol class="flex flex-col gap-3 text-sm text-slate-600 list-decimal list-inside">
+              <li><strong class="text-[#0A1628]">We read.</strong> Greg reads every form personally.</li>
+              <li><strong class="text-[#0A1628]">We route.</strong> Reply within one business day — direct intro to the right team, or an honest "not us, try X."</li>
+              <li><strong class="text-[#0A1628]">They scope.</strong> The specialist team (Hub, Dev, or Buzz) scopes the work with you directly.</li>
+            </ol>
+          </div>
+          <div>
+            <span class="kicker mb-2 block">What we will not do</span>
+            <ul class="flex flex-col gap-2 text-sm text-slate-600 list-disc list-inside">
+              <li>We will not put you on a drip sequence.</li>
+              <li>We will not send a 40-slide pitch deck.</li>
+              <li>We will not sell you a bundled retainer on the first call.</li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
   <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const btn = document.getElementById('submit-btn') as HTMLButtonElement;
-    const successEl = document.getElementById('form-success');
-    const errorEl = document.getElementById('form-error');
-
+    // Progressive enhancement: POST via fetch. If /api/contact is not wired yet
+    // (v1 ships static — Cloudflare Pages Function will land post-merge), fall
+    // back to a mailto: so users aren't blocked.
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      successEl?.classList.add('hidden');
-      errorEl?.classList.add('hidden');
-
+      if (!form || !status) return;
+      const data = new FormData(form);
+      status.textContent = 'Routing…';
       try {
-        const data = new FormData(form);
-        const body = Object.fromEntries(data.entries());
-
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(body),
-        });
-
+        const res = await fetch('/api/contact', { method: 'POST', body: data });
         if (res.ok) {
-          successEl?.classList.remove('hidden');
+          status.className = 'text-sm text-emerald-700';
+          status.textContent = 'Thanks. Greg reads every inbound personally. Expect a reply within one business day.';
           form.reset();
         } else {
-          throw new Error('Form submission failed');
+          throw new Error('bad-status');
         }
       } catch {
-        errorEl?.classList.remove('hidden');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
+        // Fallback — open user's mail client. Keeps launch unblocked.
+        const name = String(data.get('name') || '');
+        const company = String(data.get('company') || '');
+        const msg = String(data.get('message') || '');
+        const email = String(data.get('email') || '');
+        const body = `Name: ${name}%0D%0ACompany: ${company}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+        window.location.href = `mailto:hello@aiso-group.com?subject=${encodeURIComponent('AISO Group inbound — ' + (company || name))}&body=${body}`;
+        status.className = 'text-sm text-slate-600';
+        status.textContent = 'Opened your mail client — send from there if the inline form errored.';
       }
     });
   </script>

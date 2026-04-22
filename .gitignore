@@ -1,6 +1,9 @@
 dist/
 node_modules/
 .DS_Store
+.astro/
+.wrangler/
 .env
 .env.*
 !.env.example
+coming-soon/
