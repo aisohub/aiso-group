@@ -1,8 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../../../layouts/Base.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { getDictionary } from '../../i18n/routes';
-import { localisePath, isLocale, defaultLocale, type Locale } from '../../i18n/config';
+import { getDictionary } from '../../../i18n/routes';
+import { localisePath, isLocale, defaultLocale, type Locale } from '../../../i18n/config';
 
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
 const t = getDictionary(locale);
