@@ -30,6 +30,17 @@ export default defineConfig({
           fr: 'fr',
         },
       },
+      // Strip hreflang alternates from individual news (blog) posts. The
+      // /news/ index page itself is translated and keeps its alternates;
+      // individual posts do NOT advertise FR/PT pairs because post bodies
+      // are EN-only (mirrors the aiso-buzz pattern, adapted to keep URLs
+      // in the sitemap while dropping only the xhtml:link entries).
+      serialize(item) {
+        if (/\/news\/[^/]+\/$/.test(item.url)) {
+          delete item.links;
+        }
+        return item;
+      },
     }),
   ],
   vite: {
