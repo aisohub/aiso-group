@@ -264,4 +264,209 @@ export const fr: Dictionary = ({
       ctaSecondary: 'Échanger avec Greg →',
     },
   },
+
+  about: {
+    meta: {
+      title: 'À propos — Une architecture en marques filles pour l’IA spécialiste',
+      description:
+        'Nous avons construit un groupe, pas une agence. Quatre sociétés spécialistes de l’IA, un même toit, une seule règle : les spécialistes battent les généralistes pour les entreprises réelles.',
+    },
+    hero: {
+      kicker: 'À propos d’AISO Group',
+      title: 'Nous avons bâti une architecture en marques filles parce que les généralistes échouent avec les PME.',
+      lead:
+        'Quatre sociétés spécialistes de l’IA, sous un même toit. Une thèse : les spécialistes l’emportent sur les généralistes quand le travail est concret et le budget fini.',
+    },
+    sections: {
+      whySpecialistHeading: 'Pourquoi l’IA spécialiste, et pourquoi maintenant',
+      whyP1: 'Les PME n’ont pas besoin d’une énième agence généraliste.',
+      whyP2:
+        'Elles ont besoin d’un partenaire qui maîtrise une seule chose. La recherche IA. Les systèmes IA. Les réseaux sociaux et le contenu. La formation IA. Puis — le premier chantier achevé — d’un partenaire capable de les confier proprement au spécialiste suivant, sans nouvelle phase commerciale.',
+      whyP3: 'C’est le modèle du groupe. Pas un package. Un roster.',
+
+      fourHeading: 'Les quatre sociétés',
+      fourHub:
+        '<strong>AISO Hub</strong> — AI Search Optimization. La pratique spécialiste. Posée, éditoriale, centrée sur la citation.',
+      fourDev:
+        '<strong>AISO Dev</strong> — Implémentation IA pour PME. L’atelier. Technique, concret, cadré.',
+      fourBuzz:
+        '<strong>AISO Buzz</strong> — Réseaux sociaux et contenus propulsés par l’IA. Le studio créatif. Brand-bible-first, orienté résultats.',
+      fourLearn:
+        '<strong>AISO Learn</strong> — Formation IA en entreprise. La salle de classe. Cursus alignés sur l’AI Act, des preuves plutôt que des PDF.',
+      fourFooter:
+        'Chacune a son site, son équipe, sa voix. Toutes les quatre partagent un design system, un pied de page et un standard.',
+
+      notBeHeading: 'Ce que nous ne serons pas',
+      notBe1:
+        'Nous ne sommes pas une agence full-service. Si vous cherchez un retainer groupé couvrant toutes les disciplines marketing, nous ne sommes pas le bon choix.',
+      notBe2:
+        'Nous ne sommes pas un cabinet de conseil. Nous ne vendons pas de présentations. Hub fait citer. Dev construit. Buzz raconte. Learn enseigne. Les quatre livrent.',
+      notBe3:
+        'Nous ne sommes pas un revendeur d’IA. Nous ne vous repassons pas à un fournisseur. Le travail est le nôtre.',
+
+      lisbonHeading: 'Construit à Lisbonne, en 2025',
+      lisbonFounder:
+        '<strong>Fondateur :</strong> Greg Stoos. Basé à Lisbonne. 16 779 abonnés LinkedIn. Plus de 20 ans en marketing, opérations et logiciel.',
+      lisbonTeam:
+        '<strong>Équipe :</strong> des spécialistes humains par marque, augmentés par l’IA de bout en bout. Toute sortie IA est validée par un humain avant livraison.',
+      lisbonLegal: '<strong>Entité juridique :</strong> Precious Episode LDA, Lisbonne, Portugal.',
+      lisbonFocus:
+        '<strong>Focus :</strong> PME européennes. Anglais, portugais, français. Des entreprises réelles avec de vrais clients, pas des expérimentations financées par du capital-risque.',
+
+      rulesHeading: 'Les règles du groupe',
+      rule1:
+        '<strong>Un problème, un spécialiste.</strong> Aucun engagement préalable sur un package. Commencez par la marque qui répond au problème devant vous.',
+      rule2:
+        '<strong>Validation humaine sur chaque livrable.</strong> Aucun contenu IA n’arrive chez un client sans le feu vert d’un humain.',
+      rule3:
+        '<strong>Missions cadrées.</strong> Délais fixes, périmètres fixes, fourchettes de prix fixes — en particulier chez Hub et Dev. Pas de retainers opaques.',
+      rule4:
+        '<strong>Recommandations internes, sans recommercialisation.</strong> Quand un client Hub a besoin de Dev, le passage de relais est interne. Pas de nouveau processus commercial.',
+
+      year2026Heading: '2026, l’année où le modèle généraliste se casse',
+      year2026P1:
+        'Toutes les PME subissent la même pression : l’IA fait évoluer le métier plus vite qu’un généraliste ne peut suivre.',
+      year2026P2:
+        'Une agence généraliste choisit un outil d’IA, l’étiquette « transformation digitale » et espère que le retainer survit au trimestre.',
+      year2026P3:
+        'Une société spécialiste identifie le problème, livre la solution et passe à autre chose.',
+      year2026P4:
+        'Le coût du mauvais choix — des retainers dépensés pour un travail qui ne produit rien — est la raison pour laquelle nous avons construit un groupe.',
+
+      proofHeading: 'Preuves',
+      proofIntro: '<em>Nouveaux en tant que groupe. Plus anciens comme opérateurs.</em>',
+      proofHub:
+        '<strong>AISO Hub</strong> — site vitrine : <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>. Études de cas et analyses publiées.',
+      proofDev:
+        '<strong>AISO Dev</strong> livre l’outillage interne de la plateforme AISO elle-même — le moteur d’IA, l’orchestrateur, le système de messagerie inter-agents.',
+      proofBuzz:
+        '<strong>AISO Buzz</strong> gère ses propres réseaux sociaux avec la méthodologie qu’elle vend.',
+      proofFooter:
+        'Les études de cas clients nommées sont en cours de revue. Nous les publierons dès que les clients les auront approuvées.',
+
+      ctaPrimary: 'Trouver votre spécialiste AISO →',
+      ctaSecondary: 'Échanger avec Greg →',
+    },
+  },
+
+  contact: {
+    meta: {
+      title: 'Contact — Échanger avec Greg',
+      description:
+        'Vous ne savez pas quel spécialiste il vous faut ? Prenez rendez-vous pour un appel de 20 minutes. Greg vous oriente vers la bonne marque AISO — ou vous dit honnêtement si nous ne sommes pas le bon choix.',
+    },
+    hero: {
+      kicker: 'Orientation · pas un tunnel de vente',
+      title: 'Vous hésitez sur le bon spécialiste ? Prenez rendez-vous.',
+      lead:
+        '20 minutes avec Greg. Nous vous orientons vers Hub, Dev ou Buzz — ou nous vous disons franchement si nous ne sommes pas le bon partenaire. Pas de présentations. Pas d’équipe commerciale. De l’orientation.',
+    },
+    form: {
+      kicker: 'Un formulaire. Orienté par Greg.',
+      title: 'Trois champs. Pas de mise en scène.',
+      nameLabel: 'Votre nom',
+      namePlaceholder: 'Nom complet',
+      companyLabel: 'Entreprise ou projet',
+      companyPlaceholder: 'Où vous travaillez (ou ce que vous construisez)',
+      messageLabel: 'Que recherchez-vous ?',
+      messagePlaceholder:
+        'Une phrase suffit. « Nous avons besoin de recherche IA pour un produit SaaS » fonctionne. « Pas sûr, au secours » aussi.',
+      emailLabel: 'E-mail',
+      emailPlaceholder: 'Pour la réponse',
+      submit: 'Orientez-moi',
+      submitHelp:
+        'Greg lit personnellement chaque message entrant. Réponse sous un jour ouvré.',
+      statusRouting: 'Orientation en cours…',
+      statusSuccess:
+        'Merci. Greg lit personnellement chaque message entrant. Réponse sous un jour ouvré.',
+      statusFallback:
+        'Votre client e-mail a été ouvert — envoyez depuis là si le formulaire en ligne a échoué.',
+      mailSubject: 'Message entrant AISO Group',
+    },
+    sidebar: {
+      knowKicker: 'Si vous savez déjà',
+      knowHeading: 'Allez directement vers la marque',
+      hubLine: 'aiso-hub.com — Recherche IA',
+      devLine: 'aiso-dev.com — Systèmes IA / logiciel',
+      buzzLine: 'aiso-buzz.com — Réseaux sociaux et contenus',
+      calendarKicker: 'Si vous préférez le calendrier',
+      calendarBody: '20 minutes d’orientation avec Greg. Pas de pitch.',
+      calendarCta: 'Écrire à Greg →',
+      nextKicker: 'Ce qui se passe ensuite',
+      next1:
+        '<strong class="text-[#0A1628]">Nous lisons.</strong> Greg lit personnellement chaque formulaire.',
+      next2:
+        '<strong class="text-[#0A1628]">Nous orientons.</strong> Réponse sous un jour ouvré — mise en relation directe avec la bonne équipe, ou un « pas nous, essayez X » honnête.',
+      next3:
+        '<strong class="text-[#0A1628]">Ils cadrent.</strong> L’équipe spécialiste (Hub, Dev ou Buzz) cadre la mission avec vous directement.',
+      notDoKicker: 'Ce que nous ne ferons pas',
+      notDo1: 'Nous ne vous mettrons pas dans une séquence automatisée.',
+      notDo2: 'Nous n’enverrons pas une présentation de 40 diapositives.',
+      notDo3: 'Nous ne vous vendrons pas un retainer groupé dès le premier appel.',
+    },
+  },
+
+  privacy: {
+    meta: {
+      title: 'Politique de confidentialité',
+      description:
+        'Traitement, par AISO Group, des informations soumises via aiso-group.com. Minimal, basé dans l’UE, explicite.',
+    },
+    hero: {
+      kicker: 'Mentions légales',
+      title: 'Politique de confidentialité',
+      updatedLabel: 'Dernière mise à jour :',
+    },
+    whoHeading: 'Qui nous sommes',
+    whoBody:
+      'AISO Group est une marque exploitée par Precious Episode LDA, société immatriculée au Portugal (NIF 514701617), dont le siège social est situé Avenida David Mourão-Ferreira 14, 8A, 1750-204 Lisboa, Portugal. Le groupe est la maison mère de quatre sociétés spécialistes : AISO Hub, AISO Dev, AISO Buzz et AISO Learn.',
+    collectHeading: 'Données collectées',
+    collectIntro:
+      'Sur <strong>aiso-group.com</strong>, AISO Group collecte uniquement les données que vous transmettez :',
+    collectForm:
+      '<strong>Formulaire de contact.</strong> Nom, entreprise, message et, le cas échéant, adresse e-mail. Utilisés pour répondre et orienter la demande vers la marque sœur appropriée.',
+    collectEmail:
+      '<strong>Courrier électronique.</strong> Tout message adressé à <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a> est conservé dans la messagerie du groupe.',
+    collectLogs:
+      '<strong>Journaux serveur.</strong> Journaux de périphérie Cloudflare (adresse IP, user-agent, chemin d’accès) à des fins de sécurité et de débogage. Conservation maximale de 30 jours.',
+    collectNote:
+      'Aucun cookie de traçage. Aucun pixel publicitaire. Aucun outil d’analyse identifiant personnellement l’utilisateur.',
+    useHeading: 'Finalités du traitement',
+    use1: 'Répondre à votre demande entrante.',
+    use2: 'Orienter la demande, en interne, vers Hub, Dev ou Buzz.',
+    use3: 'Conserver une trace minimale de la correspondance.',
+    useNote: 'AISO Group ne vend ni ne loue aucune donnée à des tiers. En aucun cas.',
+    accessHeading: 'Destinataires des données',
+    access1: '<strong>Greg Stoos</strong> (fondateur) ainsi que l’opérateur chargé de l’orientation.',
+    access2:
+      'L’équipe spécialiste de la marque sœur à laquelle la demande est orientée, le cas échéant.',
+    access3:
+      '<strong>Sous-traitants :</strong> Cloudflare (hébergement), Resend (acheminement e-mail), Google Workspace (messagerie). Tous conformes au RGPD (GDPR).',
+    rightsHeading: 'Droits des personnes concernées (RGPD / GDPR)',
+    rightsBody:
+      'Toute personne concernée peut demander une copie de ses données, leur rectification ou leur suppression. Écrire à <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a> en indiquant « Demande RGPD » en objet. Réponse apportée dans un délai de 30 jours.',
+    retentionHeading: 'Conservation',
+    retentionBody:
+      'Entrées du formulaire de contact : conservées 24 mois, sauf demande de suppression antérieure ou poursuite de la correspondance.',
+    changesHeading: 'Modifications',
+    changesBody:
+      'Cette page est mise à jour lorsque les pratiques évoluent. La date de « dernière mise à jour » ci-dessus fait foi.',
+    contactHeading: 'Contact',
+    contactAddress:
+      '<strong>Precious Episode LDA</strong><br />Avenida David Mourão-Ferreira 14, 8A<br />1750-204 Lisboa, Portugal<br />NIF 514701617<br /><a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>',
+  },
+
+  notFound: {
+    meta: {
+      title: 'Page introuvable',
+      description:
+        'Cette page n’existe pas sur aiso-group.com. Essayez l’aiguillage de la page d’accueil, ou échangez avec Greg.',
+    },
+    kicker: '404',
+    title: 'Cette page n’existe pas.',
+    lead:
+      'Cela arrive. Essayez l’aiguillage de la page d’accueil — trois questions, un spécialiste, une réponse en 20 secondes.',
+    ctaPrimary: 'Retour à l’accueil →',
+    ctaSecondary: 'Échanger avec Greg →',
+  },
 } as unknown) as Dictionary;
