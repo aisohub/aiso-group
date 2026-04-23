@@ -81,7 +81,7 @@ export const fr: Dictionary = ({
     },
     intro: {
       p1: 'Ce n’est pas une ferme à contenus. Nous publions lorsque nous avons quelque chose à dire — un lancement, une arrivée dans l’équipe, un basculement du secteur, un outil d’auto-diagnostic pour choisir entre nos marques.',
-      p2: 'Pour la rédaction AISO tactique, rendez-vous sur <a href="https://aiso-hub.com/insights" rel="noopener">aiso-hub.com/insights</a>. Pour les journaux de construction et les analyses techniques approfondies, consultez <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>. Pour les décryptages des tendances sociales et de contenu, voyez <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>. Pour les cursus de formation IA et les repères sur le règlement européen sur l’IA, direction <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.',
+      p2: 'Pour la rédaction AISO tactique, rendez-vous sur <a href="https://aiso-hub.com/insights" rel="noopener">aiso-hub.com/insights</a>. Pour les journaux de construction et les analyses techniques approfondies, consultez <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>. Pour les décryptages des tendances sociales et de contenu, voyez <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>. Pour les cursus de formation IA et les repères sur l’AI Act, direction <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.',
       p3: 'Cette page offre uniquement la vue portefeuille.',
     },
     card: {

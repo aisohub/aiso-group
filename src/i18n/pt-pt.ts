@@ -86,7 +86,7 @@ export const ptPt: Dictionary = ({
     },
     intro: {
       p1: 'Isto não é uma fábrica de conteúdos. Publicamos quando temos algo a dizer — um lançamento, uma contratação, uma viragem na categoria, uma ferramenta de autodiagnóstico para escolher entre as nossas marcas.',
-      p2: 'Se procura textos tácticos sobre AISO, encontra-os em <a href="https://aiso-hub.com/insights" rel="noopener">aiso-hub.com/insights</a>. Se procura registos de construção e análises técnicas aprofundadas, estão em <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>. Se procura análises de tendências sociais e de conteúdo, estão em <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>. Se procura programas de formação em IA e orientações sobre o Regulamento Europeu da IA, estão em <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.',
+      p2: 'Se procura textos tácticos sobre AISO, encontra-os em <a href="https://aiso-hub.com/insights" rel="noopener">aiso-hub.com/insights</a>. Se procura registos de construção e análises técnicas aprofundadas, estão em <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>. Se procura análises de tendências sociais e de conteúdo, estão em <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>. Se procura programas de formação em IA e orientações sobre o AI Act, estão em <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.',
       p3: 'Esta página destina-se apenas à vista de portefólio.',
     },
     card: {
