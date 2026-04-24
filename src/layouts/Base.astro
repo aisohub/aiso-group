@@ -108,6 +108,25 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
         : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
 
+    {import.meta.env.PROD && (
+      <>
+        <!-- Google tag (gtag.js) - GA4: defer until after first paint to reduce TBT -->
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <script is:inline>
+          window.addEventListener('load', function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-P55SYHJ2TZ';
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P55SYHJ2TZ');
+          });
+        </script>
+      </>
+    )}
+
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
