@@ -19,7 +19,7 @@ export function getDictionary(locale: Locale | string | undefined): Dictionary {
   return dictionaries[safe];
 }
 
-/** Shortcut for page frontmatter — `const t = useT(Astro.currentLocale);` */
+/** Shortcut for page frontmatter - `const t = useT(Astro.currentLocale);` */
 export function useT(locale: Locale | string | undefined): Dictionary {
   return getDictionary(locale);
 }

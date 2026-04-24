@@ -1,4 +1,4 @@
-// EN dictionary — single source of truth for all human-facing strings on
+// EN dictionary - single source of truth for all human-facing strings on
 // aiso-group.com. Keys are organised per page (e.g. `home.hero.title`).
 // Translator stubs in `fr.ts` and `pt-pt.ts` copy this structure verbatim;
 // translators replace the string values.
@@ -21,7 +21,7 @@ export const en = {
     cta: 'Find your specialist →',
     openMenu: 'Toggle menu',
     skipToContent: 'Skip to main content',
-    homeAriaLabel: 'AISO Group — Home',
+    homeAriaLabel: 'AISO Group - Home',
     primaryAriaLabel: 'Primary',
   },
 
@@ -38,10 +38,10 @@ export const en = {
       'Four specialist AI companies under one roof. AI search. AI systems. AI-powered social. AI training.',
     location: 'Lisbon, Portugal',
     siblingBrandsHeading: 'Sibling brands',
-    siblingHub: 'AISO Hub — AI Search',
-    siblingDev: 'AISO Dev — AI Systems',
-    siblingBuzz: 'AISO Buzz — AI-Powered Social',
-    siblingLearn: 'AISO Learn — AI Training',
+    siblingHub: 'AISO Hub - AI Search',
+    siblingDev: 'AISO Dev - AI Systems',
+    siblingBuzz: 'AISO Buzz - AI-Powered Social',
+    siblingLearn: 'AISO Learn - AI Training',
     groupHeading: 'AISO Group',
     linkHome: 'Home',
     linkBrands: 'Brands',
@@ -51,15 +51,15 @@ export const en = {
     contactLegalHeading: 'Contact & legal',
     privacyPolicy: 'Privacy policy',
     copyright:
-      '© 2025–{year} AISO Group · Precious Episode LDA · Lisbon, Portugal',
+      '© 2025-{year} AISO Group · Precious Episode LDA · Lisbon, Portugal',
     strapline: 'The specialist AI group for real businesses.',
   },
 
   home: {
     meta: {
-      title: 'AISO Group — The specialist AI group for real businesses',
+      title: 'AISO Group - The specialist AI group for real businesses',
       description:
-        'Four specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn). Pick the one that fits — expand when you are ready.',
+        'Four specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn). Pick the one that fits - expand when you are ready.',
     },
     hero: {
       kicker: 'Lisbon · 2026 · Specialist AI',
@@ -84,7 +84,7 @@ export const en = {
         question: 'Do I need AI to run something in my business?',
         answer: 'AISO Dev',
         audience:
-          'We build AI systems your team can operate — data pipelines, agent workflows, custom internal tools. For SMBs with a process, not a slide deck.',
+          'We build AI systems your team can operate - data pipelines, agent workflows, custom internal tools. For SMBs with a process, not a slide deck.',
         cta: 'Visit AISO Dev →',
       },
       buzz: {
@@ -98,7 +98,7 @@ export const en = {
         question: 'Do I need my team to actually use AI?',
         answer: 'AISO Learn',
         audience:
-          'We train your team from AI-curious to AI-capable — with EU AI Act-aligned curricula. For companies who need proof, not a PDF.',
+          'We train your team from AI-curious to AI-capable - with EU AI Act-aligned curricula. For companies who need proof, not a PDF.',
         cta: 'Visit AISO Learn →',
       },
       fallback: {
@@ -126,14 +126,14 @@ export const en = {
       p2: 'We built a group instead. Four specialist companies, each with one job.',
       p3: 'The advantage: you do not buy a bundle. You buy the specialist you need now. You bring in the others when the timing is right.',
       p4: 'Lisbon-based. EU-focused. Built in 2025.',
-      signature: '— Greg Stoos, Founder. Lisbon, 2025.',
+      signature: ' - Greg Stoos, Founder. Lisbon, 2025.',
       cta: 'Read the thesis →',
     },
   },
 
   about: {
     meta: {
-      title: 'About — A branded house for specialist AI',
+      title: 'About - A branded house for specialist AI',
       description:
         'We built a group, not an agency. Four specialist AI companies, one roof, one rule: specialists beat generalists for real businesses.',
     },
@@ -147,18 +147,18 @@ export const en = {
       whySpecialistHeading: 'Why specialist AI, and why now',
       whyP1: 'Small and mid-sized businesses do not need another generalist agency.',
       whyP2:
-        'They need a partner who knows one thing well. AI search. AI systems. Social and content. AI training. Then — when the first job is done — a partner who can hand them cleanly to the next specialist, without a re-sell.',
+        'They need a partner who knows one thing well. AI search. AI systems. Social and content. AI training. Then - when the first job is done - a partner who can hand them cleanly to the next specialist, without a re-sell.',
       whyP3: 'That is the group model. Not a bundle. A roster.',
 
       fourHeading: 'The four companies',
       fourHub:
-        '<strong>AISO Hub</strong> — AI Search Optimization. The specialist practice. Calm, editorial, citation-first.',
+        '<strong>AISO Hub</strong> - AI Search Optimization. The specialist practice. Calm, editorial, citation-first.',
       fourDev:
-        '<strong>AISO Dev</strong> — AI Implementation for SMBs. The workshop. Technical, practical, scoped.',
+        '<strong>AISO Dev</strong> - AI Implementation for SMBs. The workshop. Technical, practical, scoped.',
       fourBuzz:
-        '<strong>AISO Buzz</strong> — AI-Powered Social & Content. The creative studio. Brand-bible-first, results-backed.',
+        '<strong>AISO Buzz</strong> - AI-Powered Social & Content. The creative studio. Brand-bible-first, results-backed.',
       fourLearn:
-        '<strong>AISO Learn</strong> — Corporate AI Training. The classroom. EU AI Act-aligned curricula, proof over PDFs.',
+        '<strong>AISO Learn</strong> - Corporate AI Training. The classroom. EU AI Act-aligned curricula, proof over PDFs.',
       fourFooter:
         'Each has its own site, its own team, its own voice. All four share a design system, a footer, and a standard.',
 
@@ -185,7 +185,7 @@ export const en = {
       rule2:
         '<strong>Human validation on every output.</strong> No AI content goes to a client without a human signing off.',
       rule3:
-        '<strong>Scoped engagements.</strong> Fixed timelines, fixed scopes, fixed price bands — especially at Hub and Dev. No mystery retainers.',
+        '<strong>Scoped engagements.</strong> Fixed timelines, fixed scopes, fixed price bands - especially at Hub and Dev. No mystery retainers.',
       rule4:
         '<strong>Cross-referrals without re-selling.</strong> When a Hub client needs Dev, the handoff is internal. No new sales process.',
 
@@ -197,14 +197,14 @@ export const en = {
       year2026P3:
         'A specialist shop picks the problem, ships the fix, and moves on.',
       year2026P4:
-        'The cost of the wrong call — retainers spent on work that does not land — is the reason we built a group.',
+        'The cost of the wrong call - retainers spent on work that does not land - is the reason we built a group.',
 
       proofHeading: 'Proof',
       proofIntro: '<em>We are new as a group. Older as operators.</em>',
       proofHub:
         '<strong>AISO Hub</strong> flagship site: <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>. Live case studies and insights.',
       proofDev:
-        '<strong>AISO Dev</strong> ships internal tooling for the AISO platform itself — the AI engine, the orchestrator, the agent-messaging system.',
+        '<strong>AISO Dev</strong> ships internal tooling for the AISO platform itself - the AI engine, the orchestrator, the agent-messaging system.',
       proofBuzz:
         '<strong>AISO Buzz</strong> runs its own social under the same methodology it sells.',
       proofFooter:
@@ -217,7 +217,7 @@ export const en = {
 
   brands: {
     meta: {
-      title: 'Our brands — AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
+      title: 'Our brands - AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
       description:
         'Four specialist AI companies. What each one does. What each one does not do. Pick the specialist that matches the problem.',
     },
@@ -225,7 +225,7 @@ export const en = {
       kicker: 'The four specialists',
       title: 'Four specialists. One practical advantage.',
       lead:
-        'Each AISO brand has one job. When the job fits, the work is faster, sharper, and cheaper than a generalist. Here is what each one does — and what each one does not.',
+        'Each AISO brand has one job. When the job fits, the work is faster, sharper, and cheaper than a generalist. Here is what each one does - and what each one does not.',
     },
     oneJob: 'The one job:',
     whatWeDo: 'What we do:',
@@ -242,7 +242,7 @@ export const en = {
       dont1: 'We do not write social posts. That is Buzz.',
       dont2: 'We do not build custom software. That is Dev.',
       fits:
-        'Brands whose customers now ask AI before Google. SaaS, legal, health, finance, real estate — any business where being <em>cited</em> matters more than ranking.',
+        'Brands whose customers now ask AI before Google. SaaS, legal, health, finance, real estate - any business where being <em>cited</em> matters more than ranking.',
     },
     dev: {
       kicker: 'AISO Dev',
@@ -255,7 +255,7 @@ export const en = {
       dont1: 'We do not do AI search optimization. That is Hub.',
       dont2: 'We do not manage your social channels. That is Buzz.',
       fits:
-        'SMBs with a process that should not be manual anymore — a form that routes badly, a report that takes 8 hours, a lead flow that loses people between systems.',
+        'SMBs with a process that should not be manual anymore - a form that routes badly, a report that takes 8 hours, a lead flow that loses people between systems.',
     },
     buzz: {
       kicker: 'AISO Buzz',
@@ -268,21 +268,21 @@ export const en = {
       dont1: 'We do not do AI search work. That is Hub.',
       dont2: 'We do not build software. That is Dev.',
       fits:
-        'Businesses without a marketing team who need a real social presence — and refuse to sound generic.',
+        'Businesses without a marketing team who need a real social presence - and refuse to sound generic.',
     },
     learn: {
       kicker: 'AISO Learn',
       heading: 'Corporate AI Training',
       cta: 'Visit AISO Learn →',
       oneJob: 'We turn AI-curious teams into AI-capable ones.',
-      do1: 'Corporate AI training programmes — practical, role-based, outcome-measured.',
+      do1: 'Corporate AI training programmes - practical, role-based, outcome-measured.',
       do2: 'EU AI Act-aligned curricula and audit-ready documentation.',
       do3: 'From AI literacy fundamentals to advanced agentic workflows.',
       dont1: 'We do not build your AI systems. That is Dev.',
       dont2: 'We do not make you visible in AI search. That is Hub.',
       dont3: 'We do not produce your social content. That is Buzz.',
       fits:
-        'Companies who need their team to actually use AI — and who need the training to stand up to an AI Act audit.',
+        'Companies who need their team to actually use AI - and who need the training to stand up to an AI Act audit.',
     },
     howToChoose: {
       kicker: 'How to choose',
@@ -301,15 +301,15 @@ export const en = {
 
   contact: {
     meta: {
-      title: 'Contact — Talk to Greg',
+      title: 'Contact - Talk to Greg',
       description:
-        'Not sure which specialist you need? Book a 20-minute call. Greg routes you to the right AISO brand — or tells you if we are the wrong call.',
+        'Not sure which specialist you need? Book a 20-minute call. Greg routes you to the right AISO brand - or tells you if we are the wrong call.',
     },
     hero: {
       kicker: 'Triage · not a sales funnel',
       title: 'Not sure which specialist? Book a call.',
       lead:
-        '20 minutes with Greg. We route you to Hub, Dev, or Buzz — or we tell you honestly if we are the wrong fit. No decks. No sales team. Triage.',
+        '20 minutes with Greg. We route you to Hub, Dev, or Buzz - or we tell you honestly if we are the wrong fit. No decks. No sales team. Triage.',
     },
     form: {
       kicker: 'One form. Routed by Greg.',
@@ -330,15 +330,15 @@ export const en = {
       statusSuccess:
         'Thanks. Greg reads every inbound personally. Expect a reply within one business day.',
       statusFallback:
-        'Opened your mail client — send from there if the inline form errored.',
+        'Opened your mail client - send from there if the inline form errored.',
       mailSubject: 'AISO Group inbound',
     },
     sidebar: {
       knowKicker: 'If you already know',
       knowHeading: 'Go directly to the brand',
-      hubLine: 'aiso-hub.com — AI search work',
-      devLine: 'aiso-dev.com — AI systems / software',
-      buzzLine: 'aiso-buzz.com — Social & content',
+      hubLine: 'aiso-hub.com - AI search work',
+      devLine: 'aiso-dev.com - AI systems / software',
+      buzzLine: 'aiso-buzz.com - Social & content',
       calendarKicker: 'If you want the calendar',
       calendarBody: '20-minute triage with Greg. No pitch.',
       calendarCta: 'Email Greg →',
@@ -346,7 +346,7 @@ export const en = {
       next1:
         '<strong class="text-[#0A1628]">We read.</strong> Greg reads every form personally.',
       next2:
-        '<strong class="text-[#0A1628]">We route.</strong> Reply within one business day — direct intro to the right team, or an honest "not us, try X."',
+        '<strong class="text-[#0A1628]">We route.</strong> Reply within one business day - direct intro to the right team, or an honest "not us, try X."',
       next3:
         '<strong class="text-[#0A1628]">They scope.</strong> The specialist team (Hub, Dev, or Buzz) scopes the work with you directly.',
       notDoKicker: 'What we will not do',
@@ -415,7 +415,7 @@ export const en = {
     kicker: '404',
     title: 'This page does not exist.',
     lead:
-      'Happens. Try the home router — three questions, one specialist, a 20-second answer.',
+      'Happens. Try the home router - three questions, one specialist, a 20-second answer.',
     ctaPrimary: 'Back to home →',
     ctaSecondary: 'Talk to Greg →',
   },
@@ -433,16 +433,16 @@ export const en = {
         'Group-level announcements. Occasional essays on specialist AI for real businesses. One to two posts a month. Never more, rarely less.',
     },
     intro: {
-      p1: 'This is not a content farm. We post when we have something to say — a launch, a hire, a shift in the category, a self-diagnostic tool for choosing between our brands.',
+      p1: 'This is not a content farm. We post when we have something to say - a launch, a hire, a shift in the category, a self-diagnostic tool for choosing between our brands.',
       p2: 'If you want tactical AISO writing, it lives at <a href="https://aiso-hub.com/insights" rel="noopener">aiso-hub.com/insights</a>. If you want build logs and engineering deep-dives, those live at <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>. If you want social and content trend teardowns, those live at <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>. If you want AI-training curricula and EU AI Act guidance, those live at <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.',
       p3: 'This page is for the portfolio view only.',
     },
-    // Post-card chrome — translated; post bodies stay EN.
+    // Post-card chrome - translated; post bodies stay EN.
     card: {
       readTimeSuffix: 'min read',
       readCta: 'Read →',
     },
-    // Category filter labels — same keys as content/news frontmatter `category`.
+    // Category filter labels - same keys as content/news frontmatter `category`.
     categories: {
       announcement: 'Announcement',
       'specialist-series': 'Specialist series',

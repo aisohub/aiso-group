@@ -19,7 +19,7 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   /**
    * When true, skip emitting hreflang alternates. Use for pages that only
-   * exist in English (e.g. news article detail pages) — per spec, blog bodies
+   * exist in English (e.g. news article detail pages) - per spec, blog bodies
    * stay EN-only across locales and should not advertise language alternates.
    */
   hreflangDisabled?: boolean;
@@ -37,7 +37,7 @@ const {
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
 const t = getDictionary(locale);
 
-// Canonical URL — strip query params to avoid UTM leakage.
+// Canonical URL - strip query params to avoid UTM leakage.
 const canonicalObj = new URL(Astro.url.pathname, Astro.site);
 canonicalObj.search = '';
 let canonical = canonicalUrl ?? canonicalObj.toString();

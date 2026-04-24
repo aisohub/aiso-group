@@ -1,10 +1,10 @@
-// pt-PT dictionary — European Portuguese (pt-PT, not pt-BR).
+// pt-PT dictionary - European Portuguese (pt-PT, not pt-BR).
 //
 // Scope of passes covered so far (translator, 2026-04-23):
-//   - meta, nav, languageSwitcher, footer, news (blog-chrome) — prior pass
-//   - home, brands — thread #69ea947ec5006dc554555d28
-//   - about, contact, privacy, notFound — thread #69ea9487c5006dc554555d3c
-// "services" in CTO brief maps to `brands` — the four specialist brands
+//   - meta, nav, languageSwitcher, footer, news (blog-chrome) - prior pass
+//   - home, brands - thread #69ea947ec5006dc554555d28
+//   - about, contact, privacy, notFound - thread #69ea9487c5006dc554555d3c
+// "services" in CTO brief maps to `brands` - the four specialist brands
 // ARE the services in this architecture (one page, one dictionary key).
 //
 // Register: implicit 3rd-person formal ("a sua equipa", "o seu especialista").
@@ -38,7 +38,7 @@ export const ptPt: Dictionary = ({
     cta: 'Encontre o seu especialista →',
     openMenu: 'Abrir menu',
     skipToContent: 'Saltar para o conteúdo principal',
-    homeAriaLabel: 'AISO Group — Início',
+    homeAriaLabel: 'AISO Group - Início',
     primaryAriaLabel: 'Navegação principal',
   },
 
@@ -55,10 +55,10 @@ export const ptPt: Dictionary = ({
       'Quatro empresas especialistas em IA, sob o mesmo tecto. Pesquisa com IA. Sistemas de IA. Redes sociais potenciadas por IA. Formação em IA.',
     location: 'Lisboa, Portugal',
     siblingBrandsHeading: 'Marcas do grupo',
-    siblingHub: 'AISO Hub — Pesquisa com IA',
-    siblingDev: 'AISO Dev — Sistemas de IA',
-    siblingBuzz: 'AISO Buzz — Redes sociais com IA',
-    siblingLearn: 'AISO Learn — Formação em IA',
+    siblingHub: 'AISO Hub - Pesquisa com IA',
+    siblingDev: 'AISO Dev - Sistemas de IA',
+    siblingBuzz: 'AISO Buzz - Redes sociais com IA',
+    siblingLearn: 'AISO Learn - Formação em IA',
     groupHeading: 'AISO Group',
     linkHome: 'Início',
     linkBrands: 'Marcas',
@@ -68,7 +68,7 @@ export const ptPt: Dictionary = ({
     contactLegalHeading: 'Contacto e informações legais',
     privacyPolicy: 'Política de privacidade',
     copyright:
-      '© 2025–{year} AISO Group · Precious Episode LDA · Lisboa, Portugal',
+      '© 2025-{year} AISO Group · Precious Episode LDA · Lisboa, Portugal',
     strapline: 'O grupo de IA especialista, ao serviço das empresas reais.',
   },
 
@@ -85,7 +85,7 @@ export const ptPt: Dictionary = ({
         'Anúncios ao nível do grupo. Ensaios pontuais sobre IA especialista para empresas reais. Um a dois artigos por mês. Nunca mais, raramente menos.',
     },
     intro: {
-      p1: 'Isto não é uma fábrica de conteúdos. Publicamos quando temos algo a dizer — um lançamento, uma contratação, uma viragem na categoria, uma ferramenta de autodiagnóstico para escolher entre as nossas marcas.',
+      p1: 'Isto não é uma fábrica de conteúdos. Publicamos quando temos algo a dizer - um lançamento, uma contratação, uma viragem na categoria, uma ferramenta de autodiagnóstico para escolher entre as nossas marcas.',
       p2: 'Se procura textos tácticos sobre AISO, encontra-os em <a href="https://aiso-hub.com/insights" rel="noopener">aiso-hub.com/insights</a>. Se procura registos de construção e análises técnicas aprofundadas, estão em <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>. Se procura análises de tendências sociais e de conteúdo, estão em <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>. Se procura programas de formação em IA e orientações sobre o AI Act, estão em <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.',
       p3: 'Esta página destina-se apenas à vista de portefólio.',
     },
@@ -112,9 +112,9 @@ export const ptPt: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO Group — O grupo de IA especialista, ao serviço das empresas reais',
+      title: 'AISO Group - O grupo de IA especialista, ao serviço das empresas reais',
       description:
-        'Quatro empresas especialistas em IA, sob o mesmo tecto. Pesquisa com IA (Hub), sistemas de IA (Dev), redes sociais potenciadas por IA (Buzz), formação em IA (Learn). Escolha a que se adequa — alargue quando estiver preparado.',
+        'Quatro empresas especialistas em IA, sob o mesmo tecto. Pesquisa com IA (Hub), sistemas de IA (Dev), redes sociais potenciadas por IA (Buzz), formação em IA (Learn). Escolha a que se adequa - alargue quando estiver preparado.',
     },
     hero: {
       kicker: 'Lisboa · 2026 · IA especialista',
@@ -139,7 +139,7 @@ export const ptPt: Dictionary = ({
         question: 'Preciso de IA para fazer funcionar algo no meu negócio?',
         answer: 'AISO Dev',
         audience:
-          'Construímos sistemas de IA que a sua equipa consegue operar — pipelines de dados, fluxos de agentes, ferramentas internas à medida. Para PME com um processo, não uma apresentação.',
+          'Construímos sistemas de IA que a sua equipa consegue operar - pipelines de dados, fluxos de agentes, ferramentas internas à medida. Para PME com um processo, não uma apresentação.',
         cta: 'Visitar AISO Dev →',
       },
       buzz: {
@@ -181,14 +181,14 @@ export const ptPt: Dictionary = ({
       p2: 'Construímos um grupo em alternativa. Quatro empresas especialistas, cada uma com um só ofício.',
       p3: 'A vantagem: não compra um pacote. Compra o especialista de que precisa agora. Os outros entram quando fizer sentido.',
       p4: 'Sediados em Lisboa. Foco europeu. Construído em 2025.',
-      signature: '— Greg Stoos, fundador. Lisboa, 2025.',
+      signature: ' - Greg Stoos, fundador. Lisboa, 2025.',
       cta: 'Ler a tese →',
     },
   },
 
   brands: {
     meta: {
-      title: 'As nossas marcas — AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
+      title: 'As nossas marcas - AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
       description:
         'Quatro empresas especialistas em IA. O que cada uma faz. O que cada uma não faz. Escolha o especialista que corresponde ao problema.',
     },
@@ -196,7 +196,7 @@ export const ptPt: Dictionary = ({
       kicker: 'Os quatro especialistas',
       title: 'Quatro especialistas. Uma vantagem concreta.',
       lead:
-        'Cada marca AISO tem um só ofício. Quando o ofício encaixa, o trabalho é mais rápido, mais preciso e mais barato do que com um generalista. Eis o que cada uma faz — e o que cada uma não faz.',
+        'Cada marca AISO tem um só ofício. Quando o ofício encaixa, o trabalho é mais rápido, mais preciso e mais barato do que com um generalista. Eis o que cada uma faz - e o que cada uma não faz.',
     },
     oneJob: 'O ofício:',
     whatWeDo: 'O que fazemos:',
@@ -213,7 +213,7 @@ export const ptPt: Dictionary = ({
       dont1: 'Não escrevemos publicações de redes sociais. Isso é a Buzz.',
       dont2: 'Não desenvolvemos software à medida. Isso é a Dev.',
       fits:
-        'Marcas cujos clientes agora perguntam à IA antes do Google. SaaS, jurídico, saúde, finanças, imobiliário — qualquer negócio em que ser <em>citado</em> importa mais do que posicionar-se.',
+        'Marcas cujos clientes agora perguntam à IA antes do Google. SaaS, jurídico, saúde, finanças, imobiliário - qualquer negócio em que ser <em>citado</em> importa mais do que posicionar-se.',
     },
     dev: {
       kicker: 'AISO Dev',
@@ -226,7 +226,7 @@ export const ptPt: Dictionary = ({
       dont1: 'Não fazemos optimização para pesquisa com IA. Isso é a Hub.',
       dont2: 'Não gerimos os seus canais sociais. Isso é a Buzz.',
       fits:
-        'PME com um processo que já não deveria ser manual — um formulário que encaminha mal, um relatório que leva 8 horas, um fluxo de leads que perde pessoas entre sistemas.',
+        'PME com um processo que já não deveria ser manual - um formulário que encaminha mal, um relatório que leva 8 horas, um fluxo de leads que perde pessoas entre sistemas.',
     },
     buzz: {
       kicker: 'AISO Buzz',
@@ -239,21 +239,21 @@ export const ptPt: Dictionary = ({
       dont1: 'Não fazemos trabalho de pesquisa com IA. Isso é a Hub.',
       dont2: 'Não construímos software. Isso é a Dev.',
       fits:
-        'Empresas sem equipa de marketing que precisam de uma presença social real — e recusam-se a soar genéricas.',
+        'Empresas sem equipa de marketing que precisam de uma presença social real - e recusam-se a soar genéricas.',
     },
     learn: {
       kicker: 'AISO Learn',
       heading: 'Formação em IA para empresas',
       cta: 'Visitar AISO Learn →',
       oneJob: 'Transformamos equipas curiosas sobre IA em equipas capazes em IA.',
-      do1: 'Programas de formação em IA para empresas — concretos, por função, medidos por resultados.',
+      do1: 'Programas de formação em IA para empresas - concretos, por função, medidos por resultados.',
       do2: 'Programas alinhados com o EU AI Act e documentação pronta para auditoria.',
       do3: 'Dos fundamentos da literacia em IA aos fluxos agenticos avançados.',
       dont1: 'Não construímos os seus sistemas de IA. Isso é a Dev.',
       dont2: 'Não o tornamos visível na pesquisa com IA. Isso é a Hub.',
       dont3: 'Não produzimos os seus conteúdos sociais. Isso é a Buzz.',
       fits:
-        'Empresas que precisam que a sua equipa use mesmo IA — e cuja formação tem de resistir a uma auditoria ao AI Act.',
+        'Empresas que precisam que a sua equipa use mesmo IA - e cuja formação tem de resistir a uma auditoria ao AI Act.',
     },
     howToChoose: {
       kicker: 'Como escolher',
@@ -272,7 +272,7 @@ export const ptPt: Dictionary = ({
 
   about: {
     meta: {
-      title: 'Sobre — Uma arquitetura de marcas filhas para a IA especialista',
+      title: 'Sobre - Uma arquitetura de marcas filhas para a IA especialista',
       description:
         'Construímos um grupo, não uma agência. Quatro empresas especialistas em IA, um único tecto, uma única regra: os especialistas ganham aos generalistas quando se trata de empresas reais.',
     },
@@ -286,18 +286,18 @@ export const ptPt: Dictionary = ({
       whySpecialistHeading: 'Porquê IA especialista, e porquê agora',
       whyP1: 'As pequenas e médias empresas não precisam de mais uma agência generalista.',
       whyP2:
-        'Precisam de um parceiro que domine uma coisa só. Pesquisa com IA. Sistemas de IA. Redes sociais e conteúdos. Formação em IA. Depois — terminado o primeiro trabalho — de um parceiro capaz de as passar de forma limpa ao especialista seguinte, sem novo processo comercial.',
+        'Precisam de um parceiro que domine uma coisa só. Pesquisa com IA. Sistemas de IA. Redes sociais e conteúdos. Formação em IA. Depois - terminado o primeiro trabalho - de um parceiro capaz de as passar de forma limpa ao especialista seguinte, sem novo processo comercial.',
       whyP3: 'É o modelo do grupo. Não é um pacote. É um roster.',
 
       fourHeading: 'As quatro empresas',
       fourHub:
-        '<strong>AISO Hub</strong> — AI Search Optimization. A prática especialista. Serena, editorial, centrada na citação.',
+        '<strong>AISO Hub</strong> - AI Search Optimization. A prática especialista. Serena, editorial, centrada na citação.',
       fourDev:
-        '<strong>AISO Dev</strong> — Implementação de IA para PME. A oficina. Técnica, concreta, com âmbito definido.',
+        '<strong>AISO Dev</strong> - Implementação de IA para PME. A oficina. Técnica, concreta, com âmbito definido.',
       fourBuzz:
-        '<strong>AISO Buzz</strong> — Redes sociais e conteúdos com IA. O estúdio criativo. Brand-bible-first, com resultados.',
+        '<strong>AISO Buzz</strong> - Redes sociais e conteúdos com IA. O estúdio criativo. Brand-bible-first, com resultados.',
       fourLearn:
-        '<strong>AISO Learn</strong> — Formação empresarial em IA. A sala de aula. Currículos alinhados com o AI Act, provas em vez de PDFs.',
+        '<strong>AISO Learn</strong> - Formação empresarial em IA. A sala de aula. Currículos alinhados com o AI Act, provas em vez de PDFs.',
       fourFooter:
         'Cada uma tem o seu site, a sua equipa e a sua voz. As quatro partilham um design system, um rodapé e um padrão.',
 
@@ -324,7 +324,7 @@ export const ptPt: Dictionary = ({
       rule2:
         '<strong>Validação humana em cada entrega.</strong> Nenhum conteúdo de IA chega a um cliente sem ser aprovado por um humano.',
       rule3:
-        '<strong>Projetos com âmbito definido.</strong> Prazos fixos, âmbitos fixos, bandas de preço fixas — em especial na Hub e na Dev. Sem retainers opacos.',
+        '<strong>Projetos com âmbito definido.</strong> Prazos fixos, âmbitos fixos, bandas de preço fixas - em especial na Hub e na Dev. Sem retainers opacos.',
       rule4:
         '<strong>Reencaminhamento interno, sem nova venda.</strong> Quando um cliente da Hub precisa da Dev, a passagem é interna. Sem novo processo comercial.',
 
@@ -336,14 +336,14 @@ export const ptPt: Dictionary = ({
       year2026P3:
         'Uma empresa especialista identifica o problema, entrega a solução e segue em frente.',
       year2026P4:
-        'O custo da escolha errada — retainers gastos em trabalho que não produz resultados — é a razão pela qual construímos um grupo.',
+        'O custo da escolha errada - retainers gastos em trabalho que não produz resultados - é a razão pela qual construímos um grupo.',
 
       proofHeading: 'Provas',
       proofIntro: '<em>Somos novos enquanto grupo. Mais antigos enquanto operadores.</em>',
       proofHub:
-        '<strong>AISO Hub</strong> — site de referência: <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>. Casos de estudo e análises publicadas.',
+        '<strong>AISO Hub</strong> - site de referência: <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>. Casos de estudo e análises publicadas.',
       proofDev:
-        '<strong>AISO Dev</strong> entrega a ferramentaria interna da própria plataforma AISO — o motor de IA, o orquestrador e o sistema de mensagens entre agentes.',
+        '<strong>AISO Dev</strong> entrega a ferramentaria interna da própria plataforma AISO - o motor de IA, o orquestrador e o sistema de mensagens entre agentes.',
       proofBuzz:
         '<strong>AISO Buzz</strong> gere as suas próprias redes sociais com a mesma metodologia que vende.',
       proofFooter:
@@ -356,15 +356,15 @@ export const ptPt: Dictionary = ({
 
   contact: {
     meta: {
-      title: 'Contacto — Falar com o Greg',
+      title: 'Contacto - Falar com o Greg',
       description:
-        'Não tem a certeza de qual o especialista de que precisa? Marque uma reunião de 20 minutos. O Greg encaminha para a marca AISO certa — ou diz-lhe, com honestidade, se não somos o parceiro indicado.',
+        'Não tem a certeza de qual o especialista de que precisa? Marque uma reunião de 20 minutos. O Greg encaminha para a marca AISO certa - ou diz-lhe, com honestidade, se não somos o parceiro indicado.',
     },
     hero: {
       kicker: 'Triagem · não é um funil de vendas',
       title: 'Não tem a certeza de qual o especialista? Marque uma reunião.',
       lead:
-        '20 minutos com o Greg. Encaminhamos para a Hub, para a Dev ou para a Buzz — ou dizemos honestamente se não somos o parceiro certo. Sem apresentações. Sem equipa comercial. Triagem.',
+        '20 minutos com o Greg. Encaminhamos para a Hub, para a Dev ou para a Buzz - ou dizemos honestamente se não somos o parceiro certo. Sem apresentações. Sem equipa comercial. Triagem.',
     },
     form: {
       kicker: 'Um formulário. Encaminhado pelo Greg.',
@@ -385,15 +385,15 @@ export const ptPt: Dictionary = ({
       statusSuccess:
         'Obrigado. O Greg lê pessoalmente cada mensagem recebida. Resposta num dia útil.',
       statusFallback:
-        'Abrimos o seu cliente de e-mail — envie a partir daí se o formulário tiver falhado.',
+        'Abrimos o seu cliente de e-mail - envie a partir daí se o formulário tiver falhado.',
       mailSubject: 'Mensagem recebida AISO Group',
     },
     sidebar: {
       knowKicker: 'Se já sabe',
       knowHeading: 'Vá diretamente à marca',
-      hubLine: 'aiso-hub.com — Pesquisa com IA',
-      devLine: 'aiso-dev.com — Sistemas de IA / software',
-      buzzLine: 'aiso-buzz.com — Redes sociais e conteúdos',
+      hubLine: 'aiso-hub.com - Pesquisa com IA',
+      devLine: 'aiso-dev.com - Sistemas de IA / software',
+      buzzLine: 'aiso-buzz.com - Redes sociais e conteúdos',
       calendarKicker: 'Se prefere o calendário',
       calendarBody: 'Triagem de 20 minutos com o Greg. Sem pitch.',
       calendarCta: 'Escrever ao Greg →',
@@ -401,7 +401,7 @@ export const ptPt: Dictionary = ({
       next1:
         '<strong class="text-[#0A1628]">Lemos.</strong> O Greg lê pessoalmente cada formulário.',
       next2:
-        '<strong class="text-[#0A1628]">Encaminhamos.</strong> Resposta num dia útil — apresentação direta à equipa certa ou um honesto «não somos nós, experimente X».',
+        '<strong class="text-[#0A1628]">Encaminhamos.</strong> Resposta num dia útil - apresentação direta à equipa certa ou um honesto «não somos nós, experimente X».',
       next3:
         '<strong class="text-[#0A1628]">A equipa define o âmbito.</strong> A equipa especialista (Hub, Dev ou Buzz) define o âmbito do trabalho consigo diretamente.',
       notDoKicker: 'O que não fazemos',
@@ -470,7 +470,7 @@ export const ptPt: Dictionary = ({
     kicker: '404',
     title: 'Esta página não existe.',
     lead:
-      'Acontece. Experimente o encaminhador da página inicial — três perguntas, um especialista, uma resposta em 20 segundos.',
+      'Acontece. Experimente o encaminhador da página inicial - três perguntas, um especialista, uma resposta em 20 segundos.',
     ctaPrimary: 'Voltar ao início →',
     ctaSecondary: 'Falar com o Greg →',
   },

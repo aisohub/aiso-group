@@ -2,12 +2,12 @@
 
 > AISO Group is the parent brand of four specialist AI companies, based in Lisbon, Portugal.
 
-AISO Group (Precious Episode LDA, NIF PT516578506) unites four specialist companies. Each one has a single job — you engage the specialist you need now and bring in the others when the timing is right.
+AISO Group (Precious Episode LDA, NIF PT516578506) unites four specialist companies. Each one has a single job - you engage the specialist you need now and bring in the others when the timing is right.
 
-- **AISO Hub** (https://aiso-hub.com): AI Search Optimization — audit, optimize, and monitor brand visibility across AI search (ChatGPT, Perplexity, Gemini, Google AI Overviews).
-- **AISO Dev** (https://aiso-dev.com): AI systems and implementation for SMBs — data pipelines, agent workflows, custom internal tools.
-- **AISO Buzz** (https://aiso-buzz.com): AI-powered social and content — backed by a brand bible, validated before it ships.
-- **AISO Learn** (https://aiso-learn.com): Corporate AI training — EU AI Act-aligned curricula that take teams from AI-curious to AI-capable.
+- **AISO Hub** (https://aiso-hub.com): AI Search Optimization - audit, optimize, and monitor brand visibility across AI search (ChatGPT, Perplexity, Gemini, Google AI Overviews).
+- **AISO Dev** (https://aiso-dev.com): AI systems and implementation for SMBs - data pipelines, agent workflows, custom internal tools.
+- **AISO Buzz** (https://aiso-buzz.com): AI-powered social and content - backed by a brand bible, validated before it ships.
+- **AISO Learn** (https://aiso-learn.com): Corporate AI training - EU AI Act-aligned curricula that take teams from AI-curious to AI-capable.
 
 ## Contact
 
@@ -18,4 +18,4 @@ AISO Group (Precious Episode LDA, NIF PT516578506) unites four specialist compan
 
 ## About
 
-Founded by Greg Stoos to help European SMBs become visible, credible, and operational with AI — through specialist partners, not generalist bundles.
+Founded by Greg Stoos to help European SMBs become visible, credible, and operational with AI - through specialist partners, not generalist bundles.

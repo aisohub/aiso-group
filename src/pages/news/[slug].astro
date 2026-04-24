@@ -23,7 +23,7 @@ const { Content } = await post.render();
 const categoryLabel = (key: string): string =>
   (t.news.categories as Record<string, string>)[key] ?? key;
 
-// Canonical always points to the EN blog post — per CTO spec, article bodies
+// Canonical always points to the EN blog post - per CTO spec, article bodies
 // are EN-only across locales. Localised URLs display the same EN body with
 // translated chrome.
 const canonical = `https://aiso-group.com/news/${post.slug}/`;
