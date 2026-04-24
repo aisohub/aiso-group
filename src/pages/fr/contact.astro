@@ -1,7 +1,7 @@
 ---
-import Base from '../layouts/Base.astro';
-import { getDictionary } from '../i18n/routes';
-import { isLocale, defaultLocale, type Locale } from '../i18n/config';
+import Base from '../../layouts/Base.astro';
+import { getDictionary } from '../../i18n/routes';
+import { isLocale, defaultLocale, type Locale } from '../../i18n/config';
 
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
 const t = getDictionary(locale);

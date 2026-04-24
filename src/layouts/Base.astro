@@ -1,5 +1,15 @@
 ---
 import '../styles/global.css';
+import {
+  locales as ALL_LOCALES,
+  localeHtmlLang,
+  localisePath,
+  defaultLocale,
+  isLocale,
+  type Locale,
+} from '../i18n/config';
+import { getDictionary } from '../i18n/routes';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 
 interface Props {
   title: string;
@@ -7,16 +17,58 @@ interface Props {
   ogImage?: string;
   canonicalUrl?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /**
+   * When true, skip emitting hreflang alternates. Use for pages that only
+   * exist in English (e.g. news article detail pages) — per spec, blog bodies
+   * stay EN-only across locales and should not advertise language alternates.
+   */
+  hreflangDisabled?: boolean;
 }
 
-const { title, description, ogImage = '/og-default.png', canonicalUrl, jsonLd } = Astro.props;
-const canonical = canonicalUrl ?? Astro.url.href;
-const siteTitle = title.includes('AISO Group') ? title : `${title} | AISO Group`;
+const {
+  title,
+  description,
+  ogImage = '/og-default.png',
+  canonicalUrl,
+  jsonLd,
+  hreflangDisabled = false,
+} = Astro.props;
+
+const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
+const t = getDictionary(locale);
+
+// Canonical URL — strip query params to avoid UTM leakage.
+const canonicalObj = new URL(Astro.url.pathname, Astro.site);
+canonicalObj.search = '';
+let canonical = canonicalUrl ?? canonicalObj.toString();
+if (!canonical.endsWith('/')) canonical += '/';
+
+const siteTitle = title.includes(t.meta.siteName) ? title : `${title} | ${t.meta.titleSuffix}`;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
+
+// Build hreflang alternates for every locale by translating the current path.
+const alternateLinks = !hreflangDisabled
+  ? ALL_LOCALES.map((loc) => ({
+      hreflang: localeHtmlLang[loc],
+      href: new URL(localisePath(Astro.url.pathname, loc), Astro.site).toString(),
+    }))
+  : [];
+const xDefaultHref = !hreflangDisabled
+  ? new URL(localisePath(Astro.url.pathname, defaultLocale), Astro.site).toString()
+  : null;
+
+// Locale-aware internal paths used in nav + footer + CTAs.
+const p = (slug: string) => {
+  const base = slug.startsWith('/') ? slug : `/${slug}`;
+  return localisePath(base, locale);
+};
+
+const year = new Date().getFullYear();
+const copyright = t.footer.copyright.replace('{year}', String(year));
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={localeHtmlLang[locale]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,8 +79,14 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    {alternateLinks.map(({ href, hreflang }) => (
+      <link rel="alternate" href={href} hreflang={hreflang} />
+    ))}
+    {xDefaultHref && <link rel="alternate" href={xDefaultHref} hreflang="x-default" />}
+
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="AISO Group" />
+    <meta property="og:site_name" content={t.meta.siteName} />
+    <meta property="og:locale" content={localeHtmlLang[locale].replace('-', '_')} />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
@@ -53,24 +111,25 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link">{t.nav.skipToContent}</a>
 
     <header class="sticky top-0 left-0 right-0 z-50 bg-[#0A1628]/95 backdrop-blur-sm border-b border-white/10">
-      <nav class="container-aiso h-16 flex items-center justify-between" aria-label="Primary">
-        <a href="/" class="flex items-center gap-2 group" aria-label="AISO Group — Home">
+      <nav class="container-aiso h-16 flex items-center justify-between" aria-label={t.nav.primaryAriaLabel}>
+        <a href={p('/')} class="flex items-center gap-2 group" aria-label={t.nav.homeAriaLabel}>
           <img src="/images/logo/aiso-group-negative.svg" alt="AISO Group" width="130" height="32" class="h-8 w-auto" />
         </a>
         <div class="hidden md:flex items-center gap-7">
-          <a href="/" class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">Home</a>
-          <a href="/brands/" class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">Brands</a>
-          <a href="/about/" class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">About</a>
-          <a href="/news/" class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">News</a>
-          <a href="/contact/" class="btn btn-on-dark !py-2 !px-3.5 !text-sm">Find your specialist →</a>
+          <a href={p('/')} class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">{t.nav.home}</a>
+          <a href={p('/brands/')} class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">{t.nav.brands}</a>
+          <a href={p('/about/')} class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">{t.nav.about}</a>
+          <a href={p('/news/')} class="text-slate-200 hover:text-white text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-4 rounded">{t.nav.news}</a>
+          <a href={p('/contact/')} class="btn btn-on-dark !py-2 !px-3.5 !text-sm">{t.nav.cta}</a>
+          <LanguageSwitcher variant="header" />
         </div>
         <button
           id="mobile-menu-btn"
           class="md:hidden text-white p-2 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-2"
-          aria-label="Toggle menu"
+          aria-label={t.nav.openMenu}
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
@@ -81,11 +140,12 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
       </nav>
       <div id="mobile-menu" class="hidden md:hidden bg-[#0A1628] border-t border-white/10 px-6 py-4">
         <div class="flex flex-col gap-3">
-          <a href="/" class="text-slate-200 hover:text-white font-medium transition-colors py-1">Home</a>
-          <a href="/brands/" class="text-slate-200 hover:text-white font-medium transition-colors py-1">Brands</a>
-          <a href="/about/" class="text-slate-200 hover:text-white font-medium transition-colors py-1">About</a>
-          <a href="/news/" class="text-slate-200 hover:text-white font-medium transition-colors py-1">News</a>
-          <a href="/contact/" class="text-[#E5E9EE] hover:text-white font-semibold transition-colors py-1">Find your specialist →</a>
+          <a href={p('/')} class="text-slate-200 hover:text-white font-medium transition-colors py-1">{t.nav.home}</a>
+          <a href={p('/brands/')} class="text-slate-200 hover:text-white font-medium transition-colors py-1">{t.nav.brands}</a>
+          <a href={p('/about/')} class="text-slate-200 hover:text-white font-medium transition-colors py-1">{t.nav.about}</a>
+          <a href={p('/news/')} class="text-slate-200 hover:text-white font-medium transition-colors py-1">{t.nav.news}</a>
+          <a href={p('/contact/')} class="text-[#E5E9EE] hover:text-white font-semibold transition-colors py-1">{t.nav.cta}</a>
+          <LanguageSwitcher variant="footer" />
         </div>
       </div>
     </header>
@@ -97,46 +157,45 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <footer class="bg-[#0A1628] text-slate-300 border-t border-white/10 mt-auto">
       <div class="container-aiso py-12">
         <div class="mb-8">
-          <span class="group-badge">Part of AISO Group</span>
+          <span class="group-badge">{t.footer.partOf}</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           <div>
             <img src="/images/logo/aiso-group-white.svg" alt="AISO Group" width="150" height="36" class="h-9 w-auto mb-3" />
-            <p class="text-sm text-slate-400 leading-relaxed">
-              Four specialist AI companies under one roof. AI search. AI systems. AI-powered social. AI training.
-            </p>
-            <p class="text-xs text-slate-300 mt-3">Lisbon, Portugal</p>
+            <p class="text-sm text-slate-400 leading-relaxed">{t.footer.tagline}</p>
+            <p class="text-xs text-slate-300 mt-3">{t.footer.location}</p>
+            <LanguageSwitcher variant="footer" />
           </div>
           <div>
-            <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Sibling brands</div>
+            <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">{t.footer.siblingBrandsHeading}</div>
             <ul class="flex flex-col gap-2 text-sm">
-              <li><a href="https://aiso-hub.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">AISO Hub — AI Search</a></li>
-              <li><a href="https://aiso-dev.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">AISO Dev — AI Systems</a></li>
-              <li><a href="https://aiso-buzz.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">AISO Buzz — AI-Powered Social</a></li>
-              <li><a href="https://aiso-learn.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">AISO Learn — AI Training</a></li>
+              <li><a href="https://aiso-hub.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">{t.footer.siblingHub}</a></li>
+              <li><a href="https://aiso-dev.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">{t.footer.siblingDev}</a></li>
+              <li><a href="https://aiso-buzz.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">{t.footer.siblingBuzz}</a></li>
+              <li><a href="https://aiso-learn.com" rel="noopener" class="text-slate-300 hover:text-white transition-colors">{t.footer.siblingLearn}</a></li>
             </ul>
           </div>
           <div>
-            <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">AISO Group</div>
+            <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">{t.footer.groupHeading}</div>
             <ul class="flex flex-col gap-2 text-sm">
-              <li><a href="/" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/brands/" class="text-slate-300 hover:text-white transition-colors">Brands</a></li>
-              <li><a href="/about/" class="text-slate-300 hover:text-white transition-colors">About</a></li>
-              <li><a href="/news/" class="text-slate-300 hover:text-white transition-colors">News & notes</a></li>
-              <li><a href="/contact/" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+              <li><a href={p('/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkHome}</a></li>
+              <li><a href={p('/brands/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkBrands}</a></li>
+              <li><a href={p('/about/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkAbout}</a></li>
+              <li><a href={p('/news/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkNews}</a></li>
+              <li><a href={p('/contact/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkContact}</a></li>
             </ul>
           </div>
           <div>
-            <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Contact & legal</div>
+            <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">{t.footer.contactLegalHeading}</div>
             <ul class="flex flex-col gap-2 text-sm">
               <li><a href="mailto:hello@aiso-group.com" class="text-slate-300 hover:text-white transition-colors">hello@aiso-group.com</a></li>
-              <li><a href="/privacy-policy/" class="text-slate-300 hover:text-white transition-colors">Privacy policy</a></li>
+              <li><a href={p('/privacy-policy/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.privacyPolicy}</a></li>
             </ul>
           </div>
         </div>
         <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
-          <p class="text-xs text-slate-400">&copy; 2025–{new Date().getFullYear()} AISO Group · Precious Episode LDA · Lisbon, Portugal</p>
-          <p class="text-xs text-slate-300">The specialist AI group for real businesses.</p>
+          <p class="text-xs text-slate-400">&copy; {copyright}</p>
+          <p class="text-xs text-slate-300">{t.footer.strapline}</p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,75 @@
+---
+// Top-bar language switcher for aiso-group.
+// Swaps locale on the current page using Astro.currentLocale + localisePath().
+//
+// Pattern modelled after aiso-hub's LanguageSwitch and aiso-learn's inline
+// switcher in BaseLayout — kept as a standalone component here so the Base
+// layout stays clean.
+
+import {
+  locales as ALL_LOCALES,
+  localeLabels,
+  localeShortLabels,
+  localisePath,
+  defaultLocale,
+  isLocale,
+  type Locale,
+} from '../i18n/config';
+
+interface Props {
+  variant?: 'header' | 'footer';
+}
+
+const { variant = 'header' } = Astro.props;
+
+const active: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
+
+const items = ALL_LOCALES.map((loc) => ({
+  code: loc,
+  short: localeShortLabels[loc],
+  full: localeLabels[loc],
+  href: localisePath(Astro.url.pathname, loc),
+  active: loc === active,
+}));
+---
+
+{variant === 'header' && (
+  <div
+    aria-label="Language"
+    class="hidden md:flex items-center gap-1 text-xs font-semibold"
+  >
+    {items.map((item, i) => (
+      <>
+        {i > 0 && <span class="text-white/30" aria-hidden="true">/</span>}
+        <a
+          href={item.href}
+          hreflang={item.code}
+          aria-current={item.active ? 'true' : undefined}
+          title={item.full}
+          class={`px-1.5 py-1 rounded transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-2 ${
+            item.active ? 'text-white' : 'text-slate-400 hover:text-white'
+          }`}
+        >{item.short}</a>
+      </>
+    ))}
+  </div>
+)}
+
+{variant === 'footer' && (
+  <div aria-label="Language" class="flex items-center gap-2 text-xs font-semibold mt-3">
+    {items.map((item, i) => (
+      <>
+        {i > 0 && <span class="text-slate-500" aria-hidden="true">/</span>}
+        <a
+          href={item.href}
+          hreflang={item.code}
+          aria-current={item.active ? 'true' : undefined}
+          title={item.full}
+          class={`px-1.5 py-1 rounded transition-colors ${
+            item.active ? 'text-white' : 'text-slate-400 hover:text-white'
+          }`}
+        >{item.short}</a>
+      </>
+    ))}
+  </div>
+)}
