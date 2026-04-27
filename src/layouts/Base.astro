@@ -110,6 +110,22 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
 
     {import.meta.env.PROD && (
       <>
+        <!-- Consent Mode v2: defaults denied, flipped by @aisohub/cookie-banner. -->
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'denied',
+            personalization_storage: 'denied',
+            security_storage: 'granted',
+            wait_for_update: 500
+          });
+        </script>
+
         <!-- Google tag (gtag.js) - GA4: defer until after first paint to reduce TBT -->
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <script is:inline>
@@ -225,6 +241,28 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
       btn?.addEventListener('click', () => {
         const hidden = menu?.classList.toggle('hidden');
         btn.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+      });
+    </script>
+
+    <!-- AISO Cookie Banner -->
+    <script>
+      import { initCookieBanner } from "@aisohub/cookie-banner";
+      import "@aisohub/cookie-banner/style.css";
+      const lang = document.documentElement.lang?.toLowerCase().slice(0, 2);
+      const localeKey = lang === "pt" || lang === "fr" ? lang : "en";
+      const privacyByLocale = {
+        en: "/privacy-policy/",
+        pt: "/pt-pt/privacy-policy/",
+        fr: "/fr/privacy-policy/",
+      };
+      initCookieBanner({
+        theme: {
+          brandColor: "#C7CFD8",
+          brandForeground: "#0A1628",
+          position: "bottom-left",
+        },
+        locale: localeKey,
+        privacyPolicyUrl: privacyByLocale,
       });
     </script>
   </body>
