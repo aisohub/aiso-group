@@ -20,6 +20,13 @@ interface Props { post: CollectionEntry<'news'> }
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+// Localised meta. Body stays EN per CTO spec, but the meta title and
+// description are translated to remove duplicate-title / duplicate-meta
+// audit warnings on /fr/news/* URLs. Falls back to EN if a translation
+// is missing so older posts keep building.
+const metaTitle = post.data.titleFr ?? post.data.title;
+const metaDescription = post.data.descriptionFr ?? post.data.description;
+
 const categoryLabel = (key: string): string =>
   (t.news.categories as Record<string, string>)[key] ?? key;
 
@@ -61,8 +68,8 @@ function fmt(d: Date, loc: Locale) {
 ---
 
 <Base
-  title={post.data.title}
-  description={post.data.description}
+  title={metaTitle}
+  description={metaDescription}
   canonicalUrl={canonical}
   jsonLd={[articleJsonLd, breadcrumbJsonLd]}
   hreflangDisabled={true}
