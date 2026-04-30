@@ -5,6 +5,10 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    titleFr: z.string().optional(),
+    descriptionFr: z.string().optional(),
+    titlePtPt: z.string().optional(),
+    descriptionPtPt: z.string().optional(),
     category: z.enum(['announcement', 'specialist-series', 'meta-essay']),
     date: z.coerce.date(),
     readTime: z.number().int().positive(),
