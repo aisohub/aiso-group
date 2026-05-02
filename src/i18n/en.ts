@@ -59,7 +59,7 @@ export const en = {
     meta: {
       title: 'AISO Group - The specialist AI group for real businesses',
       description:
-        'Four specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn). Pick the one that fits - expand when you are ready.',
+        'Four specialist AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn). Pick the one that fits.',
     },
     hero: {
       kicker: 'Lisbon · 2026 · Specialist AI',
@@ -217,7 +217,7 @@ export const en = {
 
   brands: {
     meta: {
-      title: 'Our brands - AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
+      title: 'Our brands - Hub, Dev, Buzz, Learn',
       description:
         'Four specialist AI companies. What each one does. What each one does not do. Pick the specialist that matches the problem.',
     },
@@ -358,9 +358,9 @@ export const en = {
 
   privacy: {
     meta: {
-      title: 'Privacy policy',
+      title: 'Privacy policy and data handling',
       description:
-        'How AISO Group handles information submitted through aiso-group.com. Minimal, EU-based, and explicit.',
+        'How AISO Group handles information submitted through aiso-group.com. Minimal data collection, EU-based processing, and explicit consent.',
     },
     hero: {
       kicker: 'Legal',
@@ -408,7 +408,7 @@ export const en = {
 
   notFound: {
     meta: {
-      title: 'Page not found',
+      title: 'Page not found - try the home router',
       description:
         'This page does not exist on aiso-group.com. Try the home router, or talk to Greg.',
     },
@@ -422,7 +422,7 @@ export const en = {
 
   news: {
     meta: {
-      title: 'News & notes',
+      title: 'News & notes from the AISO Group',
       description:
         'Group-level strategy, announcements, and occasional essays on specialist AI for real businesses. One to two posts a month. Anti-blog by design.',
     },
