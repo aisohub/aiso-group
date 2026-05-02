@@ -74,7 +74,7 @@ export const ptPt: Dictionary = ({
 
   news: {
     meta: {
-      title: 'Notícias e notas',
+      title: 'Notícias e notas do AISO Group',
       description:
         'Estratégia ao nível do grupo, anúncios e ensaios pontuais sobre IA especialista para empresas reais. Um a dois artigos por mês. Anti-blogue por princípio.',
     },
@@ -112,9 +112,9 @@ export const ptPt: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO Group - O grupo de IA especialista, ao serviço das empresas reais',
+      title: 'AISO Group - IA especialista para empresas reais',
       description:
-        'Quatro empresas especialistas em IA, sob o mesmo tecto. Pesquisa com IA (Hub), sistemas de IA (Dev), redes sociais potenciadas por IA (Buzz), formação em IA (Learn). Escolha a que se adequa - alargue quando estiver preparado.',
+        'Quatro empresas especialistas em IA sob o mesmo tecto: pesquisa IA (Hub), sistemas IA (Dev), social potenciado por IA (Buzz), formação (Learn).',
     },
     hero: {
       kicker: 'Lisboa · 2026 · IA especialista',
@@ -188,7 +188,7 @@ export const ptPt: Dictionary = ({
 
   brands: {
     meta: {
-      title: 'As nossas marcas - AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
+      title: 'As nossas marcas - Hub, Dev, Buzz, Learn',
       description:
         'Quatro empresas especialistas em IA. O que cada uma faz. O que cada uma não faz. Escolha o especialista que corresponde ao problema.',
     },
@@ -272,9 +272,9 @@ export const ptPt: Dictionary = ({
 
   about: {
     meta: {
-      title: 'Sobre - Uma arquitetura de marcas filhas para a IA especialista',
+      title: 'Sobre - Quatro marcas de IA especialistas',
       description:
-        'Construímos um grupo, não uma agência. Quatro empresas especialistas em IA, um único tecto, uma única regra: os especialistas ganham aos generalistas quando se trata de empresas reais.',
+        'Um grupo, não uma agência. Quatro empresas especialistas em IA, um único tecto, uma regra: os especialistas ganham aos generalistas.',
     },
     hero: {
       kicker: 'Sobre a AISO Group',
@@ -358,7 +358,7 @@ export const ptPt: Dictionary = ({
     meta: {
       title: 'Contacto - Falar com o Greg',
       description:
-        'Não tem a certeza de qual o especialista de que precisa? Marque uma reunião de 20 minutos. O Greg encaminha para a marca AISO certa - ou diz-lhe, com honestidade, se não somos o parceiro indicado.',
+        'Não sabe qual o especialista de que precisa? Marque uma reunião de 20 minutos. O Greg encaminha para a marca AISO certa - ou diz se não é o parceiro.',
     },
     hero: {
       kicker: 'Triagem · não é um funil de vendas',

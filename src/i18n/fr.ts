@@ -71,7 +71,7 @@ export const fr: Dictionary = ({
     meta: {
       title: 'Actualités et notes',
       description:
-        'Annonces, prises de position et essais occasionnels sur l’IA spécialiste au service des entreprises réelles. Un à deux articles par mois. Anti-blog par principe.',
+        'Annonces et essais occasionnels sur l’IA spécialiste au service des entreprises réelles. Un à deux articles par mois. Anti-blog par principe.',
     },
     hero: {
       kicker: 'Faible fréquence · Signal élevé',
@@ -107,9 +107,9 @@ export const fr: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO Group - Le groupe IA spécialiste, au service des entreprises réelles',
+      title: 'AISO Group - L’IA spécialiste pour entreprises réelles',
       description:
-        'Quatre sociétés spécialistes de l’IA, sous un même toit. Recherche IA (Hub), systèmes IA (Dev), réseaux sociaux propulsés par l’IA (Buzz), formation IA (Learn). Choisissez celle qu’il vous faut, élargissez quand vous êtes prêt.',
+        'Quatre sociétés spécialistes IA sous un même toit : recherche IA (Hub), systèmes IA (Dev), social propulsé par l’IA (Buzz), formation (Learn).',
     },
     hero: {
       kicker: 'Lisbonne · 2026 · IA spécialiste',
@@ -183,7 +183,7 @@ export const fr: Dictionary = ({
 
   brands: {
     meta: {
-      title: 'Nos marques - AISO Hub, AISO Dev, AISO Buzz, AISO Learn',
+      title: 'Nos marques - Hub, Dev, Buzz, Learn',
       description:
         'Quatre sociétés spécialistes de l’IA. Ce que chacune fait. Ce que chacune ne fait pas. Choisissez le spécialiste qui correspond à votre problème.',
     },
@@ -267,9 +267,9 @@ export const fr: Dictionary = ({
 
   about: {
     meta: {
-      title: 'À propos - Une architecture en marques filles pour l’IA spécialiste',
+      title: 'À propos - Quatre marques IA spécialistes',
       description:
-        'Nous avons construit un groupe, pas une agence. Quatre sociétés spécialistes de l’IA, un même toit, une seule règle : les spécialistes battent les généralistes pour les entreprises réelles.',
+        'Un groupe, pas une agence. Quatre sociétés spécialistes IA, un même toit, une seule règle : les spécialistes battent les généralistes.',
     },
     hero: {
       kicker: 'À propos d’AISO Group',
@@ -353,7 +353,7 @@ export const fr: Dictionary = ({
     meta: {
       title: 'Contact - Échanger avec Greg',
       description:
-        'Vous ne savez pas quel spécialiste il vous faut ? Prenez rendez-vous pour un appel de 20 minutes. Greg vous oriente vers la bonne marque AISO - ou vous dit honnêtement si nous ne sommes pas le bon choix.',
+        'Vous hésitez sur le bon spécialiste ? Réservez un appel de 20 minutes. Greg vous oriente vers la bonne marque AISO - ou vous le dit honnêtement.',
     },
     hero: {
       kicker: 'Orientation · pas un tunnel de vente',
@@ -458,7 +458,7 @@ export const fr: Dictionary = ({
 
   notFound: {
     meta: {
-      title: 'Page introuvable',
+      title: 'Page introuvable - retour à l’accueil',
       description:
         'Cette page n’existe pas sur aiso-group.com. Essayez l’aiguillage de la page d’accueil, ou échangez avec Greg.',
     },
