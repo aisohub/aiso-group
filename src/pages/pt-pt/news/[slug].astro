@@ -30,10 +30,11 @@ const metaDescription = post.data.descriptionPtPt ?? post.data.description;
 const categoryLabel = (key: string): string =>
   (t.news.categories as Record<string, string>)[key] ?? key;
 
-// Canonical always points to the EN blog post - per CTO spec, article bodies
-// are EN-only across locales. Localised URLs display the same EN body with
-// translated chrome.
-const canonical = `https://aiso-group.com/news/${post.slug}/`;
+// Canonical is self-referential per locale. Each localised URL canonicals to
+// itself so search engines do not flag "canonical points to a different URL"
+// (Phase C audit fix). Article bodies remain EN-only across locales but the
+// PT/FR URLs are valid, indexable pages with translated meta + chrome.
+const canonical = `https://aiso-group.com/pt-pt/news/${post.slug}/`;
 
 const articleJsonLd = {
   "@context": "https://schema.org",

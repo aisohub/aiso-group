@@ -34,7 +34,7 @@ const items = ALL_LOCALES.map((loc) => ({
 ---
 
 {variant === 'header' && (
-  <div
+  <nav
     aria-label="Language"
     class="hidden md:flex items-center gap-1 text-xs font-semibold"
   >
@@ -44,6 +44,7 @@ const items = ALL_LOCALES.map((loc) => ({
         <a
           href={item.href}
           hreflang={item.code}
+          aria-label={item.full}
           aria-current={item.active ? 'true' : undefined}
           title={item.full}
           class={`px-1.5 py-1 rounded transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C7CFD8] focus-visible:outline-offset-2 ${
@@ -52,17 +53,18 @@ const items = ALL_LOCALES.map((loc) => ({
         >{item.short}</a>
       </>
     ))}
-  </div>
+  </nav>
 )}
 
 {variant === 'footer' && (
-  <div aria-label="Language" class="flex items-center gap-2 text-xs font-semibold mt-3">
+  <nav aria-label="Language" class="flex items-center gap-2 text-xs font-semibold mt-3">
     {items.map((item, i) => (
       <>
         {i > 0 && <span class="text-slate-500" aria-hidden="true">/</span>}
         <a
           href={item.href}
           hreflang={item.code}
+          aria-label={item.full}
           aria-current={item.active ? 'true' : undefined}
           title={item.full}
           class={`px-1.5 py-1 rounded transition-colors ${
@@ -71,5 +73,5 @@ const items = ALL_LOCALES.map((loc) => ({
         >{item.short}</a>
       </>
     ))}
-  </div>
+  </nav>
 )}
