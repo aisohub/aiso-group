@@ -1,0 +1,205 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localisePath, isLocale, defaultLocale, type Locale } from '../../i18n/config';
+
+const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
+const p = (slug: string) => localisePath(slug.startsWith('/') ? slug : `/${slug}`, locale);
+
+const pageTitle = "Cabinet de conseil IA pour PME : visibilité, implémentation, formation";
+const pageDescription = "AISO Group, cabinet de conseil IA basé à Lisbonne. Quatre marques spécialistes pour rendre votre IA visible, l'implémenter et former vos équipes. Pour PME en France, Portugal, Belgique, Suisse et Luxembourg.";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aiso-group.com/fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Cabinet de conseil IA", "item": "https://aiso-group.com/fr/cabinet-conseil-ia/" }
+  ]
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AISO Group",
+  "alternateName": ["AISO", "AISO Group"],
+  "url": "https://aiso-group.com",
+  "description": "Cabinet de conseil IA spécialiste : quatre marques sous un même toit pour la visibilité IA, l'implémentation, le contenu social et la formation.",
+  "areaServed": ["FR", "PT", "BE", "CH", "LU"],
+  "foundingLocation": { "@type": "Place", "name": "Lisbonne, Portugal" },
+  "subOrganization": [
+    { "@type": "Organization", "name": "AISO Hub", "url": "https://aiso-hub.com", "description": "Optimisation de la visibilité dans les moteurs IA" },
+    { "@type": "Organization", "name": "AISO Dev", "url": "https://aiso-dev.com", "description": "Implémentation IA pour PME" },
+    { "@type": "Organization", "name": "AISO Buzz", "url": "https://aiso-buzz.com", "description": "Agence de contenu et social IA" },
+    { "@type": "Organization", "name": "AISO Learn", "url": "https://aiso-learn.com", "description": "Formation IA et conformité AI Act" }
+  ]
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Cabinet de conseil en intelligence artificielle",
+  "name": "AISO Group : conseil IA pour PME",
+  "provider": { "@type": "Organization", "name": "AISO Group", "url": "https://aiso-group.com" },
+  "areaServed": [
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Portugal" },
+    { "@type": "Country", "name": "Belgique" },
+    { "@type": "Country", "name": "Suisse" },
+    { "@type": "Country", "name": "Luxembourg" }
+  ],
+  "audience": { "@type": "BusinessAudience", "audienceType": "PME francophones" },
+  "url": "https://aiso-group.com/fr/cabinet-conseil-ia/",
+  "description": "Conseil IA à quatre voies pour PME : visibilité dans les moteurs IA, implémentation pratique, contenu social piloté par l'IA, formation et conformité AI Act."
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre AISO Group et un cabinet de conseil IA généraliste ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un généraliste vous propose un seul interlocuteur et sous-traite ce qu'il ne maîtrise pas. AISO Group regroupe quatre cabinets spécialistes sous un même toit : la visibilité IA (Hub), l'implémentation (Dev), le social IA (Buzz) et la formation (Learn). Vous gardez un point de contact unique mais chaque mission est portée par les spécialistes du métier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez-vous uniquement avec des grandes entreprises ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. AISO Group est conçu pour les PME : équipes de 5 à 250 personnes qui veulent des résultats concrets sans le coût ni la lourdeur d'un cabinet du Big Four. Notre offre, nos contrats et nos délais sont calibrés pour ce segment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les délais typiques d'une mission ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un audit de visibilité IA prend 2 à 3 semaines. Un projet d'implémentation pilote court entre 6 et 12 semaines. Un programme de formation IA Act se déploie en 4 à 8 semaines selon la taille de l'équipe. Tous les chiffres sont validés en cadrage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Êtes-vous conformes à l'AI Act européen ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. AISO Learn opère un programme de mise en conformité AI Act dédié aux PME : cartographie des usages, évaluation des risques, plan de gouvernance et formation des équipes. La marque française et portugaise est juridiquement portée par Precious Episode LDA, basée à Lisbonne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi un cabinet basé à Lisbonne plutôt qu'à Paris ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lisbonne est le hub IA le plus accessible de l'Europe du sud, avec un coût de structure 30 à 40 pourcent inférieur à Paris ou Genève. Nos consultants travaillent en français, portugais et anglais, et nos clients vont de Marseille à Bruxelles en passant par Lisbonne et Genève. La distance n'est plus un frein quand le modèle est piloté par la valeur livrée."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment démarrer une mission ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un appel de cadrage de 20 minutes avec Greg, fondateur, suffit pour identifier laquelle des quatre marques porte votre besoin et pour planifier la suite. Aucune obligation : si nous ne sommes pas le bon interlocuteur, nous le disons et orientons vers le bon partenaire."
+      }
+    }
+  ]
+};
+---
+
+<Base
+  title={pageTitle}
+  description={pageDescription}
+  jsonLd={[orgJsonLd, serviceJsonLd, faqJsonLd, breadcrumbJsonLd]}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-24 md:!py-32">
+      <span class="kicker kicker-on-dark mb-5 block">Cabinet de conseil IA</span>
+      <h1 class="h1 !text-white max-w-4xl">Cabinet de conseil IA pour PME : rendre votre IA visible, l'implémenter, former vos équipes.</h1>
+      <p class="lead !text-slate-300 mt-6 max-w-3xl">AISO Group réunit quatre cabinets spécialistes sous un même toit. Un point de contact unique. Des spécialistes pour chaque mission. Au service des PME en France, Portugal, Belgique, Suisse et Luxembourg.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href={p('/contact/')} class="btn btn-on-dark">Réserver un appel de cadrage</a>
+        <a href="#nos-services" class="btn btn-ghost-on-dark">Voir nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="article-body max-w-3xl">
+        <h2>Pourquoi choisir un cabinet de conseil IA spécialiste plutôt que généraliste</h2>
+        <p>Le marché du conseil en intelligence artificielle est saturé de cabinets généralistes qui promettent tout : stratégie, implémentation, formation, gouvernance, marketing. Dans la pratique, un seul consultant ne peut pas être expert en optimisation pour les moteurs IA, en architecture technique, en pilotage social et en conformité réglementaire à la fois. Le résultat : des missions à demi finies, des livrables génériques, une facturation au temps passé qui ne reflète pas la valeur livrée.</p>
+        <p>AISO Group inverse ce modèle. Nous avons construit un groupe, pas une agence. Quatre marques spécialistes, chacune dédiée à un métier précis du conseil IA pour PME, partagent une seule porte d'entrée commerciale et un seul cadre contractuel. Vous parlez à un point de contact unique, mais c'est l'équipe spécialiste qui livre.</p>
+        <p>Cette logique est simple : un kinésithérapeute ne fait pas de chirurgie, un avocat fiscaliste ne plaide pas en pénal, un cardiologue n'opère pas la rétine. Le conseil IA mérite la même rigueur. Notre offre s'organise autour de quatre métiers distincts, complémentaires et indépendamment achetables.</p>
+
+        <h2 id="nos-services">Nos quatre métiers de conseil IA pour PME</h2>
+
+        <h3>1. Visibilité IA et SEO génératif (AISO Hub)</h3>
+        <p>Quand un prospect interroge ChatGPT, Perplexity, Claude ou Google AI Overviews avec une question commerciale, votre entreprise apparaît-elle dans la réponse ? Dans la plupart des PME que nous auditons, la réponse est non. AISO Hub est notre cabinet d'optimisation de la visibilité dans les moteurs de recherche génératifs.</p>
+        <p>Nous auditons votre présence actuelle dans les réponses IA des concurrents, identifions les requêtes commerciales où vous devriez apparaître, et déployons une feuille de route pour intégrer les corpus utilisés par les modèles. Cela combine du SEO technique classique, du balisage Schema.org dédié, du contenu d'expertise et du suivi de citation cross-moteurs. Le livrable est mesurable : la part de visibilité par requête, mois après mois.</p>
+
+        <h3>2. Implémentation IA pratique (AISO Dev)</h3>
+        <p>Au-delà de la visibilité, encore faut-il faire fonctionner l'IA dans vos opérations. AISO Dev est notre partenaire d'implémentation pour PME : assistants internes, automatisations métier, intégrations dans les outils existants (CRM, helpdesk, ERP), agents conversationnels orientés client.</p>
+        <p>Notre méthode est centrée sur le pilote court : six à douze semaines pour livrer un cas d'usage en production, mesurer l'impact, puis décider de l'industrialisation. Nous évitons les programmes de transformation longs et coûteux qui caractérisent les cabinets traditionnels et qui finissent dans un tiroir. Vous achetez un résultat, pas du temps consultant.</p>
+
+        <h3>3. Contenu et social piloté par l'IA (AISO Buzz)</h3>
+        <p>L'IA générative redéfinit la production de contenu : ce qui prenait une semaine prend maintenant une après-midi, à condition d'avoir le bon dispositif éditorial. AISO Buzz est notre cabinet de contenu social IA : ligne éditoriale, calendrier multiplateforme, briefs créatifs et production accélérée par l'IA, sans renoncer à la voix de marque.</p>
+        <p>Notre périmètre couvre LinkedIn, Instagram, TikTok, YouTube, Threads et X, avec une logique de spécialisation par plateforme plutôt que de copier-coller. La gouvernance reste humaine : l'IA accélère la production, l'équipe de marque garantit la cohérence et le ton.</p>
+
+        <h3>4. Formation IA et conformité AI Act (AISO Learn)</h3>
+        <p>Le règlement européen sur l'IA (AI Act) impose à toute organisation utilisant des systèmes d'IA de former ses équipes et de cartographier les usages à risque. AISO Learn est notre cabinet de formation et de mise en conformité AI Act dédié aux PME.</p>
+        <p>Nos programmes vont de l'acculturation IA pour les équipes non techniques jusqu'à la mise en place du registre AI Act, du processus de gouvernance et de la documentation des systèmes à risque modéré ou élevé. Tout est calibré pour des structures qui n'ont pas de DPO ni de juriste IA dédié.</p>
+
+        <h2>Pour qui : nos clients types</h2>
+        <p>AISO Group travaille avec des PME entre 5 et 250 collaborateurs, en France, au Portugal, en Belgique, en Suisse et au Luxembourg. Nos missions typiques :</p>
+        <ul>
+          <li>Une PME industrielle qui veut être trouvée dans les réponses IA quand un acheteur cherche un sous-traitant en région PACA.</li>
+          <li>Un cabinet de services professionnels qui veut automatiser son onboarding client avec un assistant IA, sans changer son CRM.</li>
+          <li>Une enseigne de retail spécialisée qui veut produire dix posts LinkedIn et trois reels Instagram par semaine sans embaucher un community manager à plein temps.</li>
+          <li>Un groupe de PME qui doit former ses cinquante collaborateurs à l'IA et publier sa cartographie AI Act avant la fin de l'année.</li>
+        </ul>
+        <p>Si votre besoin ne correspond à aucun de ces quatre cas, dites-le nous. Nous orientons régulièrement des prospects vers des partenaires que nous connaissons et qui sont mieux placés que nous, plutôt que de forcer une mission.</p>
+
+        <h2>Notre méthode de cabinet de conseil IA</h2>
+        <p>Trois principes structurent toutes nos missions :</p>
+        <p><strong>Spécialisation visible.</strong> Chaque mission est portée par la marque spécialiste du métier. Vous savez qui fait quoi, vous mesurez la qualité par discipline, vous pouvez ajouter ou retirer une marque sans renégocier le contrat global.</p>
+        <p><strong>Pilote court, industrialisation décidée.</strong> Nous démarrons toujours par un pilote court (deux à douze semaines selon le métier) avec un livrable mesurable. La décision d'industrialiser se prend sur des chiffres, pas sur une promesse.</p>
+        <p><strong>Tarification à la valeur.</strong> Nos missions sont forfaitisées par livrable, pas facturées au taux journalier. Vous savez à l'avance ce que vous payez et ce que vous recevez. Les missions récurrentes (visibilité, social, formation continue) sont en abonnement mensuel.</p>
+
+        <h2>Cas client : recouvrement d'autorité de marque pour une PME francophone</h2>
+        <p>Un de nos clients, PME industrielle basée en région lyonnaise et active sur les marchés français et belge, constatait début 2026 que son nom de marque commençait à disparaître des réponses ChatGPT et Perplexity sur des requêtes commerciales pourtant historiquement gagnantes. Le diagnostic d'AISO Hub a montré que deux pages internes se faisaient concurrence sur la même requête, dispersant l'autorité de marque entre deux URL.</p>
+        <p>En six semaines, nous avons consolidé l'architecture éditoriale, ajouté un balisage Schema.org dédié, repositionné la page de contact comme un assistant secondaire à la page de marque principale, et publié trois pages d'expertise sur les sujets ChatGPT favorise. Résultat à dix semaines : remontée du nom de marque dans Perplexity et ChatGPT, plus une nouvelle position dans Google AI Overviews sur la requête commerciale principale. Le tout pour un budget inférieur à un mois de communication payante.</p>
+
+        <h2>Comparaison avec les cabinets de conseil IA traditionnels</h2>
+        <p>Les Big Four (Accenture, Deloitte, KPMG, EY) restent des références sur les programmes de transformation lourds, multinationaux, à plusieurs millions d'euros. Ils ne sont pas conçus pour une PME de 30 personnes qui veut un assistant IA en production sous trois mois pour 25 000 euros. Les agences locales spécialisées (Lusoai, Jelly, 3Hash, Alter Solutions) couvrent souvent un seul métier (l'implémentation, ou la visibilité, ou le social) mais rarement la combinaison des quatre avec une cohérence de marque et de contractualisation.</p>
+        <p>AISO Group a été conçu pour combler ce vide : la rigueur de la spécialisation des Big Four, l'agilité et la tarification d'une agence locale, et la couverture des quatre métiers que les PME doivent traiter en parallèle (visibilité, implémentation, contenu, formation).</p>
+
+        <h2>Questions fréquentes</h2>
+
+        <h3>Quelle est la différence entre AISO Group et un cabinet de conseil IA généraliste ?</h3>
+        <p>Un généraliste vous propose un seul interlocuteur et sous-traite ce qu'il ne maîtrise pas. AISO Group regroupe quatre cabinets spécialistes sous un même toit : la visibilité IA (Hub), l'implémentation (Dev), le social IA (Buzz) et la formation (Learn). Vous gardez un point de contact unique mais chaque mission est portée par les spécialistes du métier.</p>
+
+        <h3>Travaillez-vous uniquement avec des grandes entreprises ?</h3>
+        <p>Non. AISO Group est conçu pour les PME : équipes de 5 à 250 personnes qui veulent des résultats concrets sans le coût ni la lourdeur d'un cabinet du Big Four. Notre offre, nos contrats et nos délais sont calibrés pour ce segment.</p>
+
+        <h3>Quels sont les délais typiques d'une mission ?</h3>
+        <p>Un audit de visibilité IA prend 2 à 3 semaines. Un projet d'implémentation pilote court entre 6 et 12 semaines. Un programme de formation IA Act se déploie en 4 à 8 semaines selon la taille de l'équipe. Tous les chiffres sont validés en cadrage.</p>
+
+        <h3>Êtes-vous conformes à l'AI Act européen ?</h3>
+        <p>Oui. AISO Learn opère un programme de mise en conformité AI Act dédié aux PME : cartographie des usages, évaluation des risques, plan de gouvernance et formation des équipes. La marque française et portugaise est juridiquement portée par Precious Episode LDA, basée à Lisbonne.</p>
+
+        <h3>Pourquoi un cabinet basé à Lisbonne plutôt qu'à Paris ?</h3>
+        <p>Lisbonne est le hub IA le plus accessible de l'Europe du sud, avec un coût de structure 30 à 40 pour cent inférieur à Paris ou Genève. Nos consultants travaillent en français, portugais et anglais, et nos clients vont de Marseille à Bruxelles en passant par Lisbonne et Genève. La distance n'est plus un frein quand le modèle est piloté par la valeur livrée.</p>
+
+        <h3>Comment démarrer une mission ?</h3>
+        <p>Un appel de cadrage de 20 minutes avec Greg, fondateur, suffit pour identifier laquelle des quatre marques porte votre besoin et pour planifier la suite. Aucune obligation : si nous ne sommes pas le bon interlocuteur, nous le disons et orientons vers le bon partenaire.</p>
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a href={p('/contact/')} class="btn btn-primary">Réserver un appel de cadrage</a>
+        <a href={p('/brands/')} class="btn btn-ghost">Découvrir les quatre marques</a>
+      </div>
+    </div>
+  </section>
+</Base>
