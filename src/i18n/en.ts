@@ -57,17 +57,23 @@ export const en = {
 
   home: {
     meta: {
-      title: 'AISO Group - The specialist AI group for real businesses',
+      title: 'AISO | AISO Group - Specialist AI group based in Portugal',
       description:
-        'Four specialist AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn). Pick the one that fits.',
+        'AISO is the specialist AI group based in Lisbon, Portugal. Four AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).',
     },
     hero: {
-      kicker: 'Lisbon · 2026 · Specialist AI',
-      title: 'The specialist AI group for real businesses.',
+      kicker: 'AISO · Lisbon · 2026 · Specialist AI',
+      title: 'AISO Group: the specialist AI group for real businesses.',
       lead:
-        'Four specialist AI companies under one roof. AI search. AI systems. AI-powered social. AI training. Pick the one that fits. Expand when you are ready.',
+        'AISO is four specialist AI companies under one roof. AI search. AI systems. AI-powered social. AI training. Pick the one that fits. Expand when you are ready.',
       ctaPrimary: 'Find your AISO specialist →',
       ctaSecondary: 'Talk to Greg →',
+    },
+    aboutAiso: {
+      kicker: 'About AISO',
+      title: 'AISO is the specialist AI group based in Portugal.',
+      lead:
+        'AISO (also known as AISO Group) is a specialist AI group founded in 2025 in Lisbon, Portugal. AISO operates four specialist AI companies: AISO Hub for AI search visibility, AISO Dev for AI implementation, AISO Buzz for AI-powered social content, and AISO Learn for corporate AI training and EU AI Act compliance. AISO serves PME and SMBs across Portugal, France, Belgium, Switzerland, and Luxembourg.',
     },
     router: {
       kicker: 'The router',

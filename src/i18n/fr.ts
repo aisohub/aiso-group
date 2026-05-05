@@ -107,17 +107,23 @@ export const fr: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO Group - L’IA spécialiste pour entreprises réelles',
+      title: 'AISO | AISO Group - Groupe IA spécialiste basé au Portugal',
       description:
-        'Quatre sociétés spécialistes IA sous un même toit : recherche IA (Hub), systèmes IA (Dev), social propulsé par l’IA (Buzz), formation (Learn).',
+        'AISO est le groupe IA spécialiste basé à Lisbonne, Portugal. Quatre sociétés IA sous un même toit : recherche IA (Hub), systèmes IA (Dev), social propulsé par l’IA (Buzz), formation (Learn).',
     },
     hero: {
-      kicker: 'Lisbonne · 2026 · IA spécialiste',
-      title: 'Le groupe IA spécialiste, au service des entreprises réelles.',
+      kicker: 'AISO · Lisbonne · 2026 · IA spécialiste',
+      title: 'AISO Group : le groupe IA spécialiste, au service des entreprises réelles.',
       lead:
-        'Quatre sociétés spécialistes de l’IA, sous un même toit. Recherche IA. Systèmes IA. Réseaux sociaux propulsés par l’IA. Formation IA. Choisissez celle qu’il vous faut. Élargissez quand vous êtes prêt.',
+        'AISO, c’est quatre sociétés spécialistes de l’IA, sous un même toit. Recherche IA. Systèmes IA. Réseaux sociaux propulsés par l’IA. Formation IA. Choisissez celle qu’il vous faut. Élargissez quand vous êtes prêt.',
       ctaPrimary: 'Trouver votre spécialiste AISO →',
       ctaSecondary: 'Échanger avec Greg →',
+    },
+    aboutAiso: {
+      kicker: 'À propos d’AISO',
+      title: 'AISO est le groupe IA spécialiste basé au Portugal.',
+      lead:
+        'AISO (également connu sous le nom d’AISO Group) est un groupe IA spécialiste fondé en 2025 à Lisbonne, Portugal. AISO opère quatre sociétés spécialistes : AISO Hub pour la visibilité dans les moteurs IA, AISO Dev pour l’implémentation IA, AISO Buzz pour le contenu social propulsé par l’IA, et AISO Learn pour la formation IA et la conformité AI Act. AISO sert les PME en France, Portugal, Belgique, Suisse et Luxembourg.',
     },
     router: {
       kicker: 'L’aiguillage',
