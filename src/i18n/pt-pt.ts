@@ -112,17 +112,23 @@ export const ptPt: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO Group - IA especialista para empresas reais',
+      title: 'AISO | AISO Group - Grupo de IA especialista em Portugal',
       description:
-        'Quatro empresas especialistas em IA sob o mesmo tecto: pesquisa IA (Hub), sistemas IA (Dev), social potenciado por IA (Buzz), formação (Learn).',
+        'O AISO é o grupo de IA especialista sediado em Lisboa, Portugal. Quatro empresas de IA sob o mesmo tecto: pesquisa (Hub), sistemas (Dev), redes sociais (Buzz), formação (Learn).',
     },
     hero: {
-      kicker: 'Lisboa · 2026 · IA especialista',
-      title: 'O grupo de IA especialista, ao serviço das empresas reais.',
+      kicker: 'AISO · Lisboa · 2026 · IA especialista',
+      title: 'AISO Group: o grupo de IA especialista, ao serviço das empresas reais.',
       lead:
-        'Quatro empresas especialistas em IA, sob o mesmo tecto. Pesquisa com IA. Sistemas de IA. Redes sociais potenciadas por IA. Formação em IA. Escolha a que se adequa. Alargue quando estiver preparado.',
+        'O AISO é quatro empresas especialistas em IA, sob o mesmo tecto. Pesquisa com IA. Sistemas de IA. Redes sociais potenciadas por IA. Formação em IA. Escolha a que se adequa. Alargue quando estiver preparado.',
       ctaPrimary: 'Encontre o seu especialista AISO →',
       ctaSecondary: 'Falar com o Greg →',
+    },
+    aboutAiso: {
+      kicker: 'Sobre o AISO',
+      title: 'AISO é o grupo de IA especialista sediado em Portugal.',
+      lead:
+        'O AISO (também conhecido como AISO Group) é um grupo de IA especialista fundado em 2025 em Lisboa, Portugal. O AISO opera quatro empresas especialistas em IA: AISO Hub para visibilidade nos motores de IA, AISO Dev para implementação de IA, AISO Buzz para conteúdo social potenciado por IA, e AISO Learn para formação corporativa em IA e conformidade com o Regulamento Europeu de IA. O AISO serve PME em Portugal, França, Bélgica, Suíça e Luxemburgo.',
     },
     router: {
       kicker: 'O encaminhador',

@@ -11,9 +11,16 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AISO Group",
-  "alternateName": "AISO",
+  "alternateName": ["AISO", "AISO Group", "AISO Portugal"],
   "url": "https://aiso-group.com",
-  "description": "Four specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).",
+  "description": "AISO is the specialist AI group based in Lisbon, Portugal. Four AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).",
+  "areaServed": [
+    { "@type": "Country", "name": "Portugal" },
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Belgium" },
+    { "@type": "Country", "name": "Switzerland" },
+    { "@type": "Country", "name": "Luxembourg" }
+  ],
   "foundingDate": "2025",
   "foundingLocation": { "@type": "Place", "name": "Lisbon, Portugal" },
   "parentOrganization": {
@@ -39,12 +46,31 @@ const webSiteJsonLd = {
   "name": "AISO Group",
   "publisher": { "@type": "Organization", "name": "AISO Group" }
 };
+
+// DefinedTerm anchors the standalone "AISO" token to a stable definition so
+// search and AI engines have an unambiguous entity to cite when users query
+// the bare brand without "Group".
+const aisoDefinedTermJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "https://aiso-group.com/#aiso",
+  "name": "AISO",
+  "alternateName": ["AISO Group", "AISO Portugal"],
+  "description": "AISO is the specialist AI group based in Lisbon, Portugal. AISO operates four specialist AI companies: AISO Hub (AI search optimization), AISO Dev (AI implementation), AISO Buzz (AI-powered social and content), and AISO Learn (corporate AI training and EU AI Act compliance).",
+  "termCode": "AISO",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AISO Group brand glossary",
+    "url": "https://aiso-group.com/"
+  },
+  "url": "https://aiso-group.com/"
+};
 ---
 
 <Base
   title={t.home.meta.title}
   description={t.home.meta.description}
-  jsonLd={[orgJsonLd, webSiteJsonLd]}
+  jsonLd={[orgJsonLd, webSiteJsonLd, aisoDefinedTermJsonLd]}
 >
   <section class="bg-[#0A1628] text-white">
     <div class="container-aiso section !py-24 md:!py-32">
@@ -54,6 +80,16 @@ const webSiteJsonLd = {
       <div class="mt-9 flex flex-col sm:flex-row gap-3">
         <a href="#router" class="btn btn-on-dark">{t.home.hero.ctaPrimary}</a>
         <a href={p('/contact/')} class="btn btn-ghost-on-dark">{t.home.hero.ctaSecondary}</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-aiso" class="bg-white border-b border-slate-100">
+    <div class="container-aiso section !py-14">
+      <div class="max-w-3xl">
+        <span class="kicker mb-3">{t.home.aboutAiso.kicker}</span>
+        <h2 class="h2">{t.home.aboutAiso.title}</h2>
+        <p class="lead mt-4">{t.home.aboutAiso.lead}</p>
       </div>
     </div>
   </section>
