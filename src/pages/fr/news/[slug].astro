@@ -3,6 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getDictionary } from '../../../i18n/routes';
 import { localisePath, isLocale, defaultLocale, type Locale } from '../../../i18n/config';
+import { findAuthorByName, buildAuthorRoleJsonLd } from '../../../data/authors';
 
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
 const t = getDictionary(locale);
@@ -38,11 +39,14 @@ const canonical = `https://aiso-group.com/fr/news/${post.slug}/`;
 
 const articleJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   "headline": post.data.title,
   "description": post.data.description,
   "datePublished": post.data.date.toISOString(),
-  "author": { "@type": "Person", "name": post.data.author },
+  "author": (() => {
+    const a = findAuthorByName(post.data.author);
+    return a ? buildAuthorRoleJsonLd(a, 'fr') : { '@type': 'Person', name: post.data.author };
+  })(),
   "publisher": {
     "@type": "Organization",
     "name": "AISO Group",
@@ -88,7 +92,10 @@ function fmt(d: Date, loc: Locale) {
         </span>
         <h1 class="h1 !text-white max-w-4xl">{post.data.title}</h1>
         <p class="text-sm text-slate-400 mt-6">
-          {fmt(post.data.date, locale)} · {post.data.readTime} {t.news.card.readTimeSuffix} · {post.data.author}
+          {fmt(post.data.date, locale)} · {post.data.readTime} {t.news.card.readTimeSuffix} · {(() => {
+            const a = findAuthorByName(post.data.author);
+            return a ? <a href={p(`/about/team/${a.slug}/`)} class="underline hover:text-white">{post.data.author}</a> : post.data.author;
+          })()}
         </p>
         {locale !== 'en' && (
           <p class="text-xs text-slate-400 mt-3 italic">{t.news.articleEnNotice}</p>

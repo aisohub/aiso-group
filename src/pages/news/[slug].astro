@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getDictionary } from '../../i18n/routes';
 import { localisePath, isLocale, defaultLocale, type Locale } from '../../i18n/config';
+import { findAuthorByName, buildPersonJsonLd, buildAuthorRoleJsonLd, authorUrl } from '../../data/authors';
 
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
 const t = getDictionary(locale);
@@ -28,13 +29,21 @@ const categoryLabel = (key: string): string =>
 // translated chrome.
 const canonical = `https://aiso-group.com/news/${post.slug}/`;
 
+// Resolve a verifiable author entity for Person + AuthorRole JSON-LD. If the
+// MDX `author` field does not match a known author, fall back to a minimal
+// Person stub so the markup is still valid (no broken schema).
+const authorEntity = findAuthorByName(post.data.author);
+const authorJsonLdValue: Record<string, unknown> = authorEntity
+  ? buildAuthorRoleJsonLd(authorEntity, 'en')
+  : { '@type': 'Person', name: post.data.author };
+
 const articleJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "NewsArticle",
   "headline": post.data.title,
   "description": post.data.description,
   "datePublished": post.data.date.toISOString(),
-  "author": { "@type": "Person", "name": post.data.author },
+  "author": authorJsonLdValue,
   "publisher": {
     "@type": "Organization",
     "name": "AISO Group",
@@ -80,7 +89,9 @@ function fmt(d: Date, loc: Locale) {
         </span>
         <h1 class="h1 !text-white max-w-4xl">{post.data.title}</h1>
         <p class="text-sm text-slate-400 mt-6">
-          {fmt(post.data.date, locale)} · {post.data.readTime} {t.news.card.readTimeSuffix} · {post.data.author}
+          {fmt(post.data.date, locale)} · {post.data.readTime} {t.news.card.readTimeSuffix} · {authorEntity ? (
+            <a href={p(`/about/team/${authorEntity.slug}/`)} class="underline hover:text-white">{post.data.author}</a>
+          ) : post.data.author}
         </p>
         {locale !== 'en' && (
           <p class="text-xs text-slate-400 mt-3 italic">{t.news.articleEnNotice}</p>
