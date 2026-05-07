@@ -432,7 +432,7 @@ export const fr: Dictionary = ({
     collectForm:
       '<strong>Formulaire de contact.</strong> Nom, entreprise, message et, le cas échéant, adresse e-mail. Utilisés pour répondre et orienter la demande vers la marque sœur appropriée.',
     collectEmail:
-      '<strong>Courrier électronique.</strong> Tout message adressé à <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a> est conservé dans la messagerie du groupe.',
+      '<strong>Courrier électronique.</strong> Tout message adressé à <span>hello@aiso-group.com</span> est conservé dans la messagerie du groupe.',
     collectLogs:
       '<strong>Journaux serveur.</strong> Journaux de périphérie Cloudflare (adresse IP, user-agent, chemin d’accès) à des fins de sécurité et de débogage. Conservation maximale de 30 jours.',
     collectNote:
@@ -450,7 +450,7 @@ export const fr: Dictionary = ({
       '<strong>Sous-traitants :</strong> Cloudflare (hébergement), Resend (acheminement e-mail), Google Workspace (messagerie). Tous conformes au RGPD (GDPR).',
     rightsHeading: 'Droits des personnes concernées (RGPD / GDPR)',
     rightsBody:
-      'Toute personne concernée peut demander une copie de ses données, leur rectification ou leur suppression. Écrire à <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a> en indiquant « Demande RGPD » en objet. Réponse apportée dans un délai de 30 jours.',
+      'Toute personne concernée peut demander une copie de ses données, leur rectification ou leur suppression. Écrire à <span>hello@aiso-group.com</span> en indiquant « Demande RGPD » en objet. Réponse apportée dans un délai de 30 jours.',
     retentionHeading: 'Conservation',
     retentionBody:
       'Entrées du formulaire de contact : conservées 24 mois, sauf demande de suppression antérieure ou poursuite de la correspondance.',
@@ -459,7 +459,7 @@ export const fr: Dictionary = ({
       'Cette page est mise à jour lorsque les pratiques évoluent. La date de « dernière mise à jour » ci-dessus fait foi.',
     contactHeading: 'Contact',
     contactAddress:
-      '<strong>Precious Episode LDA</strong><br />Avenida David Mourão-Ferreira 14, 8A<br />1750-204 Lisboa, Portugal<br />NIF 514701617<br /><a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>',
+      '<strong>Precious Episode LDA</strong><br />Avenida David Mourão-Ferreira 14, 8A<br />1750-204 Lisboa, Portugal<br />NIF 514701617<br /><span>hello@aiso-group.com</span>',
   },
 
   notFound: {

@@ -223,7 +223,7 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
           <div>
             <div class="text-xs font-semibold text-white uppercase tracking-wider mb-4">{t.footer.contactLegalHeading}</div>
             <ul class="flex flex-col gap-2 text-sm">
-              <li><a href="mailto:hello@aiso-group.com" class="text-slate-300 hover:text-white transition-colors">hello@aiso-group.com</a></li>
+              <li><a href="#contact-email" class="text-slate-300 hover:text-white transition-colors" data-email="hello" data-domain="aiso-group.com" onclick="this.href='mailto:'+this.dataset.email+'@'+this.dataset.domain; return true;">hello@aiso-group.com</a></li>
               <li><a href={p('/privacy-policy/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.privacyPolicy}</a></li>
             </ul>
           </div>

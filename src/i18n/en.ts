@@ -382,7 +382,7 @@ export const en = {
     collectForm:
       '<strong>Contact form.</strong> Name, company, message, and (optionally) email. Used to reply to you and route you to the right sibling brand.',
     collectEmail:
-      '<strong>Email.</strong> If you write to <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>, we keep the thread in our mailbox.',
+      '<strong>Email.</strong> If you write to <span>hello@aiso-group.com</span>, we keep the thread in our mailbox.',
     collectLogs:
       '<strong>Server logs.</strong> Cloudflare edge logs (IP, user agent, path) for security and debugging. Retained up to 30 days.',
     collectNote:
@@ -400,7 +400,7 @@ export const en = {
       '<strong>Processors:</strong> Cloudflare (hosting), Resend (email delivery), Google Workspace (mailbox). All GDPR-compliant.',
     rightsHeading: 'Your rights (GDPR)',
     rightsBody:
-      'You can ask for a copy of your data, ask us to correct it, or ask us to delete it. Email <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a> with "GDPR request" in the subject. We reply within 30 days.',
+      'You can ask for a copy of your data, ask us to correct it, or ask us to delete it. Email <span>hello@aiso-group.com</span> with "GDPR request" in the subject. We reply within 30 days.',
     retentionHeading: 'Retention',
     retentionBody:
       'Contact-form entries: kept for 24 months unless you ask us to delete them sooner, or unless our correspondence continues.',
@@ -409,7 +409,7 @@ export const en = {
       'We update this page when the practice changes. The "last updated" date above is the source of truth.',
     contactHeading: 'Contact',
     contactAddress:
-      '<strong>Precious Episode LDA</strong><br />Avenida David Mourão-Ferreira 14, 8A<br />1750-204 Lisboa, Portugal<br />NIF 514701617<br /><a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>',
+      '<strong>Precious Episode LDA</strong><br />Avenida David Mourão-Ferreira 14, 8A<br />1750-204 Lisboa, Portugal<br />NIF 514701617<br /><span>hello@aiso-group.com</span>',
   },
 
   notFound: {
