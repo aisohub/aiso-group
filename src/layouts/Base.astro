@@ -74,6 +74,13 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#0A1628" />
+    <!-- Belt-and-suspenders Referrer-Policy. The HTTP header in public/_headers
+         already sets this correctly; the meta tag is a fallback in case any
+         downstream proxy (or a non-Cloudflare host) drops the header. GA4 needs
+         strict-origin-when-cross-origin so it can read the referrer URL on
+         cross-origin navigations - that's how organic / referral / social
+         attribution gets populated instead of falling back to Direct. -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
