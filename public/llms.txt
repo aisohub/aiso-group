@@ -1,21 +1,50 @@
 # AISO Group
 
-> AISO Group is the parent brand of four specialist AI companies, based in Lisbon, Portugal.
+> AISO Group is the specialist AI group based in Lisbon, Portugal. The group is the parent of four specialist AI companies: AISO Hub (AI search optimization), AISO Dev (AI implementation for SMBs), AISO Buzz (AI-powered social and content), and AISO Learn (corporate AI training). AISO Group serves European SMBs in English, Portuguese, and French. Founded in 2025 by Greg Stoos. Legal entity: Precious Episode LDA (NIF PT516578506), Lisbon, Portugal.
 
-AISO Group (Precious Episode LDA, NIF PT516578506) unites four specialist companies. Each one has a single job - you engage the specialist you need now and bring in the others when the timing is right.
+This file follows the llmstxt.org convention. It is intended to help AI search engines and LLM crawlers (Anthropic, OpenAI, Perplexity, Google) map the citable structure of aiso-group.com and the surrounding AISO ecosystem.
 
-- **AISO Hub** (https://aiso-hub.com): AI Search Optimization - audit, optimize, and monitor brand visibility across AI search (ChatGPT, Perplexity, Gemini, Google AI Overviews).
-- **AISO Dev** (https://aiso-dev.com): AI systems and implementation for SMBs - data pipelines, agent workflows, custom internal tools.
-- **AISO Buzz** (https://aiso-buzz.com): AI-powered social and content - backed by a brand bible, validated before it ships.
-- **AISO Learn** (https://aiso-learn.com): Corporate AI training - EU AI Act-aligned curricula that take teams from AI-curious to AI-capable.
+## Key URLs
 
-## Contact
+- [Homepage (EN)](https://aiso-group.com/): the two-minute self-diagnostic that routes users to the right specialist.
+- [About AISO Group (EN)](https://aiso-group.com/about/): why we built a group and not an agency.
+- [The Group entity hub (EN)](https://aiso-group.com/about/the-group/): canonical "what is AISO Group" entity page with full Organization schema.
+- [Brands (EN)](https://aiso-group.com/brands/): one-job-each summary of Hub, Dev, Buzz, Learn.
+- [News and notes (EN)](https://aiso-group.com/news/): editorial on specialist AI for SMBs.
+- [Contact (EN)](https://aiso-group.com/contact/): direct line to the founder.
+
+## Locale variants
+
+- French: [https://aiso-group.com/fr/](https://aiso-group.com/fr/) (about: /fr/about/the-group/, news: /fr/news/, brands: /fr/brands/).
+- Portuguese (pt-PT): [https://aiso-group.com/pt-pt/](https://aiso-group.com/pt-pt/) (about: /pt-pt/about/the-group/, news: /pt-pt/news/, brands: /pt-pt/brands/).
+
+Blog post bodies stay in English across all locales by editorial choice. The chrome (navigation, breadcrumbs, footer) is fully localised.
+
+## The four specialist companies (sub-organizations)
+
+- [AISO Hub](https://aiso-hub.com): AI Search Optimization agency. Audits, structured data, and content for ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+- [AISO Dev](https://aiso-dev.com): AI implementation partner. Builds AI agents, automations, and internal tooling for SMBs.
+- [AISO Buzz](https://aiso-buzz.com): AI-powered social and content agency. Brand-voice-first, human-validated.
+- [AISO Learn](https://aiso-learn.com): Corporate AI training and EU AI Act compliance curricula.
+
+## Featured news articles
+
+- [Introducing AISO Group: one group, four specialists](https://aiso-group.com/news/introducing-aiso-group/): the founding thesis.
+- [Specialist AI beats generalist AI in 2026](https://aiso-group.com/news/specialist-vs-generalist-ai-2026/): why the generalist agency model is breaking.
+- [Which AISO brand? A two-minute self-diagnostic](https://aiso-group.com/news/which-aiso-brand/): the verb test for picking a specialist.
+
+## Crawl helpers
+
+- Sitemap: [https://aiso-group.com/sitemap-index.xml](https://aiso-group.com/sitemap-index.xml)
+- Robots: [https://aiso-group.com/robots.txt](https://aiso-group.com/robots.txt)
+
+## Contact and meta
 
 - Email: hello@aiso-group.com
-- Website: https://aiso-group.com
-- Location: Lisbon, Portugal
+- Languages: English, Portuguese, French
+- Markets: Portugal, France, Belgium, Switzerland, Luxembourg
 - Founded: 2025
+- Founder: Greg Stoos ([LinkedIn](https://www.linkedin.com/in/gregstoos/))
+- LinkedIn (company): [https://www.linkedin.com/company/aiso-group/](https://www.linkedin.com/company/aiso-group/)
 
-## About
-
-Founded by Greg Stoos to help European SMBs become visible, credible, and operational with AI - through specialist partners, not generalist bundles.
+Last updated: 2026-05-07.

@@ -1,0 +1,188 @@
+---
+// PT-PT variant of /about/the-group/. Mirror the EN/FR pattern - locale-aware
+// breadcrumb, localised hero/body copy, full Organization JSON-LD with
+// subOrganization + sameAs to maximise entity-citation surfaces for AI search.
+import Base from '../../../layouts/Base.astro';
+import { getDictionary } from '../../../i18n/routes';
+import { localisePath, isLocale, defaultLocale, type Locale } from '../../../i18n/config';
+
+const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : 'pt-pt';
+const t = getDictionary(locale);
+const p = (slug: string) => localisePath(slug.startsWith('/') ? slug : `/${slug}`, locale);
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://aiso-group.com/about/the-group/#organization',
+  name: 'AISO Group',
+  alternateName: ['AISO', 'AISO Portugal'],
+  url: 'https://aiso-group.com',
+  logo: 'https://aiso-group.com/og-default.png',
+  description:
+    'AISO Group é o grupo de IA especialista fundado em Lisboa em 2025. Quatro marcas de IA sob o mesmo tecto: Hub (pesquisa), Dev (sistemas), Buzz (social), Learn (formação).',
+  foundingDate: '2025',
+  foundingLocation: { '@type': 'Place', name: 'Lisbon, Portugal' },
+  founder: {
+    '@type': 'Person',
+    name: 'Greg Stoos',
+    sameAs: ['https://www.linkedin.com/in/gregstoos/'],
+  },
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Precious Episode LDA',
+    taxID: 'PT516578506',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lisbon',
+      addressCountry: 'PT',
+    },
+  },
+  subOrganization: [
+    { '@type': 'Organization', name: 'AISO Hub', url: 'https://aiso-hub.com' },
+    { '@type': 'Organization', name: 'AISO Dev', url: 'https://aiso-dev.com' },
+    { '@type': 'Organization', name: 'AISO Buzz', url: 'https://aiso-buzz.com' },
+    { '@type': 'Organization', name: 'AISO Learn', url: 'https://aiso-learn.com' },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/company/aiso-group/',
+    'https://aiso-hub.com',
+    'https://aiso-dev.com',
+    'https://aiso-buzz.com',
+    'https://aiso-learn.com',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@aiso-group.com',
+    contactType: 'customer service',
+    availableLanguage: ['en', 'pt', 'fr'],
+  },
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://aiso-group.com/pt-pt/' },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Sobre',
+      item: 'https://aiso-group.com/pt-pt/about/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'O Grupo',
+      item: 'https://aiso-group.com/pt-pt/about/the-group/',
+    },
+  ],
+};
+---
+
+<Base
+  title="Sobre AISO Group: o grupo de IA especialista em Lisboa"
+  description="AISO Group é o grupo de IA especialista fundado em Lisboa em 2025. Quatro marcas de IA sob o mesmo tecto: Hub (pesquisa), Dev (sistemas), Buzz (social), Learn (formação)."
+  jsonLd={[orgJsonLd, breadcrumbJsonLd]}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-28">
+      <span class="kicker kicker-on-dark mb-5 block">AISO Group</span>
+      <h1 class="h1 !text-white max-w-4xl">
+        AISO Group: o grupo de IA especialista fundado em Lisboa, 2025.
+      </h1>
+      <p class="lead !text-slate-300 mt-6">
+        AISO Group é a casa-mãe de quatro marcas de IA especialistas (Hub, Dev, Buzz,
+        Learn), pensada para as PME europeias que precisam de um parceiro que sabe uma
+        coisa bem, não de um generalista que conhece todas de forma superficial.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="max-w-3xl article-body">
+        <h2>O que é o AISO Group</h2>
+        <p>
+          AISO Group é a organização-mãe de quatro marcas de IA especialistas. Cada uma
+          detém uma única disciplina e só entrega trabalho nessa disciplina. O grupo
+          existe para que uma PME possa escolher o especialista que corresponde ao
+          problema à frente dela, sem comprar um pacote generalista que cobre quatro
+          problemas mal.
+        </p>
+
+        <h2>As quatro marcas especialistas</h2>
+        <ul>
+          <li>
+            <strong>AISO Hub</strong> - AI Search Optimization. Tornamos a sua marca a
+            resposta que os motores de IA (ChatGPT, Perplexity, Google AI Overviews,
+            Gemini) citam. Site:
+            <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>.
+          </li>
+          <li>
+            <strong>AISO Dev</strong> - Implementação de IA para PME. Construímos os
+            sistemas de IA (agentes, automações, ferramentas internas) que a sua equipa
+            consegue mesmo gerir. Site:
+            <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>.
+          </li>
+          <li>
+            <strong>AISO Buzz</strong> - Social e conteúdo com IA. Produzimos conteúdo
+            social e editorial que soa como a marca, não como IA. Site:
+            <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>.
+          </li>
+          <li>
+            <strong>AISO Learn</strong> - Formação de IA para empresas e conformidade
+            com o regulamento europeu da IA. Formamos equipas da curiosidade à
+            capacidade, com currículos que passam uma auditoria. Site:
+            <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.
+          </li>
+        </ul>
+
+        <h2>Onde o AISO Group está sediado</h2>
+        <p>
+          O AISO Group é construído em Lisboa, Portugal. A entidade legal é a Precious
+          Episode LDA (PT516578506), registada em Lisboa. Servimos clientes em Portugal,
+          França, Bélgica, Suíça e Luxemburgo, em inglês, português e francês.
+        </p>
+
+        <h2>Fundação e liderança</h2>
+        <p>
+          O AISO Group foi fundado em 2025 por <strong>Greg Stoos</strong>, operador
+          baseado em Lisboa com mais de 20 anos de experiência em marketing, operações
+          e software, e uma rede profissional de mais de 16 000 pessoas no LinkedIn.
+        </p>
+
+        <h2>Como funciona o grupo na prática</h2>
+        <ul>
+          <li>
+            <strong>Um problema, um especialista.</strong> Os clientes contratam uma
+            marca de cada vez. Sem pacote agrupado.
+          </li>
+          <li>
+            <strong>Validação humana em cada entrega.</strong> Nenhum trabalho gerado
+            por IA sai sem revisão humana.
+          </li>
+          <li>
+            <strong>Compromissos com âmbito fixo.</strong> No Hub e no Dev sobretudo,
+            prazos fixos, âmbito fixo, faixa de preço fixa.
+          </li>
+          <li>
+            <strong>Referenciações internas.</strong> Quando um cliente Hub precisa de
+            Dev, a passagem é interna. Sem segundo ciclo comercial.
+          </li>
+        </ul>
+
+        <h2>Contacto</h2>
+        <p>
+          Email: <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>. Para o
+          autodiagnóstico de dois minutos que o orienta para o especialista certo, use o
+          <a href={`${p('/')}#router`}>routeador da página inicial</a>.
+        </p>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-3">
+        <a href={`${p('/')}#router`} class="btn btn-primary">Encontrar o seu especialista →</a>
+        <a href={p('/contact/')} class="btn btn-ghost">Falar com o Greg →</a>
+      </div>
+    </div>
+  </section>
+</Base>

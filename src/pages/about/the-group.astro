@@ -1,0 +1,235 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getDictionary } from '../../i18n/routes';
+import { localisePath, isLocale, defaultLocale, type Locale } from '../../i18n/config';
+
+const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
+const t = getDictionary(locale);
+const p = (slug: string) => localisePath(slug.startsWith('/') ? slug : `/${slug}`, locale);
+
+const meta = {
+  en: {
+    title: 'About AISO Group: the specialist AI group based in Lisbon',
+    description:
+      'AISO Group is the specialist AI group built in Lisbon in 2025. Four AI companies under one roof: Hub (search), Dev (systems), Buzz (social), Learn (training).',
+    h1: 'AISO Group: the specialist AI group built in Lisbon, 2025.',
+    lead:
+      'AISO Group is the parent of four specialist AI companies (Hub, Dev, Buzz, Learn), built for European SMBs that need a partner who knows one thing well, not a generalist who knows everything badly.',
+  },
+  fr: {
+    title: 'À propos d’AISO Group : le groupe IA spécialiste à Lisbonne',
+    description:
+      'AISO Group est le groupe IA spécialiste fondé à Lisbonne en 2025. Quatre marques IA sous un même toit : Hub (recherche), Dev (systèmes), Buzz (social), Learn (formation).',
+    h1: 'AISO Group : le groupe IA spécialiste fondé à Lisbonne, 2025.',
+    lead:
+      'AISO Group est la maison-mère de quatre marques IA spécialistes (Hub, Dev, Buzz, Learn), pensée pour les PME européennes qui veulent un partenaire qui maîtrise une chose, pas un généraliste qui les connaît toutes mal.',
+  },
+  'pt-pt': {
+    title: 'Sobre AISO Group: o grupo de IA especialista em Lisboa',
+    description:
+      'AISO Group é o grupo de IA especialista fundado em Lisboa em 2025. Quatro marcas de IA sob o mesmo tecto: Hub (pesquisa), Dev (sistemas), Buzz (social), Learn (formação).',
+    h1: 'AISO Group: o grupo de IA especialista fundado em Lisboa, 2025.',
+    lead:
+      'AISO Group é a casa-mãe de quatro marcas de IA especialistas (Hub, Dev, Buzz, Learn), pensada para as PME europeias que precisam de um parceiro que sabe uma coisa bem, não de um generalista que conhece todas de forma superficial.',
+  },
+} as const;
+
+const m = meta[locale];
+
+// Organization JSON-LD with subOrganizations + sameAs to maximise entity
+// citation surface for AI search engines.
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://aiso-group.com/about/the-group/#organization',
+  name: 'AISO Group',
+  alternateName: ['AISO', 'AISO Portugal'],
+  url: 'https://aiso-group.com',
+  logo: 'https://aiso-group.com/og-default.png',
+  description:
+    'AISO Group is the specialist AI group based in Lisbon, Portugal. Four AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).',
+  foundingDate: '2025',
+  foundingLocation: { '@type': 'Place', name: 'Lisbon, Portugal' },
+  founder: {
+    '@type': 'Person',
+    name: 'Greg Stoos',
+    sameAs: ['https://www.linkedin.com/in/gregstoos/'],
+  },
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Precious Episode LDA',
+    taxID: 'PT516578506',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lisbon',
+      addressCountry: 'PT',
+    },
+  },
+  subOrganization: [
+    {
+      '@type': 'Organization',
+      name: 'AISO Hub',
+      url: 'https://aiso-hub.com',
+      description: 'AI Search Optimization agency for SMBs.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'AISO Dev',
+      url: 'https://aiso-dev.com',
+      description: 'AI implementation partner for SMBs.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'AISO Buzz',
+      url: 'https://aiso-buzz.com',
+      description: 'AI-powered social and content agency.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'AISO Learn',
+      url: 'https://aiso-learn.com',
+      description: 'Corporate AI training and EU AI Act compliance.',
+    },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/company/aiso-group/',
+    'https://aiso-hub.com',
+    'https://aiso-dev.com',
+    'https://aiso-buzz.com',
+    'https://aiso-learn.com',
+  ],
+  areaServed: [
+    { '@type': 'Country', name: 'Portugal' },
+    { '@type': 'Country', name: 'France' },
+    { '@type': 'Country', name: 'Belgium' },
+    { '@type': 'Country', name: 'Switzerland' },
+    { '@type': 'Country', name: 'Luxembourg' },
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@aiso-group.com',
+    contactType: 'customer service',
+    availableLanguage: ['en', 'pt', 'fr'],
+  },
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aiso-group.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://aiso-group.com/about/' },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'The Group',
+      item: 'https://aiso-group.com/about/the-group/',
+    },
+  ],
+};
+---
+
+<Base title={m.title} description={m.description} jsonLd={[orgJsonLd, breadcrumbJsonLd]}>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-28">
+      <span class="kicker kicker-on-dark mb-5 block">AISO Group</span>
+      <h1 class="h1 !text-white max-w-4xl">{m.h1}</h1>
+      <p class="lead !text-slate-300 mt-6">{m.lead}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="max-w-3xl article-body">
+        <h2>What AISO Group is</h2>
+        <p>
+          AISO Group is the parent organisation of four specialist AI companies. Each one
+          owns a single discipline and ships work in that discipline only. The group exists
+          so a small or mid-sized business can pick the specialist that matches the problem
+          in front of them, without buying a generalist bundle that covers four problems
+          badly.
+        </p>
+
+        <h2>The four specialist companies</h2>
+        <ul>
+          <li>
+            <strong>AISO Hub</strong> - AI Search Optimization. We make your brand the
+            answer AI engines (ChatGPT, Perplexity, Google AI Overviews, Gemini) cite.
+            Site: <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>.
+          </li>
+          <li>
+            <strong>AISO Dev</strong> - AI implementation for SMBs. We build the AI
+            systems (agents, automations, internal tooling) your team can actually run.
+            Site: <a href="https://aiso-dev.com" rel="noopener">aiso-dev.com</a>.
+          </li>
+          <li>
+            <strong>AISO Buzz</strong> - AI-powered social and content. We produce social
+            and editorial content that sounds like the brand, not like AI. Site:
+            <a href="https://aiso-buzz.com" rel="noopener">aiso-buzz.com</a>.
+          </li>
+          <li>
+            <strong>AISO Learn</strong> - Corporate AI training and EU AI Act compliance.
+            We train teams from AI-curious to AI-capable, with curricula that survive an
+            audit. Site: <a href="https://aiso-learn.com" rel="noopener">aiso-learn.com</a>.
+          </li>
+        </ul>
+
+        <h2>Where AISO Group is based</h2>
+        <p>
+          AISO Group is built in Lisbon, Portugal. The legal entity is Precious Episode
+          LDA (PT516578506), registered in Lisbon. We serve clients across Portugal,
+          France, Belgium, Switzerland, and Luxembourg, in English, Portuguese, and French.
+        </p>
+
+        <h2>Founding and leadership</h2>
+        <p>
+          AISO Group was founded in 2025 by <strong>Greg Stoos</strong>, a Lisbon-based
+          operator with 20+ years across marketing, operations, and software, and a
+          16,000+ professional network on LinkedIn. The group was built from the inside
+          out: AISO Hub was the first practice, then Dev, Buzz, and Learn were spun up to
+          cover adjacent specialties without diluting Hub's focus.
+        </p>
+
+        <h2>How the group works in practice</h2>
+        <ul>
+          <li>
+            <strong>One problem, one specialist.</strong> Clients engage one brand at a
+            time. No bundled retainer.
+          </li>
+          <li>
+            <strong>Human validation on every output.</strong> No AI-generated work
+            ships to a client without a human reviewing it.
+          </li>
+          <li>
+            <strong>Fixed-scope engagements.</strong> Especially at Hub and Dev,
+            engagements have fixed timelines, fixed scopes, and fixed price bands.
+          </li>
+          <li>
+            <strong>Internal cross-referrals.</strong> When a Hub client needs Dev work,
+            the handoff is internal. No second sales cycle.
+          </li>
+        </ul>
+
+        <h2>Press, mentions, and proof</h2>
+        <p>
+          AISO Hub publishes case studies and editorial at
+          <a href="https://aiso-hub.com" rel="noopener">aiso-hub.com</a>. The group's own
+          editorial lives on <a href={p('/news/')}>this site's news section</a>. Named
+          client case studies are released after client approval.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:hello@aiso-group.com">hello@aiso-group.com</a>. For the
+          two-minute self-diagnostic that routes you to the right specialist, use the
+          <a href={`${p('/')}#router`}>homepage router</a>.
+        </p>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-3">
+        <a href={`${p('/')}#router`} class="btn btn-primary">Find your AISO specialist →</a>
+        <a href={p('/contact/')} class="btn btn-ghost">Talk to Greg →</a>
+      </div>
+    </div>
+  </section>
+</Base>
