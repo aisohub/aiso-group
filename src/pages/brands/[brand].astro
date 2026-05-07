@@ -1,0 +1,133 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localisePath } from '../../i18n/config';
+import { subBrands, subBrandSlugs, type SubBrandSlug } from '../../data/sub-brands';
+
+export async function getStaticPaths() {
+  return subBrandSlugs.map((slug) => ({ params: { brand: slug } }));
+}
+
+const { brand } = Astro.params;
+const slug = brand as SubBrandSlug;
+const data = subBrands[slug];
+const t = data.copy.en;
+const locale = 'en' as const;
+const p = (path: string) => localisePath(path.startsWith('/') ? path : `/${path}`, locale);
+const pageUrl = `https://aiso-group.com/brands/${slug}/`;
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t.breadcrumbHome, item: 'https://aiso-group.com/' },
+    { '@type': 'ListItem', position: 2, name: t.breadcrumbBrands, item: 'https://aiso-group.com/brands/' },
+    { '@type': 'ListItem', position: 3, name: t.kicker, item: pageUrl },
+  ],
+};
+
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: t.metaTitle,
+  description: t.metaDescription,
+  url: pageUrl,
+  mainEntity: {
+    '@type': 'Organization',
+    name: t.kicker,
+    url: data.externalUrl,
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'AISO Group',
+      url: 'https://aiso-group.com/',
+    },
+    description: t.whatIs,
+  },
+};
+---
+
+<Base
+  title={t.metaTitle}
+  description={t.metaDescription}
+  canonicalUrl={pageUrl}
+  jsonLd={[breadcrumbJsonLd, aboutJsonLd]}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-16 md:!py-20">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-slate-400">
+        <a href={p('/')} class="hover:text-white">{t.breadcrumbHome}</a>
+        <span class="mx-2">/</span>
+        <a href={p('/brands/')} class="hover:text-white">{t.breadcrumbBrands}</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">{t.kicker}</span>
+      </nav>
+      <div class="w-12 h-1.5 rounded-full mb-4" style={`background: ${data.accentHex};`}></div>
+      <span class="kicker kicker-on-dark mb-4 block">{t.kicker}</span>
+      <h1 class="h1 !text-white max-w-4xl">{t.heading}</h1>
+    </div>
+  </section>
+
+  <section id="what-is" class="bg-white">
+    <div class="container-aiso section">
+      <div class="max-w-3xl">
+        <h2 class="h2 !text-[#0A1628] mb-6">{t.whatIsHeading}</h2>
+        <p class="lead text-start">{t.whatIs}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-do" class="bg-slate-50">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <h2 class="h2 !text-[#0A1628]">{t.doHeading}</h2>
+        </div>
+        <div class="md:col-span-2 article-body">
+          <ul>
+            <li>{t.do[0]}</li>
+            <li>{t.do[1]}</li>
+            <li>{t.do[2]}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-do-not-do" class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <h2 class="h2 !text-[#0A1628]">{t.dontHeading}</h2>
+        </div>
+        <div class="md:col-span-2 article-body">
+          <ul>
+            <li>{t.dont[0]}</li>
+            <li>{t.dont[1]}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who-it-fits" class="bg-slate-50">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <h2 class="h2 !text-[#0A1628]">{t.fitsHeading}</h2>
+        </div>
+        <div class="md:col-span-2 article-body">
+          <p set:html={t.fits} />
+          <p class="mt-8">
+            <a
+              href={data.externalUrl}
+              rel="noopener"
+              class="btn btn-primary"
+              style={`background-color: ${data.accentHex};`}
+            >
+              {t.cta}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
