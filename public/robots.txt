@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://aiso-group.com/sitemap-index.xml
+
+# LLMs and AI crawlers: see /llms.txt for a citable map of this site.
+# https://aiso-group.com/llms.txt

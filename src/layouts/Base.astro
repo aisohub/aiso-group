@@ -216,6 +216,7 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
               <li><a href={p('/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkHome}</a></li>
               <li><a href={p('/brands/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkBrands}</a></li>
               <li><a href={p('/about/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkAbout}</a></li>
+              <li><a href={p('/about/the-group/')} class="text-slate-300 hover:text-white transition-colors">{locale === 'fr' ? 'Le Groupe' : locale === 'pt-pt' ? 'O Grupo' : 'The Group'}</a></li>
               <li><a href={p('/news/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkNews}</a></li>
               <li><a href={p('/contact/')} class="text-slate-300 hover:text-white transition-colors">{t.footer.linkContact}</a></li>
             </ul>
