@@ -11,33 +11,78 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AISO Group",
-  "alternateName": "AISO",
+  "alternateName": ["AISO", "AISO Group", "AISO Portugal"],
   "url": "https://aiso-group.com",
-  "description": "Four specialist AI companies under one roof. AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).",
+  "logo": "https://aiso-group.com/images/logo/aiso-group-negative.svg",
+  "description": "AISO is the specialist AI group based in Lisbon, Portugal. Four AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).",
+  "areaServed": [
+    { "@type": "Country", "name": "Portugal" },
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Belgium" },
+    { "@type": "Country", "name": "Switzerland" },
+    { "@type": "Country", "name": "Luxembourg" }
+  ],
   "foundingDate": "2025",
   "foundingLocation": { "@type": "Place", "name": "Lisbon, Portugal" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida David Mourão-Ferreira 14, 8A",
+    "postalCode": "1750-204",
+    "addressLocality": "Lisboa",
+    "addressCountry": "PT"
+  },
   "parentOrganization": {
     "@type": "Organization",
     "name": "Precious Episode LDA",
-    "taxID": "PT516578506",
-    "address": { "@type": "PostalAddress", "addressLocality": "Lisbon", "addressCountry": "PT" }
+    "taxID": "514701617",
+    "vatID": "PT514701617",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida David Mourão-Ferreira 14, 8A",
+      "postalCode": "1750-204",
+      "addressLocality": "Lisboa",
+      "addressCountry": "PT"
+    }
   },
   "subOrganization": [
-    { "@type": "Organization", "name": "AISO Hub", "url": "https://aiso-hub.com", "description": "AI Search Optimization agency" },
+    { "@type": "Organization", "name": "AISO Learn", "url": "https://aiso-learn.com", "description": "Corporate AI training and EU AI Act compliance" },
     { "@type": "Organization", "name": "AISO Dev", "url": "https://aiso-dev.com", "description": "AI implementation partner for SMBs" },
-    { "@type": "Organization", "name": "AISO Buzz", "url": "https://aiso-buzz.com", "description": "AI-powered social & content agency" },
-    { "@type": "Organization", "name": "AISO Learn", "url": "https://aiso-learn.com", "description": "Corporate AI training & EU AI Act compliance" }
+    { "@type": "Organization", "name": "AISO Hub", "url": "https://aiso-hub.com", "description": "AI Search Optimization agency" },
+    { "@type": "Organization", "name": "AISO Buzz", "url": "https://aiso-buzz.com", "description": "AI-powered social and content agency" }
+  ],
+  "sameAs": [
+    "https://aiso-hub.com",
+    "https://aiso-dev.com",
+    "https://aiso-buzz.com",
+    "https://aiso-learn.com",
+    "https://www.linkedin.com/company/aiso-hub",
+    "https://github.com/aisohub"
   ],
   "founder": { "@type": "Person", "name": "Greg Stoos" },
-  "contactPoint": { "@type": "ContactPoint", "email": "hello@aiso-group.com", "contactType": "customer service" }
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@aiso-group.com",
+    "contactType": "customer service",
+    "availableLanguage": ["en", "pt", "fr"]
+  }
 };
 
 const webSiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https://aiso-group.com",
   "name": "AISO Group",
-  "publisher": { "@type": "Organization", "name": "AISO Group" }
+  "alternateName": "AISO",
+  "url": "https://aiso-group.com",
+  "publisher": { "@type": "Organization", "name": "AISO Group" },
+  "inLanguage": ["en", "pt-PT", "fr-FR"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://aiso-group.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 };
 ---
 

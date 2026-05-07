@@ -2,7 +2,7 @@
 
 > AISO Group is the parent brand of four specialist AI companies, based in Lisbon, Portugal.
 
-AISO Group (Precious Episode LDA, NIF PT516578506) unites four specialist companies. Each one has a single job - you engage the specialist you need now and bring in the others when the timing is right.
+AISO Group (Precious Episode LDA, NIF 514701617 / VAT PT514701617) unites four specialist companies. Each one has a single job - you engage the specialist you need now and bring in the others when the timing is right.
 
 - **AISO Hub** (https://aiso-hub.com): AI Search Optimization - audit, optimize, and monitor brand visibility across AI search (ChatGPT, Perplexity, Gemini, Google AI Overviews).
 - **AISO Dev** (https://aiso-dev.com): AI systems and implementation for SMBs - data pipelines, agent workflows, custom internal tools.

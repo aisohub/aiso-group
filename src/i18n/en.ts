@@ -57,9 +57,14 @@ export const en = {
 
   home: {
     meta: {
-      title: 'AISO | AISO Group - Specialist AI group based in Portugal',
+      // Locked tagline matrix (Brands/AISO Group/Brand Bible/voice/tagline-lock.md,
+      // sealed 2026-04-22). Title and meta description must match the locked
+      // strings verbatim. Do not paraphrase or invent locale variants - until
+      // the locale-lock workflow ships PT-PT/FR strings, those locales reuse
+      // the EN locked copy verbatim per BA directive (2026-05-07).
+      title: 'AISO Group: Four specialist brands. One AI advantage.',
       description:
-        'AISO is the specialist AI group based in Lisbon, Portugal. Four AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).',
+        'Four specialist brands, one AI advantage: AI training, implementation, search visibility, and social, under one roof.',
     },
     hero: {
       kicker: 'AISO · Lisbon · 2026 · Specialist AI',
