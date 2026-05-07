@@ -107,14 +107,13 @@ export const fr: Dictionary = ({
 
   home: {
     meta: {
-      // 58 chars - native FR, "AISO Group" stays in English. Leads with brand
-      // + value claim ("quatre marques IA spécialistes").
-      title: 'AISO Group : quatre marques IA spécialistes, à Lisbonne',
-      // 153 chars - native FR, includes "quatre marques IA spécialistes" and
-      // a soft CTA ("Choisissez le bon spécialiste"). Not a literal
-      // translation of the EN version.
+      // Locked tagline matrix (Brands/AISO Group/Brand Bible/voice/tagline-lock.md,
+      // sealed 2026-04-22). FR locale has no locked translation yet, so per
+      // BA directive (2026-05-07) the EN locked strings ship verbatim until the
+      // locale-lock workflow produces an approved FR version.
+      title: 'AISO Group: Four specialist brands. One AI advantage.',
       description:
-        'AISO Group réunit quatre marques IA spécialistes sous un groupe lisboète : recherche, systèmes, social, formation. Choisissez le bon spécialiste.',
+        'Four specialist brands, one AI advantage: AI training, implementation, search visibility, and social, under one roof.',
     },
     hero: {
       kicker: 'AISO · Lisbonne · 2026 · IA spécialiste',

@@ -57,15 +57,14 @@ export const en = {
 
   home: {
     meta: {
-      // 58 chars - leads with brand token + value claim ("four specialist AI
-      // companies") + geography hook ("one Lisbon parent"). Built to convert
-      // the 86 zero-click branded impressions on "aiso group" at avg pos 1.99.
-      title: 'AISO Group: Four specialist AI companies, one Lisbon parent',
-      // 150 chars - includes "four specialist AI companies", concrete
-      // differentiators (search optimisation, AI builds, social, training),
-      // and a soft CTA ("Pick the right specialist").
+      // Locked tagline matrix (Brands/AISO Group/Brand Bible/voice/tagline-lock.md,
+      // sealed 2026-04-22). Title and meta description must match the locked
+      // strings verbatim. Do not paraphrase or invent locale variants - until
+      // the locale-lock workflow ships PT-PT/FR strings, those locales reuse
+      // the EN locked copy verbatim per BA directive (2026-05-07).
+      title: 'AISO Group: Four specialist brands. One AI advantage.',
       description:
-        'AISO Group unites four specialist AI companies under one Lisbon parent: search optimisation, AI builds, social, training. Pick the right specialist.',
+        'Four specialist brands, one AI advantage: AI training, implementation, search visibility, and social, under one roof.',
     },
     hero: {
       kicker: 'AISO · Lisbon · 2026 · Specialist AI',

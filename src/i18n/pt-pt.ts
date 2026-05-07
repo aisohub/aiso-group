@@ -112,14 +112,13 @@ export const ptPt: Dictionary = ({
 
   home: {
     meta: {
-      // 58 chars - native PT-PT, "AISO Group" stays in English (entity name).
-      // Leads with brand + value claim ("quatro empresas IA especialistas").
-      title: 'AISO Group: quatro empresas IA especialistas, em Lisboa',
-      // 152 chars - native pt-PT, includes "quatro empresas IA especialistas"
-      // and a soft CTA ("Escolha o especialista certo"). Not a literal
-      // translation of the EN version.
+      // Locked tagline matrix (Brands/AISO Group/Brand Bible/voice/tagline-lock.md,
+      // sealed 2026-04-22). PT-PT locale has no locked translation yet, so per
+      // BA directive (2026-05-07) the EN locked strings ship verbatim until the
+      // locale-lock workflow produces an approved PT-PT version.
+      title: 'AISO Group: Four specialist brands. One AI advantage.',
       description:
-        'AISO Group reúne quatro empresas IA especialistas sob um grupo lisboeta: pesquisa, sistemas, conteúdos sociais, formação. Escolha o especialista certo.',
+        'Four specialist brands, one AI advantage: AI training, implementation, search visibility, and social, under one roof.',
     },
     hero: {
       kicker: 'AISO · Lisboa · 2026 · IA especialista',
