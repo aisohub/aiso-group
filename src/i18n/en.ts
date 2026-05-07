@@ -57,9 +57,15 @@ export const en = {
 
   home: {
     meta: {
-      title: 'AISO | AISO Group - Specialist AI group based in Portugal',
+      // 58 chars - leads with brand token + value claim ("four specialist AI
+      // companies") + geography hook ("one Lisbon parent"). Built to convert
+      // the 86 zero-click branded impressions on "aiso group" at avg pos 1.99.
+      title: 'AISO Group: Four specialist AI companies, one Lisbon parent',
+      // 150 chars - includes "four specialist AI companies", concrete
+      // differentiators (search optimisation, AI builds, social, training),
+      // and a soft CTA ("Pick the right specialist").
       description:
-        'AISO is the specialist AI group based in Lisbon, Portugal. Four AI companies under one roof: AI search (Hub), AI systems (Dev), AI-powered social (Buzz), AI training (Learn).',
+        'AISO Group unites four specialist AI companies under one Lisbon parent: search optimisation, AI builds, social, training. Pick the right specialist.',
     },
     hero: {
       kicker: 'AISO · Lisbon · 2026 · Specialist AI',

@@ -107,9 +107,14 @@ export const fr: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO | AISO Group - Groupe IA spécialiste basé au Portugal',
+      // 58 chars - native FR, "AISO Group" stays in English. Leads with brand
+      // + value claim ("quatre marques IA spécialistes").
+      title: 'AISO Group : quatre marques IA spécialistes, à Lisbonne',
+      // 153 chars - native FR, includes "quatre marques IA spécialistes" and
+      // a soft CTA ("Choisissez le bon spécialiste"). Not a literal
+      // translation of the EN version.
       description:
-        'AISO est le groupe IA spécialiste basé à Lisbonne, Portugal. Quatre sociétés IA sous un même toit : recherche IA (Hub), systèmes IA (Dev), social propulsé par l’IA (Buzz), formation (Learn).',
+        'AISO Group réunit quatre marques IA spécialistes sous un groupe lisboète : recherche, systèmes, social, formation. Choisissez le bon spécialiste.',
     },
     hero: {
       kicker: 'AISO · Lisbonne · 2026 · IA spécialiste',

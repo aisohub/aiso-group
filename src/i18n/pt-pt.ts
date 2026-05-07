@@ -112,9 +112,14 @@ export const ptPt: Dictionary = ({
 
   home: {
     meta: {
-      title: 'AISO | AISO Group - Grupo de IA especialista em Portugal',
+      // 58 chars - native PT-PT, "AISO Group" stays in English (entity name).
+      // Leads with brand + value claim ("quatro empresas IA especialistas").
+      title: 'AISO Group: quatro empresas IA especialistas, em Lisboa',
+      // 152 chars - native pt-PT, includes "quatro empresas IA especialistas"
+      // and a soft CTA ("Escolha o especialista certo"). Not a literal
+      // translation of the EN version.
       description:
-        'O AISO é o grupo de IA especialista sediado em Lisboa, Portugal. Quatro empresas de IA sob o mesmo tecto: pesquisa (Hub), sistemas (Dev), redes sociais (Buzz), formação (Learn).',
+        'AISO Group reúne quatro empresas IA especialistas sob um grupo lisboeta: pesquisa, sistemas, conteúdos sociais, formação. Escolha o especialista certo.',
     },
     hero: {
       kicker: 'AISO · Lisboa · 2026 · IA especialista',
