@@ -23,6 +23,12 @@ interface Props {
    * stay EN-only across locales and should not advertise language alternates.
    */
   hreflangDisabled?: boolean;
+  /**
+   * When true, emit `<meta name="robots" content="noindex,follow">` so the
+   * page is not indexed. Used on thin-content surfaces like /search results.
+   * Default false.
+   */
+  noindex?: boolean;
 }
 
 const {
@@ -32,6 +38,7 @@ const {
   canonicalUrl,
   jsonLd,
   hreflangDisabled = false,
+  noindex = false,
 } = Astro.props;
 
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
@@ -84,6 +91,7 @@ const copyright = t.footer.copyright.replace('{year}', String(year));
 
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="canonical" href={canonical} />
 
     {alternateLinks.map(({ href, hreflang }) => (

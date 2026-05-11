@@ -417,6 +417,30 @@ export const en = {
       '<strong>Precious Episode LDA</strong><br />Avenida David Mourão-Ferreira 14, 8A<br />1750-204 Lisboa, Portugal<br />NIF 514701617<br /><span>hello@aiso-group.com</span>',
   },
 
+  search: {
+    meta: {
+      title: 'Search - AISO Group',
+      description:
+        'Search across AISO Group pages, sub-brand profiles, and news.',
+    },
+    hero: {
+      kicker: 'Search',
+      title: 'Search AISO Group',
+      lead:
+        'Find pages, brands, and articles across aiso-group.com.',
+    },
+    form: {
+      label: 'Search query',
+      placeholder: 'Search AISO Group',
+      submit: 'Search',
+    },
+    resultsCount: '{count} results for "{query}"',
+    resultsCountSingular: '1 result for "{query}"',
+    noResults: 'No results for "{query}"',
+    emptyPrompt: 'Type a search above to get started.',
+    backHome: '← Back to home',
+  },
+
   notFound: {
     meta: {
       title: 'Page not found - try the home router',
