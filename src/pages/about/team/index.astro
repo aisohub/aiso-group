@@ -1,0 +1,67 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { localisePath } from '../../../i18n/config';
+import { authors, authorSlugs } from '../../../data/authors';
+
+const locale = 'en' as const;
+const p = (path: string) => localisePath(path.startsWith('/') ? path : `/${path}`, locale);
+
+const pageUrl = 'https://aiso-group.com/about/team/';
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aiso-group.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://aiso-group.com/about/' },
+    { '@type': 'ListItem', position: 3, name: 'Team', item: pageUrl },
+  ],
+};
+
+const team = authorSlugs.map((slug) => authors[slug]);
+---
+
+<Base
+  title="The team behind AISO Group"
+  description="The people behind AISO Group's four AI specialist brands. Founders, leads, and contributors named on every news article."
+  canonicalUrl={pageUrl}
+  jsonLd={breadcrumbJsonLd}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-24">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-slate-400">
+        <a href={p('/')} class="hover:text-white">Home</a>
+        <span class="mx-2">/</span>
+        <a href={p('/about/')} class="hover:text-white">About</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">Team</span>
+      </nav>
+      <h1 class="h1 !text-white max-w-4xl">The team behind AISO Group</h1>
+      <p class="lead !text-slate-300 mt-6 max-w-3xl">
+        The people who build, write, and ship across our four AI specialist brands. Every news article on this site is named and verifiable.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {team.map((author) => {
+          const t = author.copy.en;
+          return (
+            <article class="article-body">
+              <h2 class="h3 !text-[#0A1628]">
+                <a href={p(`/about/team/${author.slug}/`)} class="hover:underline">{author.name}</a>
+              </h2>
+              <p class="kicker mb-2 block">{t.jobTitle}</p>
+              <p>{t.bio}</p>
+              <p>
+                <a href={p(`/about/team/${author.slug}/`)} class="underline">Read full bio →</a>
+              </p>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Base>

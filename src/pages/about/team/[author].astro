@@ -1,0 +1,87 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { localisePath } from '../../../i18n/config';
+import { authors, authorSlugs, type AuthorSlug, buildPersonJsonLd } from '../../../data/authors';
+
+export async function getStaticPaths() {
+  return authorSlugs.map((slug) => ({ params: { author: slug } }));
+}
+
+const { author: slugParam } = Astro.params;
+const slug = slugParam as AuthorSlug;
+const author = authors[slug];
+const t = author.copy.en;
+const locale = 'en' as const;
+const p = (path: string) => localisePath(path.startsWith('/') ? path : `/${path}`, locale);
+
+const pageUrl = `https://aiso-group.com/about/team/${slug}/`;
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  ...buildPersonJsonLd(author, 'en'),
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aiso-group.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://aiso-group.com/about/' },
+    { '@type': 'ListItem', position: 3, name: 'Team', item: 'https://aiso-group.com/about/team/' },
+    { '@type': 'ListItem', position: 4, name: author.name, item: pageUrl },
+  ],
+};
+---
+
+<Base
+  title={t.metaTitle}
+  description={t.metaDescription}
+  canonicalUrl={pageUrl}
+  jsonLd={[personJsonLd, breadcrumbJsonLd]}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-24">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-slate-400">
+        <a href={p('/')} class="hover:text-white">Home</a>
+        <span class="mx-2">/</span>
+        <a href={p('/about/')} class="hover:text-white">About</a>
+        <span class="mx-2">/</span>
+        <a href={p('/about/team/')} class="hover:text-white">Team</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">{author.name}</span>
+      </nav>
+      <h1 class="h1 !text-white">{author.name}</h1>
+      <p class="kicker kicker-on-dark mt-4 block">{t.jobTitle}</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-2 article-body">
+          <h2 class="h2 !text-[#0A1628]">About {author.name}</h2>
+          <p class="lead text-start">{t.longBio}</p>
+
+          <h2 class="h2 !text-[#0A1628] mt-12">Areas of expertise</h2>
+          <ul>
+            {author.knowsAbout.map((topic) => (
+              <li>{topic}</li>
+            ))}
+          </ul>
+        </div>
+        <aside class="md:col-span-1">
+          <div class="border border-slate-200 rounded-lg p-6">
+            <h3 class="kicker mb-4 block">Profiles</h3>
+            <ul class="space-y-2 text-sm">
+              {author.sameAs.map((url) => (
+                <li>
+                  <a href={url} rel="noopener" class="underline hover:text-[#00d492]">{url.replace(/^https?:\/\//, '')}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>

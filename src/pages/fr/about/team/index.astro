@@ -1,0 +1,66 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import { localisePath } from '../../../../i18n/config';
+import { authors, authorSlugs } from '../../../../data/authors';
+
+const locale = 'fr' as const;
+const p = (path: string) => localisePath(path.startsWith('/') ? path : `/${path}`, locale);
+const pageUrl = 'https://aiso-group.com/fr/about/team/';
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://aiso-group.com/fr/' },
+    { '@type': 'ListItem', position: 2, name: 'À propos', item: 'https://aiso-group.com/fr/about/' },
+    { '@type': 'ListItem', position: 3, name: 'Équipe', item: pageUrl },
+  ],
+};
+
+const team = authorSlugs.map((slug) => authors[slug]);
+---
+
+<Base
+  title="L'équipe derrière AISO Group"
+  description="Les personnes derrière les quatre marques spécialistes en IA d'AISO Group. Fondateurs, leads et contributeurs nommés sur chaque article."
+  canonicalUrl={pageUrl}
+  jsonLd={breadcrumbJsonLd}
+>
+  <section class="bg-[#0A1628] text-white">
+    <div class="container-aiso section !py-20 md:!py-24">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-slate-400">
+        <a href={p('/')} class="hover:text-white">Accueil</a>
+        <span class="mx-2">/</span>
+        <a href={p('/about/')} class="hover:text-white">À propos</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">Équipe</span>
+      </nav>
+      <h1 class="h1 !text-white max-w-4xl">L'équipe derrière AISO Group</h1>
+      <p class="lead !text-slate-300 mt-6 max-w-3xl">
+        Les personnes qui construisent, écrivent et livrent dans nos quatre marques spécialistes en IA. Chaque article de news sur ce site est nommé et vérifiable.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-aiso section">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {team.map((author) => {
+          const t = author.copy.fr;
+          return (
+            <article class="article-body">
+              <h2 class="h3 !text-[#0A1628]">
+                <a href={p(`/about/team/${author.slug}/`)} class="hover:underline">{author.name}</a>
+              </h2>
+              <p class="kicker mb-2 block">{t.jobTitle}</p>
+              <p>{t.bio}</p>
+              <p>
+                <a href={p(`/about/team/${author.slug}/`)} class="underline">Lire la bio complète →</a>
+              </p>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Base>
