@@ -1,0 +1,117 @@
+---
+// Related-links block injected at the bottom of every news article (EN/FR/PT-PT).
+//
+// Purpose: pass authority from indexed news URLs to the brand router and
+// sub-brand pages, with descriptive anchors that LLM retrievers can use as
+// semantic signals ("AI search optimization", "AI systems for SMBs", etc.).
+//
+// Locale-aware. Internal links go to /brands/<slug>/ (or /fr/, /pt-pt/),
+// external links go to the sibling brand sites.
+
+import { localisePath } from '../i18n/config';
+
+interface Props {
+  locale: 'en' | 'pt-pt' | 'fr';
+}
+
+const { locale } = Astro.props;
+const p = (path: string) => localisePath(path.startsWith('/') ? path : `/${path}`, locale);
+
+const heading =
+  locale === 'fr'
+    ? 'Aller plus loin avec AISO'
+    : locale === 'pt-pt'
+    ? 'Continuar com a AISO'
+    : 'Where to go next';
+
+const intro =
+  locale === 'fr'
+    ? 'Quatre marques spécialistes. Choisissez celle qui correspond à votre besoin :'
+    : locale === 'pt-pt'
+    ? 'Quatro marcas especialistas. Escolha a que corresponde à sua necessidade:'
+    : 'Four specialist brands. Pick the one that matches your problem:';
+
+const router =
+  locale === 'fr'
+    ? 'Découvrir les quatre marques AISO Group'
+    : locale === 'pt-pt'
+    ? 'Conhecer as quatro marcas do AISO Group'
+    : 'Explore the four AISO Group brands';
+
+const labels = {
+  hubAnchor:
+    locale === 'fr'
+      ? 'AISO Hub : optimisation pour la recherche par IA'
+      : locale === 'pt-pt'
+      ? 'AISO Hub: otimização para pesquisa por IA'
+      : 'AISO Hub: AI search optimization',
+  hubSummary:
+    locale === 'fr'
+      ? 'Faites de votre marque la réponse que ChatGPT, Perplexity et Google AI Overviews citent.'
+      : locale === 'pt-pt'
+      ? 'Torne a sua marca a resposta que o ChatGPT, Perplexity e Google AI Overviews citam.'
+      : 'Make your brand the answer ChatGPT, Perplexity, and Google AI Overviews cite.',
+  devAnchor:
+    locale === 'fr'
+      ? 'AISO Dev : systèmes d\'IA pour PME'
+      : locale === 'pt-pt'
+      ? 'AISO Dev: sistemas de IA para PMEs'
+      : 'AISO Dev: AI systems for SMBs',
+  devSummary:
+    locale === 'fr'
+      ? 'Logiciels d\'IA, automatisations et intégrations livrés en production.'
+      : locale === 'pt-pt'
+      ? 'Software de IA, automações e integrações entregues em produção.'
+      : 'Production AI software, automations, and integrations.',
+  buzzAnchor:
+    locale === 'fr'
+      ? 'AISO Buzz : social boosté par l\'IA'
+      : locale === 'pt-pt'
+      ? 'AISO Buzz: social com IA'
+      : 'AISO Buzz: AI-powered social',
+  buzzSummary:
+    locale === 'fr'
+      ? 'Calendriers éditoriaux et contenu social produits avec l\'IA, validés par des humains.'
+      : locale === 'pt-pt'
+      ? 'Calendários editoriais e conteúdo social com IA, validados por humanos.'
+      : 'Editorial calendars and social content produced with AI, validated by humans.',
+  learnAnchor:
+    locale === 'fr'
+      ? 'AISO Learn : formation IA en entreprise'
+      : locale === 'pt-pt'
+      ? 'AISO Learn: formação corporativa em IA'
+      : 'AISO Learn: corporate AI training',
+  learnSummary:
+    locale === 'fr'
+      ? 'Programmes pratiques par métier - marketing, ventes, ops, juridique, RH.'
+      : locale === 'pt-pt'
+      ? 'Programas práticos por função: marketing, vendas, operações, jurídico, RH.'
+      : 'Hands-on, role-based programs for marketing, sales, ops, legal, and HR.',
+};
+---
+
+<aside class="mt-12 pt-8 border-t border-slate-200 article-body" aria-label={heading}>
+  <h2 class="h3 !text-[#0A1628]">{heading}</h2>
+  <p>{intro}</p>
+  <ul>
+    <li>
+      <a href="https://aiso-hub.com" rel="noopener">{labels.hubAnchor}</a>{' - '}
+      <a href={p('/brands/aiso-hub/')}>{labels.hubSummary}</a>
+    </li>
+    <li>
+      <a href="https://aiso-dev.com" rel="noopener">{labels.devAnchor}</a>{' - '}
+      <a href={p('/brands/aiso-dev/')}>{labels.devSummary}</a>
+    </li>
+    <li>
+      <a href="https://aiso-buzz.com" rel="noopener">{labels.buzzAnchor}</a>{' - '}
+      <a href={p('/brands/aiso-buzz/')}>{labels.buzzSummary}</a>
+    </li>
+    <li>
+      <a href="https://aiso-learn.com" rel="noopener">{labels.learnAnchor}</a>{' - '}
+      <a href={p('/brands/aiso-learn/')}>{labels.learnSummary}</a>
+    </li>
+  </ul>
+  <p>
+    <a href={p('/brands/')} class="font-semibold">{router} →</a>
+  </p>
+</aside>
